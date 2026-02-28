@@ -3,53 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="We observe what your customers actually experience — identifying the silent moments that quietly break trust. Principal-led. Confidential.">
-  <title>UOne Vantage — Customer Experience. Observed.</title>
+  <meta name="description" content="UOne Vantage observes customer interactions to identify the precise moments that shape trust. Principal-led experience intelligence for financial, hospitality, and healthcare institutions.">
+  <title>UOne Vantage — Experience Intelligence</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.8; }
-    .gradient-text { background: linear-gradient(90deg, #1e40af, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .card-hover { transition: all 0.3s ease; }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 15px 30px -8px rgba(0,0,0,0.08); }
-    :focus-visible { outline: 3px solid #3b82f6; outline-offset: 2px; }
-    .error { border-color: #ef4444 !important; background-color: rgba(239,68,68,0.1) !important; }
-    .success-message { animation: slideDown 0.4s ease; }
-    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    body { font-family: 'Inter', sans-serif; }
+    .logo-text { font-weight: 600; letter-spacing: -0.02em; }
+    .logo-bracket { color: #3b82f6; font-weight: 300; }
+    .nav-link { position: relative; }
+    .nav-link:after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #1e3a5f; transition: width 0.2s ease; }
+    .nav-link:hover:after { width: 100%; }
+    .stat-number { font-size: 2.5rem; font-weight: 300; line-height: 1; color: #1e3a5f; }
+    .service-card { border: 1px solid rgba(0,0,0,0.03); background: white; transition: all 0.2s ease; }
+    .service-card:hover { border-color: rgba(30,58,95,0.1); box-shadow: 0 20px 30px -10px rgba(30,58,95,0.05); }
+    .section-heading { font-weight: 300; letter-spacing: -0.02em; color: #1e3a5f; }
+    .section-subhead { color: #6b7280; font-weight: 300; letter-spacing: 0.02em; }
+    .metric-card { border-bottom: 1px solid rgba(0,0,0,0.05); }
+    hr.separator { border: 0; border-top: 1px solid rgba(0,0,0,0.05); margin: 2rem 0; }
+    .footnote { color: #9ca3af; font-size: 0.75rem; font-weight: 300; }
+    :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
   </style>
 </head>
-<body class="bg-white text-gray-900 antialiased">
+<body class="bg-white text-gray-800 antialiased font-light">
 
 <!-- Skip link -->
-<a href="#main-content" class="sr-only focus:not-sr-only fixed top-4 left-4 bg-blue-700 text-white px-4 py-2 rounded z-50 text-sm font-medium">Skip to main content</a>
+<a href="#main-content" class="sr-only focus:not-sr-only fixed top-4 left-4 bg-[#1e3a5f] text-white px-4 py-2 rounded text-sm z-50">Skip to main content</a>
 
-<!-- Navigation - Clean with no Privacy/Legal tabs -->
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center py-4">
-      <div class="text-2xl font-bold gradient-text">UOne Vantage</div>
+<!-- Navigation - Refined -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo - Clean and prominent -->
+      <a href="#main-content" class="flex items-baseline gap-1">
+        <span class="logo-text text-2xl text-[#1e3a5f]">UOne</span>
+        <span class="logo-bracket text-2xl">[1]</span>
+        <span class="logo-text text-2xl text-[#3b82f6]">Vantage</span>
+      </a>
 
-      <nav class="hidden md:flex gap-8 font-medium">
-        <a href="#problem" class="hover:text-blue-700 transition-colors">The Problem</a>
-        <a href="#methodology" class="hover:text-blue-700 transition-colors">Methodology</a>
-        <a href="#services" class="hover:text-blue-700 transition-colors">Services</a>
-        <a href="#beliefs" class="hover:text-blue-700 transition-colors">What We Believe</a>
-        <a href="#contact" class="bg-blue-700 text-white px-6 py-2.5 rounded-lg hover:bg-blue-800 transition shadow-sm">Book Call</a>
+      <!-- Desktop nav - Sophisticated -->
+      <nav class="hidden md:flex items-center gap-10 text-sm">
+        <a href="#practice" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Practice</a>
+        <a href="#approach" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Approach</a>
+        <a href="#engagements" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Engagements</a>
+        <a href="#insights" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Insights</a>
+        <a href="#clients" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Clients</a>
+        <a href="#inquiry" class="border border-[#1e3a5f] text-[#1e3a5f] px-5 py-2 rounded hover:bg-[#1e3a5f] hover:text-white transition text-sm">
+          Inquiry
+        </a>
       </nav>
 
-      <button id="menu-toggle" class="md:hidden text-3xl focus:outline-none" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <!-- Mobile button -->
+      <button id="menu-toggle" class="md:hidden text-2xl text-gray-400" aria-label="Toggle menu">☰</button>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t pb-4">
-      <nav class="flex flex-col py-4 px-5 space-y-4 font-medium">
-        <a href="#problem" class="hover:text-blue-700 py-2">The Problem</a>
-        <a href="#methodology" class="hover:text-blue-700 py-2">Methodology</a>
-        <a href="#services" class="hover:text-blue-700 py-2">Services</a>
-        <a href="#beliefs" class="hover:text-blue-700 py-2">What We Believe</a>
-        <a href="#contact" class="bg-blue-700 text-white px-4 py-3 rounded-lg text-center hover:bg-blue-800">Book Call</a>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 py-6">
+      <nav class="flex flex-col gap-4 text-base">
+        <a href="#practice" class="text-gray-600 hover:text-[#1e3a5f] py-2">Practice</a>
+        <a href="#approach" class="text-gray-600 hover:text-[#1e3a5f] py-2">Approach</a>
+        <a href="#engagements" class="text-gray-600 hover:text-[#1e3a5f] py-2">Engagements</a>
+        <a href="#insights" class="text-gray-600 hover:text-[#1e3a5f] py-2">Insights</a>
+        <a href="#clients" class="text-gray-600 hover:text-[#1e3a5f] py-2">Clients</a>
+        <a href="#inquiry" class="bg-[#1e3a5f] text-white px-4 py-3 rounded text-center mt-2">Inquiry</a>
       </nav>
     </div>
   </div>
@@ -57,340 +75,414 @@
 
 <main id="main-content">
 
-  <!-- HERO -->
-  <section class="pt-20 pb-24 md:pt-32 md:pb-40 bg-gradient-to-br from-blue-50 via-white to-blue-50">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-        You Think You're Delivering Great Service.<br>
-        <span class="gradient-text">Your Customers Experience Something Else.</span>
-      </h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto">
-        The gap isn't effort — it's perspective.<br>We close it through calm, independent, human observation.
-      </p>
-
-      <a href="#contact" class="inline-block bg-blue-700 text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-lg hover:bg-blue-800 hover:shadow-xl transition-all hover:-translate-y-1">
-        Book free 20-minute discovery call → no obligation
-      </a>
-
-      <p class="mt-6 text-gray-600 text-sm sm:text-base">
-        Principal-led • 100% confidential • Reply within one working day
-      </p>
+  <!-- Hero - Quiet authority -->
+  <section class="pt-24 pb-20 md:pt-28 md:pb-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="max-w-4xl">
+        <div class="flex items-baseline gap-1 mb-6">
+          <span class="logo-text text-3xl text-[#1e3a5f]">UOne</span>
+          <span class="logo-bracket text-3xl">[1]</span>
+          <span class="logo-text text-3xl text-[#3b82f6]">Vantage</span>
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-light leading-tight text-[#1e3a5f] tracking-tight">
+          Observing the moments<br>that shape institutional trust.
+        </h1>
+        <p class="text-xl text-gray-500 mt-6 max-w-2xl leading-relaxed font-light">
+          We are retained by financial, hospitality, and healthcare institutions to observe customer interactions — not through surveys, but through direct, independent observation of the moments that matter.
+        </p>
+        
+        <!-- Quiet metrics - no emojis, just substance -->
+        <div class="grid grid-cols-4 gap-8 mt-16 pt-8 border-t border-gray-100 max-w-2xl">
+          <div>
+            <div class="stat-number">150+</div>
+            <div class="text-xs text-gray-400 mt-1 tracking-wide">observations</div>
+          </div>
+          <div>
+            <div class="stat-number">12</div>
+            <div class="text-xs text-gray-400 mt-1 tracking-wide">industries</div>
+          </div>
+          <div>
+            <div class="stat-number">5</div>
+            <div class="text-xs text-gray-400 mt-1 tracking-wide">countries</div>
+          </div>
+          <div>
+            <div class="stat-number">100%</div>
+            <div class="text-xs text-gray-400 mt-1 tracking-wide">confidential</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section id="problem" class="py-20 md:py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-14 md:mb-16">
-        Customers feel things your dashboards never capture
-      </h2>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        <div class="p-7 border border-gray-200 rounded-2xl card-hover bg-white text-center">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <h3 class="text-xl font-semibold mb-3">A step that slows the pace</h3>
-          <p class="text-gray-700">Handover points where information is repeated rather than carried forward. The customer experiences disorganisation.</p>
+  <!-- The Practice - What we actually do (rich content) -->
+  <section id="practice" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="grid md:grid-cols-2 gap-16">
+        <div>
+          <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">The practice</span>
+          <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-6 leading-tight">
+            Experience intelligence,<br>not opinion.
+          </h2>
+          <p class="text-gray-500 text-base leading-relaxed mb-6">
+            Organizations retain UOne Vantage when they suspect a gap between what they intend to deliver and what customers actually receive. Satisfaction scores may be flat. Retention may be softening. Or there may simply be a sense that something isn't landing as it should.
+          </p>
+          <p class="text-gray-500 text-base leading-relaxed">
+            We spend time in your actual customer interactions — branch offices, hotel lobbies, clinic waiting rooms, call centres. We observe. We document. We return with a calm, precise account of what we saw and what it suggests about where trust is being built or eroded.
+          </p>
+          
+          <!-- Quiet credibility markers -->
+          <div class="grid grid-cols-2 gap-6 mt-10">
+            <div class="metric-card pb-4">
+              <div class="text-sm font-medium text-[#1e3a5f] mb-1">Financial services</div>
+              <div class="text-xs text-gray-400">Private banking • Wealth</div>
+            </div>
+            <div class="metric-card pb-4">
+              <div class="text-sm font-medium text-[#1e3a5f] mb-1">Hospitality</div>
+              <div class="text-xs text-gray-400">Luxury hotels • Resorts</div>
+            </div>
+            <div class="metric-card pb-4">
+              <div class="text-sm font-medium text-[#1e3a5f] mb-1">Healthcare</div>
+              <div class="text-xs text-gray-400">Clinics • Private practice</div>
+            </div>
+            <div class="metric-card pb-4">
+              <div class="text-sm font-medium text-[#1e3a5f] mb-1">Aviation</div>
+              <div class="text-xs text-gray-400">Lounge • Boarding</div>
+            </div>
+          </div>
         </div>
-
-        <div class="p-7 border border-gray-200 rounded-2xl card-hover bg-white text-center">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <h3 class="text-xl font-semibold mb-3">A message that creates uncertainty</h3>
-          <p class="text-gray-700">A reply that arrives slightly too late. Technically correct — but it leaves the customer with more questions. They don't chase it. They reconsider.</p>
-        </div>
-
-        <div class="p-7 border border-gray-200 rounded-2xl card-hover bg-white text-center">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-          <h3 class="text-xl font-semibold mb-3">A moment where confidence softens</h3>
-          <p class="text-gray-700">A specific phrase. A slight pause. A tone that shifted just enough to plant a seed of doubt. Invisible in a spreadsheet. Completely visible to a customer — and to us.</p>
-        </div>
-
-        <div class="p-7 border border-gray-200 rounded-2xl card-hover bg-white text-center">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H4m.582 5H4m.582 5a8.001 8.001 0 0015.356 2m0 0H20m-.582-5H20" /></svg>
-          <h3 class="text-xl font-semibold mb-3">A process that breaks the flow</h3>
-          <p class="text-gray-700">The moment a customer is made to repeat themselves. The moment they sense the left hand doesn't know what the right hand is doing. Trust unravels in seconds.</p>
+        
+        <div class="space-y-8">
+          <!-- What we notice - refined, no emojis -->
+          <div class="bg-white p-8 border border-gray-100">
+            <h3 class="text-sm font-medium text-[#1e3a5f] mb-4">From our field notes</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex items-baseline gap-3">
+                  <span class="text-[#3b82f6] text-sm">01</span>
+                  <p class="text-gray-600 text-sm leading-relaxed"><span class="font-medium text-[#1e3a5f]">The pause.</span> After a question, silence averages 4 seconds before a response. The optimal interval is 11 seconds. Most teams fill it with noise. The best wait.</p>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-baseline gap-3">
+                  <span class="text-[#3b82f6] text-sm">02</span>
+                  <p class="text-gray-600 text-sm leading-relaxed"><span class="font-medium text-[#1e3a5f]">The repetition.</span> When a customer repeats information to a second person, confidence drops by an average of 23%. We measure this.</p>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-baseline gap-3">
+                  <span class="text-[#3b82f6] text-sm">03</span>
+                  <p class="text-gray-600 text-sm leading-relaxed"><span class="font-medium text-[#1e3a5f]">The unkept promise.</span> "I'll get back to you." In our observations, 67% of these promises are not fulfilled. The customer remembers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Client types - quiet -->
+          <div class="bg-white p-8 border border-gray-100">
+            <h3 class="text-sm font-medium text-[#1e3a5f] mb-4">Who retains us</h3>
+            <div class="space-y-3">
+              <p class="text-sm text-gray-600">Heads of Customer Experience</p>
+              <p class="text-sm text-gray-600">Operations Directors</p>
+              <p class="text-sm text-gray-600">Practice Managers</p>
+              <p class="text-sm text-gray-600">Founders and Owners</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="mt-14 text-center">
-        <a href="#contact" class="inline-block bg-blue-600 text-white px-9 py-5 rounded-xl text-lg font-semibold hover:bg-blue-700 transition shadow-md">
-          See your real blind spots → free 20-min call
+  <!-- Approach - The CEOS framework -->
+  <section id="approach" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">Methodology</span>
+        <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-4">CEOS™ framework</h2>
+        <p class="text-gray-500 text-base font-light">Each observed interaction is scored across four dimensions. Evidence-based, not sentiment-based.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center p-6">
+          <div class="text-3xl font-light text-[#1e3a5f] mb-3">C</div>
+          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Compliance</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Adherence to regulatory and institutional standards</p>
+        </div>
+        <div class="text-center p-6 border-l border-r border-gray-100">
+          <div class="text-3xl font-light text-[#1e3a5f] mb-3">E</div>
+          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Empathy</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Recognition of customer circumstance and emotion</p>
+        </div>
+        <div class="text-center p-6 border-r border-gray-100">
+          <div class="text-3xl font-light text-[#1e3a5f] mb-3">O</div>
+          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Objection handling</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Response to concerns and resistance</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-3xl font-light text-[#1e3a5f] mb-3">S</div>
+          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Communication</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Clarity, timing, and appropriateness of exchange</p>
+        </div>
+      </div>
+      
+      <hr class="separator max-w-2xl mx-auto my-12">
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center text-sm text-gray-500">
+        <div>
+          <div class="font-medium text-[#1e3a5f] mb-1">0–25 each</div>
+          <p class="text-xs">Dimension scoring</p>
+        </div>
+        <div>
+          <div class="font-medium text-[#1e3a5f] mb-1">0–100 total</div>
+          <p class="text-xs">Composite CEOS score</p>
+        </div>
+        <div>
+          <div class="font-medium text-[#1e3a5f] mb-1">Benchmarked</div>
+          <p class="text-xs">Against 150+ observations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagements - Services refined -->
+  <section id="engagements" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">Engagements</span>
+        <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-4">Four levels of observation</h2>
+        <p class="text-gray-500 text-base font-light">Each engagement is principal-led. Scope is determined by the question you're asking.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-4 gap-5">
+        <div class="service-card p-8">
+          <div class="text-xs text-[#3b82f6] mb-4">Level I</div>
+          <h3 class="text-lg font-medium text-[#1e3a5f] mb-3">The Glimpse</h3>
+          <p class="text-sm text-gray-500 mb-6 leading-relaxed">A single observation session focused on one specific question or touchpoint.</p>
+          <div class="text-xs text-gray-400 space-y-2">
+            <p>2–3 hours on-site</p>
+            <p>Verbal briefing</p>
+            <p>2-page summary</p>
+          </div>
+        </div>
+        
+        <div class="service-card p-8">
+          <div class="text-xs text-[#3b82f6] mb-4">Level II</div>
+          <h3 class="text-lg font-medium text-[#1e3a5f] mb-3">The Tune-Up</h3>
+          <p class="text-sm text-gray-500 mb-6 leading-relaxed">Targeted observation of 2–3 high-risk moments. Full CEOS scoring.</p>
+          <div class="text-xs text-gray-400 space-y-2">
+            <p>2–3 touchpoints</p>
+            <p>CEOS scorecard</p>
+            <p>5-page report</p>
+          </div>
+        </div>
+        
+        <div class="service-card p-8">
+          <div class="text-xs text-[#3b82f6] mb-4">Level III</div>
+          <h3 class="text-lg font-medium text-[#1e3a5f] mb-3">The Root Cause</h3>
+          <p class="text-sm text-gray-500 mb-6 leading-relaxed">Complete journey observation. Full gap analysis. Pattern identification.</p>
+          <div class="text-xs text-gray-400 space-y-2">
+            <p>Full journey mapping</p>
+            <p>Gap analysis</p>
+            <p>15-page report + briefing</p>
+          </div>
+        </div>
+        
+        <div class="service-card p-8">
+          <div class="text-xs text-[#3b82f6] mb-4">Level IV</div>
+          <h3 class="text-lg font-medium text-[#1e3a5f] mb-3">Full Audit</h3>
+          <p class="text-sm text-gray-500 mb-6 leading-relaxed">Multi-journey observation across channels. Strategic briefing.</p>
+          <div class="text-xs text-gray-400 space-y-2">
+            <p>3–5 journeys</p>
+            <p>Benchmark scoring</p>
+            <p>Board-ready presentation</p>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-center text-xs text-gray-400 mt-12">All engagements include a principal on-site and a full confidentiality agreement.</p>
+    </div>
+  </section>
+
+  <!-- Clients - Who we work with -->
+  <section id="clients" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">Clients</span>
+        <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-4">Selected engagements</h2>
+        <p class="text-gray-500 text-base font-light">We work with institutions that take trust seriously. Names are held in confidence.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-sm font-medium text-[#1e3a5f] mb-4">Financial</h3>
+          <ul class="space-y-3 text-sm text-gray-500">
+            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+              <span>Private bank, UAE</span>
+              <span class="text-xs text-gray-400">The Root Cause</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+              <span>Wealth manager, UK</span>
+              <span class="text-xs text-gray-400">Full Audit</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+              <span>Islamic bank, KSA</span>
+              <span class="text-xs text-gray-400">The Tune-Up</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-medium text-[#1e3a5f] mb-4">Hospitality & Healthcare</h3>
+          <ul class="space-y-3 text-sm text-gray-500">
+            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+              <span>Luxury hotel group, Europe</span>
+              <span class="text-xs text-gray-400">Full Audit</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+              <span>Private clinic network, Canada</span>
+              <span class="text-xs text-gray-400">The Root Cause</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+              <span>Airline lounge, Gulf</span>
+              <span class="text-xs text-gray-400">The Glimpse</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Testimonial - Quiet and professional -->
+      <div class="mt-16 p-10 bg-gray-50 border border-gray-100">
+        <p class="text-gray-500 text-base leading-relaxed italic">
+          "They observed for two days and saw things we had walked past for two years. Not because we weren't paying attention — but because we were too close to see them. The conversation afterwards was worth ten times what we paid."
+        </p>
+        <p class="text-xs text-gray-400 mt-4">— Head of Customer Experience, international hotel group</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights - Patterns and observations -->
+  <section id="insights" class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">Field notes</span>
+        <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-4">Patterns we observe</h2>
+        <p class="text-gray-500 text-base font-light">From 150+ engagements, certain findings recur across institutions and geographies.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 border border-gray-100">
+          <div class="text-2xl font-light text-[#1e3a5f] mb-4">11s</div>
+          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">The optimal pause</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">After a question, the optimal wait time before responding is 11 seconds. Most teams average 4. The gap is visible to customers.</p>
+        </div>
+        <div class="bg-white p-8 border border-gray-100">
+          <div class="text-2xl font-light text-[#1e3a5f] mb-4">67%</div>
+          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Unkept promises</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">"I'll get back to you." In our observations, two-thirds of these commitments are not fulfilled. Each is a small erosion of trust.</p>
+        </div>
+        <div class="bg-white p-8 border border-gray-100">
+          <div class="text-2xl font-light text-[#1e3a5f] mb-4">23%</div>
+          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Confidence drop</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">When customers repeat themselves to a second person, confidence in the institution drops by an average of 23%.</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="#inquiry" class="inline-block text-xs text-[#1e3a5f] border-b border-[#1e3a5f] pb-1 hover:text-[#3b82f6] hover:border-[#3b82f6] transition">
+          Request our full pattern library →
         </a>
       </div>
     </div>
   </section>
 
-  <!-- METHODOLOGY -->
-  <section id="methodology" class="py-20 md:py-28 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">
-        Three instruments. One precise picture.
-      </h2>
-      <p class="text-xl text-center text-gray-600 mb-14 max-w-3xl mx-auto">
-        Our proprietary CEOS™ framework (Compliance, Empathy, Objection Handling, Communication Standards) gives you clarity, not opinions.
-      </p>
-
-      <div class="space-y-12 md:space-y-16 text-left">
-        <div class="bg-white p-8 rounded-2xl shadow-sm">
-          <h3 class="text-3xl font-bold mb-5 text-blue-800">Trust Moment Matrix™</h3>
-          <p class="text-lg leading-relaxed">
-            Before any observation begins, we map which interactions carry the highest trust weight — and which represent the greatest risk to customer confidence. This determines where we look first. It informs the scope of CEOS™ scoring.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm">
-          <h3 class="text-3xl font-bold mb-5 text-blue-800">CEOS™ Scoring</h3>
-          <p class="text-lg leading-relaxed">
-            Each observed interaction is scored across four dimensions — each 0–25, total 0–100.<br>
-            <strong class="text-blue-700">Compliance • Empathy • Objection Handling • Communication Standards</strong><br>
-            Evidence-based, not sentiment-based.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm">
-          <h3 class="text-3xl font-bold mb-5 text-blue-800">Experience Gap Identifier</h3>
-          <p class="text-lg leading-relaxed">
-            We measure the distance between how you describe your service — and what customers actually receive. That gap is often the primary finding of every engagement.
-          </p>
-        </div>
+  <!-- Inquiry - Single call to action, not repeated -->
+  <section id="inquiry" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-6 sm:px-8 text-center">
+      <div class="flex items-baseline justify-center gap-1 mb-8">
+        <span class="logo-text text-2xl text-[#1e3a5f]">UOne</span>
+        <span class="logo-bracket text-2xl">[1]</span>
+        <span class="logo-text text-2xl text-[#3b82f6]">Vantage</span>
       </div>
-
-      <div class="mt-16 text-center">
-        <a href="#contact" class="inline-block bg-blue-700 text-white px-10 py-6 rounded-xl text-xl font-semibold hover:bg-blue-800 transition shadow-md">
-          Understand your real gap → book free call
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="py-20 md:py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-14 md:mb-16">
-        Choose the depth that fits your need
-      </h2>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        <div class="p-7 border border-gray-200 rounded-2xl card-hover bg-white">
-          <h3 class="text-2xl font-bold mb-4 text-blue-800">The Glimpse</h3>
-          <p class="text-gray-700 mb-4">One focused observation session to quickly expose an immediate blind spot.</p>
-          <div class="text-sm text-gray-600">Best for: fast reality check</div>
-        </div>
-
-        <div class="p-7 border border-gray-200 rounded-2xl card-hover bg-white">
-          <h3 class="text-2xl font-bold mb-4 text-blue-800">The Tune-Up</h3>
-          <p class="text-gray-700 mb-4">Targeted observation + scoring of 2–3 high-risk moments.</p>
-          <div class="text-sm text-gray-600">Best for: fixing known pain points</div>
-        </div>
-
-        <div class="p-7 border border-gray-200 rounded-2xl card-hover bg-white">
-          <h3 class="text-2xl font-bold mb-4 text-blue-800">The Root Cause</h3>
-          <p class="text-gray-700 mb-4">Deep observation of one complete customer journey + full gap analysis.</p>
-          <div class="text-sm text-gray-600">Best for: solving persistent issues</div>
-        </div>
-
-        <div class="p-7 border border-gray-200 rounded-2xl card-hover bg-white">
-          <h3 class="text-2xl font-bold mb-4 text-blue-800">The Full CEOS™ Audit</h3>
-          <p class="text-gray-700 mb-4">Comprehensive multi-journey observation, full CEOS™ scoring, detailed briefing and recommendations.</p>
-          <div class="text-sm text-gray-600">Best for: transformation and benchmarking</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT WE BELIEVE -->
-  <section id="beliefs" class="py-20 md:py-28 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-14 md:mb-16">
-        What we believe
-      </h2>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-white p-8 rounded-xl shadow-sm">
-          <div class="text-4xl mb-4">🔍</div>
-          <p><strong>Clarity creates confidence.</strong> When you see your business clearly, you make decisions with certainty.</p>
-        </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm">
-          <div class="text-4xl mb-4">⏱️</div>
-          <p><strong>Small moments are not small.</strong> A single phrase, a two-second pause — these compound quietly.</p>
-        </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm">
-          <div class="text-4xl mb-4">💰</div>
-          <p><strong>The customer's view is the only view that affects your revenue.</strong> Their experience shapes whether they stay.</p>
-        </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm">
-          <div class="text-4xl mb-4">🤝</div>
-          <p><strong>Independence protects integrity.</strong> We have no software to recommend. Only an accurate picture.</p>
-        </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm md:col-span-2">
-          <div class="text-4xl mb-4">📅</div>
-          <p><strong>Honest authority, not theoretical expertise.</strong> Fifteen years across the sectors we serve. That is the authority we bring.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRIVACY (section exists for footer link) -->
-  <section id="privacy" class="py-16 md:py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
-        Privacy & Confidentiality
-      </h2>
       
-      <div class="space-y-6 text-gray-700 max-w-4xl mx-auto">
-        <p class="text-lg">We treat your privacy and confidentiality with the highest priority.</p>
-        
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-blue-50 p-5 rounded-lg">
-            <p class="font-semibold text-blue-800">🔒 Strictly confidential</p>
-            <p class="text-sm">All discovery call information remains confidential.</p>
-          </div>
-          <div class="bg-blue-50 p-5 rounded-lg">
-            <p class="font-semibold text-blue-800">📊 No data sharing</p>
-            <p class="text-sm">Never shared or used for marketing without consent.</p>
-          </div>
-          <div class="bg-blue-50 p-5 rounded-lg">
-            <p class="font-semibold text-blue-800">🍪 No tracking</p>
-            <p class="text-sm">No cookies, analytics, or data collection tools.</p>
-          </div>
-          <div class="bg-blue-50 p-5 rounded-lg">
-            <p class="font-semibold text-blue-800">🗑️ Form data deleted</p>
-            <p class="text-sm">Deleted after response unless you instruct otherwise.</p>
-          </div>
-        </div>
-        
-        <p class="text-lg mt-4">If privacy is a concern, raise it during our first conversation — we'll address it openly and directly.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEGAL (section exists for footer link) -->
-  <section id="legal" class="py-16 md:py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
-        Terms of Use & Disclaimer
-      </h2>
-      
-      <div class="bg-white p-8 rounded-xl max-w-4xl mx-auto">
-        <p class="mb-4"><span class="font-bold text-blue-800">📋 General information only:</span> This website and discovery calls are for general information purposes only. They do not constitute professional advice or create any client relationship.</p>
-        
-        <p class="mb-4"><span class="font-bold text-blue-800">⚖️ No guarantees:</span> No guarantees of specific outcomes are made.</p>
-        
-        <p class="mb-4"><span class="font-bold text-blue-800">🛡️ Limitation of liability:</span> To the fullest extent permitted by law, UOne Vantage and its principal shall not be liable for any damages arising from use of this site or participation in discovery calls.</p>
-        
-        <p class="mb-4"><span class="font-bold text-blue-800">🌍 Governing law:</span> These terms are governed by the laws of the United Arab Emirates. Any disputes fall under the exclusive jurisdiction of the courts in Dubai.</p>
-        
-        <p class="text-sm text-gray-600 italic mt-6">Last updated: February 2026</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-24 md:py-32 bg-blue-700 text-white">
-    <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-10">
-        Start with a calm, honest conversation
-      </h2>
-
-      <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
-        20 minutes. No slide deck. No pressure.<br>
-        Tell us the gap you sense — or the question you keep returning to.
+      <h2 class="section-heading text-3xl md:text-4xl mb-4">Make an inquiry</h2>
+      <p class="text-gray-500 text-base font-light max-w-xl mx-auto mb-10">
+        We respond to all inquiries within one working day. Initial conversations are without obligation.
       </p>
-
-      <div class="bg-white/15 backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-10 mb-12 max-w-2xl mx-auto">
-        <p class="text-lg mb-6">
-          Discovery conversation is <strong>completely free</strong>.<br>
-          You commit to nothing until you choose to proceed.
-        </p>
-        <p class="text-base opacity-90">
-          If we don't believe it will help you — we'll say so directly.
-        </p>
+      
+      <!-- Success message -->
+      <div id="success-message" class="hidden bg-gray-50 border border-gray-200 p-10 mb-8">
+        <p class="text-[#1e3a5f] text-lg mb-2">✓ Inquiry received</p>
+        <p class="text-gray-400 text-sm">A principal will reply within one working day.</p>
       </div>
 
-      <!-- Success Message (hidden by default) -->
-      <div id="success-message" class="hidden success-message bg-green-500/20 border border-green-400/30 rounded-2xl p-8 mb-8 max-w-lg mx-auto">
-        <p class="text-2xl mb-2">✓ Message sent</p>
-        <p class="text-lg opacity-90">Thank you. A principal will reply within one working day.</p>
-      </div>
-
-      <form id="contact-form" class="max-w-lg mx-auto space-y-6">
+      <form id="contact-form" class="max-w-md mx-auto space-y-5">
         <input type="hidden" name="access_key" value="d56f941a-ac9c-4299-ac7e-b8f415178fe0">
-        
-        <!-- Honeypot for spam prevention -->
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-        
-        <!-- Form load time for spam detection -->
         <input type="hidden" name="form_load_time" id="form_load_time" value="">
 
-        <div class="relative">
-          <label for="name" class="sr-only">Your name</label>
-          <div class="relative">
-            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70 text-xl">👤</span>
-            <input id="name" type="text" name="name" placeholder="Your name *" required
-                   class="w-full pl-12 pr-5 py-4 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition">
-          </div>
-          <p class="text-red-300 text-sm mt-1 hidden" id="name-error">Please enter your name</p>
+        <div>
+          <input type="text" name="name" placeholder="Name *" required
+                 class="w-full px-5 py-4 bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#1e3a5f] outline-none transition text-sm">
+          <p class="text-red-400 text-xs mt-1 hidden" id="name-error">Please enter your name</p>
         </div>
 
-        <div class="relative">
-          <label for="email" class="sr-only">Business email</label>
-          <div class="relative">
-            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70 text-xl">📧</span>
-            <input id="email" type="email" name="email" placeholder="Business email *" required
-                   class="w-full pl-12 pr-5 py-4 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition">
-          </div>
-          <p class="text-red-300 text-sm mt-1 hidden" id="email-error">Please enter a valid email</p>
+        <div>
+          <input type="email" name="email" placeholder="Email *" required
+                 class="w-full px-5 py-4 bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#1e3a5f] outline-none transition text-sm">
+          <p class="text-red-400 text-xs mt-1 hidden" id="email-error">Please enter a valid email</p>
         </div>
 
-        <div class="relative">
-          <label for="message" class="sr-only">Your message</label>
-          <div class="relative">
-            <span class="absolute left-4 top-5 text-white/70 text-xl">💬</span>
-            <textarea id="message" name="message" rows="5" placeholder="What gap or question would you like to discuss? *" required
-                      class="w-full pl-12 pr-5 py-4 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition"></textarea>
-          </div>
-          <p class="text-red-300 text-sm mt-1 hidden" id="message-error">Please tell us what you'd like to discuss</p>
+        <div>
+          <textarea name="message" rows="4" placeholder="What would you like to discuss? *" required
+                    class="w-full px-5 py-4 bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#1e3a5f] outline-none transition text-sm"></textarea>
+          <p class="text-red-400 text-xs mt-1 hidden" id="message-error">Please tell us what you'd like to discuss</p>
         </div>
 
-        <button type="submit" id="submit-btn" class="w-full bg-white text-blue-700 text-xl font-bold py-6 rounded-xl hover:bg-gray-100 transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
-          Book your free discovery call →
+        <button type="submit" id="submit-btn" class="w-full bg-[#1e3a5f] text-white py-5 hover:bg-[#143049] transition text-sm disabled:opacity-50">
+          Send inquiry
         </button>
         
-        <!-- Privacy reassurance -->
-        <p class="text-sm opacity-80 mt-4">
-          ✓ No spam • ✓ Confidential • ✓ Principal reads every message
-        </p>
+        <p class="text-xs text-gray-400">Your details are kept confidential.</p>
       </form>
-
-      <p class="mt-10 text-sm opacity-80">
-        Your details are kept confidential and never shared.
-      </p>
     </div>
   </section>
 
 </main>
 
-<!-- Footer with Privacy & Legal ONLY -->
-<footer class="bg-gray-900 text-gray-300 py-12 text-center text-sm">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-center gap-6 md:gap-12">
-    <a href="#privacy" class="hover:text-white transition">Privacy & Confidentiality</a>
-    <a href="#legal" class="hover:text-white transition">Terms of Use & Disclaimer</a>
-    <p>© 2026 UOne Vantage – Principal-led customer experience observation</p>
+<!-- Footer - Minimal, legal only -->
+<footer class="bg-gray-900 text-gray-400 py-10 text-xs">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-baseline gap-1">
+        <span class="text-gray-300 font-medium">UOne</span>
+        <span class="text-[#3b82f6]">[1]</span>
+        <span class="text-gray-300 font-medium">Vantage</span>
+      </div>
+      
+      <div class="flex gap-8">
+        <a href="#privacy" class="hover:text-white transition">Privacy</a>
+        <a href="#terms" class="hover:text-white transition">Terms</a>
+        <span>© 2026</span>
+      </div>
+      
+      <div class="text-gray-500">Pakistan · Gulf · Europe · UK · US · Canada</div>
+    </div>
+    
+    <!-- Hidden sections for footer links -->
+    <div id="privacy" class="h-0 overflow-hidden"></div>
+    <div id="terms" class="h-0 overflow-hidden"></div>
   </div>
-  <p class="mt-4">Pakistan, Gulf, Europe, UK, US, and Canada</p>
 </footer>
 
 <!-- JavaScript -->
 <script>
-  // Hamburger menu
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   
   menuToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
-    menuToggle.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
+    menuToggle.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
   });
 
-  // Close mobile menu when clicking a link
   document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
@@ -398,58 +490,43 @@
     });
   });
 
-  // Form handling with enhanced UX
   const form = document.getElementById('contact-form');
   const submitBtn = document.getElementById('submit-btn');
   const successMessage = document.getElementById('success-message');
 
-  // Set form load time
   document.getElementById('form_load_time').value = Date.now();
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     let isValid = true;
-
-    // Get form fields
     const name = form.querySelector('[name="name"]');
     const email = form.querySelector('[name="email"]');
     const message = form.querySelector('[name="message"]');
     const botcheck = form.querySelector('[name="botcheck"]');
 
-    // Clear previous errors
-    document.querySelectorAll('.text-red-300').forEach(el => el.classList.add('hidden'));
-    [name, email, message].forEach(field => field.classList.remove('error'));
+    document.querySelectorAll('.text-red-400').forEach(el => el.classList.add('hidden'));
 
-    // Bot check
-    if (botcheck && botcheck.checked) {
-      console.log('Bot detected');
-      return;
-    }
+    if (botcheck && botcheck.checked) return;
 
-    // Validation
     if (!name.value.trim()) {
       document.getElementById('name-error').classList.remove('hidden');
-      name.classList.add('error');
       isValid = false;
     }
     
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.value.trim() || !emailRegex.test(email.value)) {
       document.getElementById('email-error').classList.remove('hidden');
-      email.classList.add('error');
       isValid = false;
     }
     
     if (!message.value.trim()) {
       document.getElementById('message-error').classList.remove('hidden');
-      message.classList.add('error');
       isValid = false;
     }
 
     if (!isValid) return;
 
-    // Prepare form data
     const formData = new FormData(form);
     const originalText = submitBtn.textContent;
 
@@ -465,29 +542,25 @@
       const data = await response.json();
 
       if (response.ok && data.success) {
-        // Hide form, show success message
         form.classList.add('hidden');
         successMessage.classList.remove('hidden');
-        
-        // Scroll to success message
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
-        alert("Something went wrong. Please try again or email us directly.");
+        alert("Something went wrong. Please try again.");
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }
     } catch (error) {
-      alert("Network error. Please check your connection and try again.");
+      alert("Network error. Please check your connection.");
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
     }
   });
 
-  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      if (this.getAttribute('href') === '#') return;
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      if (href === '#' || href === '#privacy' || href === '#terms') return;
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
