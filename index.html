@@ -1,573 +1,2105 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="UOne Vantage observes customer interactions to identify the precise moments that shape trust. Principal-led experience intelligence for financial, hospitality, and healthcare institutions.">
-  <title>UOne Vantage — Experience Intelligence</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .logo-text { font-weight: 600; letter-spacing: -0.02em; }
-    .logo-bracket { color: #3b82f6; font-weight: 300; }
-    .nav-link { position: relative; }
-    .nav-link:after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #1e3a5f; transition: width 0.2s ease; }
-    .nav-link:hover:after { width: 100%; }
-    .stat-number { font-size: 2.5rem; font-weight: 300; line-height: 1; color: #1e3a5f; }
-    .service-card { border: 1px solid rgba(0,0,0,0.03); background: white; transition: all 0.2s ease; }
-    .service-card:hover { border-color: rgba(30,58,95,0.1); box-shadow: 0 20px 30px -10px rgba(30,58,95,0.05); }
-    .section-heading { font-weight: 300; letter-spacing: -0.02em; color: #1e3a5f; }
-    .section-subhead { color: #6b7280; font-weight: 300; letter-spacing: 0.02em; }
-    .metric-card { border-bottom: 1px solid rgba(0,0,0,0.05); }
-    hr.separator { border: 0; border-top: 1px solid rgba(0,0,0,0.05); margin: 2rem 0; }
-    .footnote { color: #9ca3af; font-size: 0.75rem; font-weight: 300; }
-    :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F6F3EC">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<link rel="dns-prefetch" href="//api.web3forms.com">
+<title>UOne Vantage — Customer Experience. Observed.</title>
+<meta name="description" content="UOne Vantage observes real customer interactions across your business — scoring what happens, identifying friction, and briefing you directly on what to fix. Human observation. No algorithms.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="UOne Vantage">
+<link rel="canonical" href="https://www.uonevantage.com/">
+<link rel="alternate" hreflang="en-ae" href="https://www.uonevantage.com/">
+<link rel="alternate" hreflang="en-us" href="https://www.uonevantage.com/">
+<link rel="alternate" hreflang="en-gb" href="https://www.uonevantage.com/">
+<link rel="alternate" hreflang="en-ca" href="https://www.uonevantage.com/">
+<link rel="alternate" hreflang="en-pk" href="https://www.uonevantage.com/">
+<link rel="alternate" hreflang="x-default" href="https://www.uonevantage.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.uonevantage.com/">
+<meta property="og:title" content="UOne Vantage — Customer Experience. Observed.">
+<meta property="og:description" content="UOne Vantage observes real customer interactions — identifying friction, scoring every touchpoint, briefing you directly. Human observation. No algorithms.">
+<meta property="og:image" content="https://www.uonevantage.com/og-image.png">
+<meta property="og:site_name" content="UOne Vantage">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UOne Vantage — Customer Experience. Observed.">
+<meta name="twitter:description" content="Human-observed customer experience audits. No algorithms. Real interactions, real scoring, direct briefing.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "UOne Vantage",
+  "url": "https://www.uonevantage.com",
+  "email": "hello@uonevantage.com",
+  "description": "UOne Vantage delivers human-observed customer experience audits using the proprietary CEOS™ framework.",
+  "slogan": "Customer Experience. Observed.",
+  "areaServed": ["AE","SA","KW","BH","QA","OM","PK","US","CA"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "CX Observation Services",
+    "itemListElement": [
+      {"@type":"Offer","name":"The Glimpse — Tier 1"},
+      {"@type":"Offer","name":"The Tune-Up — Tier 2"},
+      {"@type":"Offer","name":"The Root Cause — Tier 3"},
+      {"@type":"Offer","name":"The Full CEOS™ Audit — Tier 4"}
+    ]
+  }
+}
+</script>
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIACWAQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAV1JREFUeJztkj1rVGEQhc+Zee/e/XDdTYyrqIiFpJDUMXVqf5Q/SBAEsbQxpbapbATZQiExycb1vnfmpNjYKDaW4lMeZmA4zwD/IQCYGbUB5CaSlL8Ob89au7cYDrqaKQnLL+taAKBt22dd170heR/ABMAFgB7ASWZWM6rv057uTec7c5tPRz6+sz1YvHh7+q4AQN/3I0k0s9uZOZN0ZGbPSb4vpdxtik+EeLX+0S/3H/uBuyyADgJIEu4+IbmIiE8kR2Y2yMwVyQlJA3QjQsvd3akOnkwfnl30lwa3449nX+nuY3ffi4gPJG9GxMlmCSRZJPXXfaS7DUbDZkioStmdr2qUiLgk+cDdV+7+iORWZn4rpcxqrbfc/XUp5bDW+rmU0n5f5zihRpEvAZz+tDA0swnJOYD2+gpJGri7SM5IbgHYl3SUmeeSjiPiN1N/9k1a0zQ7Ztb89dP8o1wBcsWoXbStQ18AAAAASUVORK5CYII=">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════
+   DESIGN TOKENS & RESET
+═══════════════════════════════════════════════════ */
+:root {
+  --ivory:   #F6F3EC;
+  --ivory-d: #EDE8DC;
+  --ivory-dd:#E2DBCC;
+  --charcoal: #0D0D0B;
+  --charcoal-l: #1C1C18;
+  --charcoal-ll: #2E2E28;
+  --gold:    #C9952A;
+  --gold-lt: #E8B84B;
+  --gold-dk: #8A6318;
+  --gold-pale:#F5E8C4;
+  --t1: #0D0D0B;
+  --t2: #3A3A34;
+  --t3: #6B6B60;
+  --t4: #9A9A8E;
+  --b1: rgba(13,13,11,0.10);
+  --b2: rgba(13,13,11,0.06);
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+
+  --sec: clamp(72px, 9vw, 120px);
+  --gut: clamp(18px, 4vw, 32px);
+  --radius: 3px;
+  --radius-lg: 8px;
+
+  --nav-h: 68px;
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--sans);
+  background: var(--ivory);
+  color: var(--t1);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+
+/* ═══════════════════════════════════════════════════
+   SKIP LINK
+═══════════════════════════════════════════════════ */
+.skip-link {
+  position: absolute; top: -100px; left: 20px; z-index: 9999;
+  background: var(--charcoal); color: var(--ivory);
+  padding: 10px 20px; font-size: 0.875rem; font-family: var(--sans);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  transition: top .2s;
+}
+.skip-link:focus { top: 0; }
+
+/* ═══════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════ */
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--gut);
+}
+
+/* ═══════════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════════ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-h);
+  background: rgba(246, 243, 236, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--b1);
+  transition: box-shadow .3s var(--ease);
+}
+.nav.scrolled { box-shadow: 0 2px 32px rgba(13,13,11,0.08); }
+.nav__in {
+  display: flex; align-items: center; justify-content: space-between;
+  height: var(--nav-h);
+}
+.nav__brand { display: flex; align-items: center; }
+.nav__logo { height: 34px; width: auto; }
+
+.nav__links {
+  display: flex; align-items: center; gap: 36px;
+}
+.nav__links a {
+  font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.02em; color: var(--t2);
+  position: relative;
+  transition: color .2s;
+}
+.nav__links a::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; right: 100%;
+  height: 1px; background: var(--gold);
+  transition: right .25s var(--ease);
+}
+.nav__links a:hover { color: var(--t1); }
+.nav__links a:hover::after { right: 0; }
+
+.nav__cta {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  background: var(--charcoal);
+  color: var(--ivory);
+  border-radius: var(--radius);
+  transition: background .2s, transform .15s;
+}
+.nav__cta:hover { background: var(--charcoal-ll); transform: translateY(-1px); }
+
+.nav__burger {
+  display: none;
+  flex-direction: column; gap: 5px; padding: 8px;
+  min-width: 44px; min-height: 44px; justify-content: center; align-items: center;
+}
+.nav__burger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--charcoal);
+  transition: transform .25s var(--ease), opacity .2s;
+}
+.nav__burger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav__burger.active span:nth-child(2) { opacity: 0; }
+.nav__burger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav__mob {
+  display: none;
+  flex-direction: column;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--b1);
+  padding: 20px var(--gut) 28px;
+  gap: 4px;
+  position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 999;
+  box-shadow: 0 12px 40px rgba(13,13,11,0.10);
+}
+.nav__mob a {
+  font-size: 1.0625rem; font-weight: 500; color: var(--t1);
+  padding: 11px 0; border-bottom: 1px solid var(--b2);
+  transition: color .15s, padding-left .2s;
+}
+.nav__mob a:last-child { border-bottom: none; color: var(--gold); font-weight: 600; margin-top: 8px; }
+.nav__mob a:hover { color: var(--gold); padding-left: 6px; }
+
+@media (max-width: 900px) {
+  .nav__links { display: none; }
+  .nav__cta { display: none; }
+  .nav__burger { display: flex; }
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════ */
+.hero {
+  min-height: 80svh;
+  padding-top: calc(var(--nav-h) + 60px);
+  padding-bottom: 80px;
+  background: var(--ivory);
+  position: relative;
+  overflow: hidden;
+  display: flex; align-items: center;
+}
+
+/* decorative background shapes */
+.hero::before {
+  content: '';
+  position: absolute; top: -120px; right: -180px;
+  width: 640px; height: 640px;
+  background: radial-gradient(ellipse at center, rgba(201,149,42,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -60px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(ellipse at center, rgba(201,149,42,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__wrap { position: relative; z-index: 1; }
+
+.hero__kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 32px;
+  opacity: 0; animation: fadeUp .8s var(--ease) .1s forwards;
+}
+.hero__kicker::before {
+  content: '';
+  width: 28px; height: 1px; background: var(--gold);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: clamp(48px, 6vw, 96px);
+  align-items: center;
+}
+
+.hero__h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.75rem, 6vw, 5.25rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: var(--t1);
+  margin-bottom: 28px;
+  opacity: 0; animation: fadeUp .9s var(--ease) .25s forwards;
+}
+.hero__h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero__sub {
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  color: var(--t2);
+  line-height: 1.78;
+  max-width: 540px;
+  margin-bottom: 40px;
+  opacity: 0; animation: fadeUp .9s var(--ease) .4s forwards;
+}
+.hero__sub strong { color: var(--t1); font-weight: 500; }
+
+.hero__actions {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp .9s var(--ease) .55s forwards;
+}
+
+.hero__geo {
+  margin-top: 24px;
+  font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--t4); font-weight: 500;
+  opacity: 0; animation: fadeUp .9s var(--ease) .65s forwards;
+}
+
+/* method card */
+.hero__card {
+  background: var(--charcoal);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  color: var(--ivory);
+  opacity: 0; animation: fadeIn 1s var(--ease) .7s forwards;
+  box-shadow: 0 32px 64px rgba(13,13,11,0.22), 0 2px 8px rgba(13,13,11,0.12);
+}
+.hero__card-label {
+  font-size: 0.625rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(246,243,236,0.45); margin-bottom: 24px; font-weight: 600;
+}
+.hero__method-item {
+  display: flex; gap: 16px; padding: 16px 0;
+  border-bottom: 1px solid rgba(246,243,236,0.08);
+}
+.hero__method-item:last-child { border-bottom: none; padding-bottom: 0; }
+.hero__method-roman {
+  font-family: var(--serif); font-size: 0.875rem; font-weight: 700;
+  color: var(--gold-lt); min-width: 22px; padding-top: 2px;
+}
+.hero__method-title {
+  font-family: var(--serif); font-size: 1.0625rem; font-weight: 600;
+  color: var(--ivory); margin-bottom: 4px; letter-spacing: -0.01em;
+}
+.hero__method-desc {
+  font-size: 0.8125rem; color: rgba(246,243,236,0.55); line-height: 1.62;
+}
+
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__card { max-width: 460px; }
+  .hero { align-items: flex-start; }
+}
+@media (max-width: 600px) {
+  .hero { padding-top: calc(var(--nav-h) + 40px); padding-bottom: 60px; }
+  .hero__h1 { font-size: clamp(2.25rem, 10vw, 3rem); }
+  .hero__actions { flex-direction: column; }
+  .hero__actions .btn { width: 100%; text-align: center; justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 13px 26px; border-radius: var(--radius);
+  transition: transform .15s var(--ease), box-shadow .15s, background .2s, color .2s;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-dark {
+  background: var(--charcoal); color: var(--ivory);
+  box-shadow: 0 4px 20px rgba(13,13,11,0.18);
+}
+.btn-dark:hover { background: var(--charcoal-ll); box-shadow: 0 8px 32px rgba(13,13,11,0.24); }
+.btn-ghost {
+  background: transparent; color: var(--t1);
+  border: 1.5px solid var(--b1);
+}
+.btn-ghost:hover { border-color: var(--charcoal); background: rgba(13,13,11,0.03); }
+.btn-gold {
+  background: var(--gold); color: var(--ivory);
+  box-shadow: 0 4px 20px rgba(201,149,42,0.28);
+}
+.btn-gold:hover { background: var(--gold-dk); box-shadow: 0 8px 32px rgba(201,149,42,0.36); }
+
+/* ═══════════════════════════════════════════════════
+   SECTION COMMONS
+═══════════════════════════════════════════════════ */
+.section-pad { padding: var(--sec) 0; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.625rem; font-weight: 700; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 16px;
+}
+.eyebrow::before {
+  content: ''; width: 20px; height: 1px; background: var(--gold);
+}
+
+.sec-title {
+  font-family: var(--serif);
+  font-size: clamp(1.875rem, 4vw, 3.25rem);
+  font-weight: 700; line-height: 1.08;
+  letter-spacing: -0.025em; color: var(--t1);
+}
+.sec-title em { font-style: italic; color: var(--gold); }
+
+.sec-lead {
+  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+  color: var(--t2); line-height: 1.78; max-width: 520px;
+}
+
+.sh {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 4vw, 64px); align-items: end;
+  margin-bottom: clamp(48px, 7vw, 80px);
+}
+@media (max-width: 700px) { .sh { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════════ */
+.sr { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.sr.d1 { transition-delay: .12s; }
+.sr.d2 { transition-delay: .24s; }
+.sr.d3 { transition-delay: .36s; }
+.sr.vis { opacity: 1; transform: none; }
+
+/* ═══════════════════════════════════════════════════
+   BAND: NUMBERS
+═══════════════════════════════════════════════════ */
+.numbers-band {
+  background: var(--charcoal);
+  padding: 60px 0;
+}
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(246,243,236,0.08);
+}
+@media (max-width: 700px) { .numbers-grid { grid-template-columns: repeat(2, 1fr); } }
+.number-item {
+  padding: 40px 32px;
+  background: var(--charcoal);
+  text-align: center;
+}
+.number-item__num {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700; line-height: 1;
+  color: var(--gold-lt); letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.number-item__label {
+  font-size: 0.75rem; color: rgba(246,243,236,0.5);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════
+   OBSERVE — FRICTION CARDS
+═══════════════════════════════════════════════════ */
+.observe { padding: var(--sec) 0; background: var(--ivory-d); }
+.friction-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--b1);
+  border: 1px solid var(--b1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+@media (max-width: 900px) { .friction-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .friction-grid { grid-template-columns: 1fr; } }
+
+.fcard {
+  background: var(--ivory-d);
+  padding: clamp(28px, 3.5vw, 44px) clamp(24px, 3vw, 36px);
+  transition: background .25s;
+}
+.fcard:hover { background: var(--ivory); }
+.fcard__num {
+  font-family: var(--serif); font-size: 2.75rem; font-weight: 700;
+  color: var(--ivory-dd); letter-spacing: -0.04em; line-height: 1;
+  margin-bottom: 20px;
+  transition: color .3s;
+}
+.fcard:hover .fcard__num { color: var(--gold-pale); }
+.fcard__icon {
+  width: 36px; height: 36px; margin-bottom: 18px;
+  color: var(--gold);
+}
+.fcard__title {
+  font-family: var(--serif); font-size: 1.1875rem; font-weight: 700;
+  color: var(--t1); line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.01em;
+}
+.fcard__body {
+  font-size: 1rem; color: var(--t3); line-height: 1.72;
+}
+
+/* ═══════════════════════════════════════════════════
+   METHODOLOGY
+═══════════════════════════════════════════════════ */
+.method { padding: var(--sec) 0; background: var(--ivory); }
+.method-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+@media (max-width: 800px) { .method-cards { grid-template-columns: 1fr; } }
+
+.mcard {
+  padding: clamp(28px, 3vw, 44px) clamp(24px, 2.5vw, 36px);
+  border-radius: var(--radius-lg);
+  position: relative; overflow: hidden;
+  transition: transform .25s var(--ease), box-shadow .25s;
+}
+.mcard:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(13,13,11,0.10); }
+
+.mcard--i   { background: var(--charcoal); color: var(--ivory); }
+.mcard--ii  { background: var(--gold); color: var(--ivory); }
+.mcard--iii { background: var(--ivory-d); border: 1px solid var(--b1); color: var(--t1); }
+
+.mcard__roman {
+  font-family: var(--serif); font-size: 4rem; font-weight: 700;
+  line-height: 1; margin-bottom: 20px; letter-spacing: -0.04em;
+}
+.mcard--i   .mcard__roman { color: rgba(246,243,236,0.12); }
+.mcard--ii  .mcard__roman { color: rgba(246,243,236,0.20); }
+.mcard--iii .mcard__roman { color: var(--ivory-dd); }
+
+.mcard__label {
+  font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase;
+  font-weight: 700; margin-bottom: 10px;
+}
+.mcard--i   .mcard__label { color: rgba(246,243,236,0.4); }
+.mcard--ii  .mcard__label { color: rgba(246,243,236,0.7); }
+.mcard--iii .mcard__label { color: var(--gold); }
+
+.mcard__title {
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 700;
+  line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.02em;
+}
+.mcard--i   .mcard__title { color: var(--ivory); }
+.mcard--ii  .mcard__title { color: var(--ivory); }
+.mcard--iii .mcard__title { color: var(--t1); }
+
+.mcard__body { font-size: 0.875rem; line-height: 1.72; }
+.mcard--i   .mcard__body { color: rgba(246,243,236,0.60); }
+.mcard--ii  .mcard__body { color: rgba(246,243,236,0.78); }
+.mcard--iii .mcard__body { color: var(--t3); }
+
+.mcard__seq {
+  display: block; margin-top: 24px;
+  font-size: 0.6875rem; letter-spacing: 0.06em;
+}
+.mcard--i   .mcard__seq { color: rgba(246,243,236,0.30); }
+.mcard--ii  .mcard__seq { color: rgba(246,243,236,0.55); }
+.mcard--iii .mcard__seq { color: var(--t4); }
+
+/* flow bar */
+.method-flow {
+  display: flex; align-items: center;
+  background: var(--ivory-d); border-radius: var(--radius-lg);
+  border: 1px solid var(--b1);
+  overflow: hidden;
+}
+.mf-item {
+  flex: 1; padding: 18px 24px;
+  display: flex; align-items: center; gap: 14px;
+}
+.mf-item + .mf-item {
+  border-left: 1px solid var(--b1);
+  position: relative;
+}
+.mf-item + .mf-item::before {
+  content: '→';
+  position: absolute; left: -13px;
+  font-size: 0.875rem; color: var(--gold);
+  background: var(--ivory-d); padding: 0 2px;
+}
+.mf-num {
+  font-family: var(--serif); font-size: 1.25rem; font-weight: 700;
+  color: var(--gold); line-height: 1;
+}
+.mf-phase { font-size: 0.625rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--t4); }
+.mf-name  { font-size: 0.875rem; font-weight: 500; color: var(--t1); }
+@media (max-width: 600px) {
+  .method-flow { flex-direction: column; }
+  .mf-item + .mf-item { border-left: none; border-top: 1px solid var(--b1); }
+  .mf-item + .mf-item::before { content: '↓'; left: 50%; top: -13px; transform: translateX(-50%); }
+}
+
+/* ═══════════════════════════════════════════════════
+   DIFFERENTIATION
+═══════════════════════════════════════════════════ */
+.diff { padding: var(--sec) 0; background: var(--charcoal); }
+.diff .eyebrow { color: var(--gold-lt); }
+.diff .eyebrow::before { background: var(--gold-lt); }
+.diff .sec-title { color: var(--ivory); }
+.diff .sec-lead { color: rgba(246,243,236,0.55); }
+.diff .sh { border-bottom: 1px solid rgba(246,243,236,0.08); padding-bottom: 48px; margin-bottom: 0; }
+
+.diff__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+}
+.diff__table thead tr {
+  border-bottom: 1px solid rgba(246,243,236,0.10);
+}
+.diff__table th {
+  padding: 20px 28px; text-align: left;
+  font-size: 0.625rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700;
+}
+.diff__th-them { color: rgba(246,243,236,0.30); }
+.diff__th-us   { color: var(--gold-lt); }
+
+.diff__row { border-bottom: 1px solid rgba(246,243,236,0.06); }
+.diff__row:last-child { border-bottom: none; }
+.diff__row:hover td { background: rgba(246,243,236,0.02); }
+.diff__row td {
+  padding: 20px 28px;
+  vertical-align: top;
+  font-size: 0.9375rem; line-height: 1.62;
+  transition: background .15s;
+}
+.diff__cell-them { color: rgba(246,243,236,0.35); font-style: italic; }
+.diff__cell-us   { color: rgba(246,243,236,0.85); }
+.diff__cell-us strong { color: var(--ivory); font-weight: 500; }
+.diff__dot-off { color: rgba(246,243,236,0.20); margin-right: 8px; font-size: 0.6875rem; }
+.diff__dot-on  { color: var(--gold); margin-right: 8px; font-size: 0.75rem; }
+
+@media (max-width: 700px) {
+  .diff__table, .diff__table thead, .diff__table tbody, .diff__row, .diff__row td { display: block; }
+  .diff__table thead { display: none; }
+  .diff__row { padding: 20px 0; border-bottom: 1px solid rgba(246,243,236,0.06); }
+  .diff__cell-them { padding: 4px 20px; font-size: 0.8125rem; }
+  .diff__cell-us   { padding: 8px 20px 4px; }
+}
+
+/* ═══════════════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════════ */
+.services { padding: var(--sec) 0; background: var(--ivory-d); }
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1000px) { .tiers-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px)  { .tiers-grid { grid-template-columns: 1fr; } }
+
+.tier {
+  background: var(--ivory);
+  border: 1px solid var(--b1);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 2.5vw, 36px) clamp(20px, 2vw, 28px);
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  transition: transform .25s var(--ease), box-shadow .25s;
+}
+.tier:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(13,13,11,0.09); }
+
+.tier--feat {
+  background: var(--charcoal); border-color: var(--charcoal);
+}
+.tier--feat .tier__num { color: rgba(246,243,236,0.35); }
+.tier--feat .tier__name { color: var(--ivory); }
+.tier--feat .tier__q { color: rgba(246,243,236,0.55); }
+.tier--feat .tier__desc { color: rgba(246,243,236,0.62); }
+.tier--feat .tier__divider { background: rgba(246,243,236,0.10); }
+.tier--feat .tier__recv-label { color: rgba(246,243,236,0.35); }
+.tier--feat .tier__recv { color: rgba(246,243,236,0.70); }
+.tier--feat .tier__time { color: rgba(246,243,236,0.40); }
+
+.tier__badge {
+  position: absolute; top: 16px; right: 16px;
+  background: var(--gold); color: var(--ivory);
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700;
+  padding: 4px 10px; border-radius: 2px;
+}
+
+.tier__num {
+  font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase;
+  font-weight: 700; color: var(--t4); margin-bottom: 8px;
+}
+.tier__name {
+  font-family: var(--serif); font-size: 1.375rem; font-weight: 700;
+  color: var(--t1); letter-spacing: -0.015em; margin-bottom: 12px; line-height: 1.15;
+}
+.tier__q {
+  font-size: 0.8125rem; color: var(--t3); line-height: 1.62; font-style: italic;
+  margin-bottom: 14px;
+}
+.tier__desc {
+  font-size: 1rem; color: var(--t2); line-height: 1.70; flex: 1;
+}
+.tier__divider {
+  height: 1px; background: var(--b1); margin: 22px 0;
+}
+.tier__recv-label {
+  font-size: 0.5625rem; letter-spacing: 0.18em; text-transform: uppercase;
+  font-weight: 700; color: var(--t4); margin-bottom: 8px;
+}
+.tier__recv { font-size: 0.8125rem; color: var(--t2); line-height: 1.62; margin-bottom: 14px; }
+.tier__time { font-size: 0.75rem; color: var(--t4); }
+
+/* ═══════════════════════════════════════════════════
+   PROCESS
+═══════════════════════════════════════════════════ */
+.process { padding: var(--sec) 0; background: var(--ivory); }
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 12px;
+}
+.process-timeline::before {
+  content: '';
+  position: absolute; top: 28px; left: 28px; right: 28px; height: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--b1) 100%);
+}
+@media (max-width: 900px) {
+  .process-timeline { grid-template-columns: repeat(3, 1fr); }
+  .process-timeline::before { display: none; }
+}
+@media (max-width: 540px) { .process-timeline { grid-template-columns: repeat(2, 1fr); } }
+
+.step {
+  padding: 0 20px 0 0;
+  position: relative; z-index: 1;
+}
+.step__dot {
+  width: 56px; height: 56px;
+  background: var(--ivory-d); border: 1px solid var(--b1);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  transition: background .25s, border-color .25s;
+}
+.step:hover .step__dot { background: var(--gold-pale); border-color: var(--gold); }
+.step__dot-num {
+  font-family: var(--serif); font-size: 1.125rem; font-weight: 700;
+  color: var(--gold); line-height: 1;
+}
+.step__title {
+  font-family: var(--serif); font-size: 1.0625rem; font-weight: 700;
+  color: var(--t1); letter-spacing: -0.01em; margin-bottom: 8px; line-height: 1.2;
+}
+.step__body { font-size: 0.9375rem; color: var(--t3); line-height: 1.70; }
+
+/* ═══════════════════════════════════════════════════
+   BELIEF BAND
+═══════════════════════════════════════════════════ */
+.belief-band {
+  padding: 80px 0;
+  background: var(--gold);
+  position: relative; overflow: hidden;
+}
+.belief-band::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 400px; height: 400px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+.belief-band__inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px); align-items: center;
+}
+@media (max-width: 700px) { .belief-band__inner { grid-template-columns: 1fr; } }
+.belief-band__quote {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700; line-height: 1.1;
+  color: var(--ivory);
+  letter-spacing: -0.03em;
+}
+.belief-band__quote em { font-style: italic; opacity: 0.75; }
+.belief-band__text {
+  font-size: 1rem; color: rgba(246,243,236,0.80); line-height: 1.80;
+}
+.belief-band__text strong { color: var(--ivory); font-weight: 500; }
+
+/* ═══════════════════════════════════════════════════
+   OUTCOMES
+═══════════════════════════════════════════════════ */
+.outcomes { padding: var(--sec) 0; background: var(--ivory-d); }
+.outcomes-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 800px) { .outcomes-grid { grid-template-columns: 1fr; } }
+
+.outcome-card {
+  background: var(--ivory);
+  border: 1px solid var(--b1);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 3vw, 40px);
+  display: flex; flex-direction: column;
+  transition: transform .25s var(--ease), box-shadow .25s;
+}
+.outcome-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(13,13,11,0.08); }
+
+.outcome-tag {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 700;
+  color: var(--gold); background: var(--gold-pale);
+  width: 72px; height: 48px; border-radius: var(--radius);
+  margin-bottom: 20px; letter-spacing: -0.02em;
+}
+.outcome-body {
+  font-size: 0.9375rem; color: var(--t2); line-height: 1.78; flex: 1;
+}
+.outcome-body strong { color: var(--t1); font-weight: 500; }
+.outcome-sector {
+  margin-top: 20px; padding-top: 16px;
+  border-top: 1px solid var(--b2);
+  font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 600; color: var(--t4);
+}
+
+/* ═══════════════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════════════ */
+.about { padding: var(--sec) 0; background: var(--ivory); }
+.about__layout {
+  display: grid; grid-template-columns: 1fr 320px;
+  gap: clamp(48px, 6vw, 88px); align-items: start;
+}
+@media (max-width: 860px) { .about__layout { grid-template-columns: 1fr; } }
+
+.about__title {
+  font-family: var(--serif);
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+  font-weight: 700; line-height: 1.08; letter-spacing: -0.025em;
+  color: var(--t1); margin-bottom: 24px;
+}
+.about__title em { font-style: italic; color: var(--gold); }
+.about__body {
+  font-size: 0.9375rem; color: var(--t2); line-height: 1.82; margin-bottom: 16px;
+}
+
+.principles-label {
+  font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase;
+  font-weight: 700; color: var(--t4); margin: 32px 0 12px;
+}
+.principles {
+  border: 1px solid var(--b1); border-radius: var(--radius-lg); overflow: hidden;
+}
+.principle {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 14px 20px; border-bottom: 1px solid var(--b2);
+  background: var(--ivory); font-size: 0.875rem; color: var(--t2); line-height: 1.65;
+  transition: background .15s, padding-left .2s;
+}
+.principle:last-child { border-bottom: none; }
+.principle:hover { background: var(--ivory-d); padding-left: 26px; }
+.principle__n {
+  font-family: var(--serif); font-size: 0.875rem; font-weight: 700;
+  color: var(--gold); min-width: 14px; line-height: 1.5; flex-shrink: 0;
+}
+.principle strong { color: var(--t1); font-weight: 500; }
+
+.about__panel {
+  border: 1px solid var(--b1); border-radius: var(--radius-lg);
+  overflow: hidden; background: var(--ivory);
+  box-shadow: 0 4px 24px rgba(13,13,11,0.06);
+}
+.about__cred { padding: 24px 28px; }
+.about__cred + .about__cred { border-top: 1px solid var(--b1); }
+.about__cred-head {
+  font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase;
+  font-weight: 700; color: var(--gold); margin-bottom: 10px;
+}
+.about__cred p { font-size: 0.875rem; color: var(--t2); line-height: 1.72; }
+
+/* ═══════════════════════════════════════════════════
+   THINKING
+═══════════════════════════════════════════════════ */
+.thinking { padding: var(--sec) 0; background: var(--ivory-d); }
+.thinking__layout {
+  display: grid; grid-template-columns: 280px 1fr;
+  gap: clamp(48px, 6vw, 88px); align-items: start;
+}
+@media (max-width: 800px) { .thinking__layout { grid-template-columns: 1fr; } }
+
+.thinking__sticky { position: sticky; top: calc(var(--nav-h) + 24px); }
+.thinking__quote {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.125rem);
+  font-weight: 700; line-height: 1.2;
+  color: var(--t1); letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+.thinking__quote em { font-style: italic; color: var(--gold); }
+.thinking__rule { width: 24px; height: 1px; background: var(--gold); margin-bottom: 16px; }
+.thinking__aside {
+  font-size: 0.8125rem; color: var(--t4); line-height: 1.70; font-style: italic;
+}
+
+.t-block { margin-bottom: 40px; }
+.t-block:last-child { margin-bottom: 0; }
+.t-block h3 {
+  font-family: var(--serif); font-size: 1.375rem; font-weight: 700;
+  color: var(--t1); letter-spacing: -0.015em; margin-bottom: 10px; line-height: 1.2;
+}
+.t-block p { font-size: 0.9375rem; color: var(--t2); line-height: 1.78; }
+
+.beliefs { margin-top: 12px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--b1); }
+.belief-item {
+  display: grid; grid-template-columns: 3px 1fr;
+  gap: 0 16px; padding: 16px 20px;
+  border-bottom: 1px solid var(--b2);
+  transition: background .15s, padding-left .2s;
+  cursor: default;
+}
+.belief-item:first-child { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.belief-item:last-child { border-bottom: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+.belief-item::before {
+  content: ''; grid-row: 1 / 3;
+  background: var(--gold); border-radius: 3px; align-self: stretch;
+  width: 3px; opacity: 0.7;
+}
+.belief-item:hover { background: rgba(201,149,42,0.05); }
+.belief-item__strong {
+  font-weight: 600; color: var(--t1); font-size: 0.875rem; line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.belief-item__desc {
+  color: var(--t3); line-height: 1.65; font-size: 0.9375rem; margin-top: 3px;
+}
+
+/* ═══════════════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════════════ */
+.contact { padding: var(--sec) 0; background: var(--charcoal); }
+.contact .eyebrow { color: var(--gold-lt); }
+.contact .eyebrow::before { background: var(--gold-lt); }
+.contact .sec-title { color: var(--ivory); }
+.contact .sec-lead { color: rgba(246,243,236,0.55); }
+.contact .sh { border-bottom: 1px solid rgba(246,243,236,0.08); padding-bottom: 48px; margin-bottom: 48px; }
+
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 840px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.cp {
+  border-radius: var(--radius-lg); padding: clamp(32px, 4vw, 52px);
+}
+.cp--info {
+  background: rgba(246,243,236,0.05);
+  border: 1px solid rgba(246,243,236,0.08);
+}
+.cp--info h3 {
+  font-family: var(--serif); font-size: 1.625rem; font-weight: 700;
+  color: var(--ivory); letter-spacing: -0.02em; margin-bottom: 16px;
+}
+.cp--info p { font-size: 0.9375rem; color: rgba(246,243,236,0.55); line-height: 1.72; margin-bottom: 28px; }
+
+.info-rows { display: flex; flex-direction: column; gap: 0; }
+.info-row {
+  display: flex; gap: 16px; padding: 14px 0;
+  border-bottom: 1px solid rgba(246,243,236,0.06);
+  align-items: flex-start;
+}
+.info-row:last-child { border-bottom: none; }
+.info-dot { color: var(--gold); font-size: 0.5rem; padding-top: 5px; flex-shrink: 0; }
+.info-label {
+  font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 700; color: var(--gold-lt); margin-bottom: 3px;
+}
+.info-val { font-size: 0.875rem; color: rgba(246,243,236,0.55); line-height: 1.62; }
+
+.cp--form {
+  background: var(--ivory);
+  box-shadow: 0 24px 64px rgba(13,13,11,0.30);
+}
+.cp--form h3 {
+  font-family: var(--serif); font-size: 1.625rem; font-weight: 700;
+  color: var(--t1); letter-spacing: -0.02em; margin-bottom: 8px;
+}
+.cp--form > p { font-size: 0.875rem; color: var(--t3); margin-bottom: 28px; line-height: 1.65; }
+
+/* form */
+.cf { display: flex; flex-direction: column; gap: 16px; }
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 480px) { .cf-row { grid-template-columns: 1fr; } }
+.cf-field { display: flex; flex-direction: column; gap: 6px; }
+.cf-field label {
+  font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--t3);
+}
+.cf-field input,
+.cf-field select,
+.cf-field textarea {
+  font-family: var(--sans); font-size: 0.9375rem;
+  background: var(--ivory-d); color: var(--t1);
+  border: 1.5px solid var(--b1); border-radius: var(--radius);
+  padding: 12px 14px; transition: border-color .2s, box-shadow .2s;
+  outline: none; appearance: none;
+  line-height: 1.5;
+}
+.cf-field input::placeholder,
+.cf-field textarea::placeholder { color: var(--t4); }
+.cf-field input:focus,
+.cf-field select:focus,
+.cf-field textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,149,42,0.12);
+  background: var(--ivory);
+}
+.cf-field textarea { min-height: 120px; resize: vertical; }
+.cf-required { font-size: 0.6875rem; color: var(--t4); margin-bottom: 4px; }
+.cf-submit { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.cf-privacy { font-size: 0.75rem; color: var(--t4); line-height: 1.5; }
+.cf-success {
+  display: none;
+  background: rgba(54, 130, 80, 0.10);
+  border: 1px solid rgba(54, 130, 80, 0.30);
+  color: #2D6A4F; border-radius: var(--radius);
+  padding: 14px 18px; font-size: 0.9rem;
+}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════ */
+.footer { background: #0A0A08; padding: 72px 0 0; }
+.footer__top {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: clamp(32px, 4vw, 56px);
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(246,243,236,0.07);
+}
+@media (max-width: 800px) { .footer__top { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 460px) { .footer__top { grid-template-columns: 1fr; } }
+
+.footer__logo { height: 30px; width: auto; margin-bottom: 20px; }
+.footer__mission {
+  font-size: 1rem; color: rgba(246,243,236,0.75); line-height: 1.72; margin-bottom: 12px;
+}
+.footer__geo {
+  font-size: 0.6875rem; color: rgba(246,243,236,0.25);
+  letter-spacing: 0.10em; text-transform: uppercase;
+}
+
+.footer__col h4 {
+  font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase;
+  font-weight: 700; color: var(--gold); margin-bottom: 16px;
+}
+.footer__col ul { display: flex; flex-direction: column; gap: 8px; }
+.footer__col a {
+  font-size: 0.875rem; color: rgba(246,243,236,0.40);
+  transition: color .2s; line-height: 1.5;
+}
+.footer__col a:hover { color: rgba(246,243,236,0.80); }
+
+.footer__bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 0; flex-wrap: wrap; gap: 16px;
+}
+.footer__legal {
+  font-size: 0.75rem; color: rgba(246,243,236,0.20);
+}
+.footer__tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.ftag {
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 600; color: rgba(246,243,236,0.20);
+  border: 1px solid rgba(246,243,236,0.10); border-radius: 2px;
+  padding: 4px 8px;
+}
+.footer__sign {
+  font-family: var(--serif); font-size: 0.9375rem; font-style: italic;
+  color: var(--gold); opacity: 0.6;
+}
+
+.footer__legal-strip {
+  border-top: 1px solid rgba(246,243,236,0.06);
+  padding: 20px 0;
+  display: flex; gap: 24px; flex-wrap: wrap;
+}
+.footer__legal-btn {
+  font-size: 0.75rem; color: rgba(246,243,236,0.25);
+  text-decoration: underline; text-underline-offset: 3px;
+  transition: color .2s;
+  min-height: 44px; display: inline-flex; align-items: center;
+}
+.footer__legal-btn:hover { color: rgba(246,243,236,0.55); }
+
+.footer__legal-panels { padding: 0 0 32px; }
+.footer__legal-panel {
+  background: rgba(246,243,236,0.04);
+  border: 1px solid rgba(246,243,236,0.08);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-top: 16px;
+  position: relative;
+  font-size: 0.875rem; color: rgba(246,243,236,0.50); line-height: 1.72;
+}
+.footer__legal-panel strong { color: rgba(246,243,236,0.70); }
+.footer__legal-panel p { margin-top: 12px; }
+.footer__legal-panel a { color: var(--gold); text-decoration: underline; }
+.footer__panel-close {
+  position: absolute; top: 16px; right: 16px;
+  color: rgba(246,243,236,0.35); font-size: 0.875rem;
+  min-width: 44px; min-height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  transition: color .2s;
+}
+.footer__panel-close:hover { color: rgba(246,243,236,0.80); }
+
+/* ═══════════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  :root { --sec: clamp(52px, 8vw, 72px); --gut: 18px; }
+  .sec-title { font-size: clamp(1.625rem, 7vw, 2.5rem); }
+}
+
+/* ═══════════════════════════════════════════════════
+   REDUCED MOTION
+═══════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   FOCUS INDICATORS
+═══════════════════════════════════════════════════ */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════
+   PRINT
+═══════════════════════════════════════════════════ */
+@media print {
+  * { background: #fff !important; color: #000 !important; box-shadow: none !important; }
+  .nav, .nav__mob, .footer__tags, .skip-link { display: none !important; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.7em; }
+  section { padding: 20px 0 !important; }
+}
+</style>
 </head>
-<body class="bg-white text-gray-800 antialiased font-light">
+<body>
 
-<!-- Skip link -->
-<a href="#main-content" class="sr-only focus:not-sr-only fixed top-4 left-4 bg-[#1e3a5f] text-white px-4 py-2 rounded text-sm z-50">Skip to main content</a>
+<a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- Navigation - Refined -->
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-6 sm:px-8">
-    <div class="flex justify-between items-center h-20">
-      <!-- Logo - Clean and prominent -->
-      <a href="#main-content" class="flex items-baseline gap-1">
-        <span class="logo-text text-2xl text-[#1e3a5f]">UOne</span>
-        <span class="logo-bracket text-2xl">[1]</span>
-        <span class="logo-text text-2xl text-[#3b82f6]">Vantage</span>
+<!-- ══════════════════ NAV ══════════════════ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav__in">
+      <a href="/" class="nav__brand" aria-label="UOne Vantage home">
+        <img src="data:image/png;base64,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VApwNgDfgEkvRx11RTE9PEopJCUlQUqJn/70p27jn/3sZ0hOSYaMHrXBgwcjGOzCb36zBWvXPoHk5GRhmmZ0YQqapicEQinpLlgp+4hqmgZNE66WOZvR3d2NpKQk13PZR9rWGsAhonqfFKf92sdRRJNlioSmG3YKITpHG0t78bquudk6W4k1AFoP4LHG9umnn6au6zQMg5WVla4XMSN2NFxeXs7CwkL2FwlLaUe6kgoRy4wpjyRo25PGIIkf/vCH/MtfShnvIRPJiO2XuI1dVl9fTztrMLD82KyBGx45g1uWherqavp8PgLgihUreoCJphCWLl3K3/3udySJ9vZ2HD9+jG+99RY//PBDtrfbrNeSPRPt6gri00/PkCSCwU58+OEHPHbsKNvaWl25V69e5dKlSwiA27dv54ULF1hfX09n0vX19Txw4H9YWlrqbpYDkANKMBhEeflpvvvuX3nlylckibVr1xIAy8vLSRKtra04ePAg9+7dy8rKfzA+fREPjvvDWfwjjzxCAExNTeXVq1fdAa5fv878/Hy2tLTg3LlzvPfee3n33Xdzzpy5BMAxY8awoqKCSik0NjbiscceY25uLrOysllaWsqhQ4e6fCQvL49fffUVpZRYsGABATApKYkjR44kOTkZABRFpGsXAAAAABJRU5ErkJggg==" alt="UOne Vantage" class="nav__logo" width="70" height="36" loading="eager" decoding="async">
       </a>
 
-      <!-- Desktop nav - Sophisticated -->
-      <nav class="hidden md:flex items-center gap-10 text-sm">
-        <a href="#practice" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Practice</a>
-        <a href="#approach" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Approach</a>
-        <a href="#engagements" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Engagements</a>
-        <a href="#insights" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Insights</a>
-        <a href="#clients" class="nav-link text-gray-600 hover:text-[#1e3a5f] transition">Clients</a>
-        <a href="#inquiry" class="border border-[#1e3a5f] text-[#1e3a5f] px-5 py-2 rounded hover:bg-[#1e3a5f] hover:text-white transition text-sm">
-          Inquiry
-        </a>
-      </nav>
+      <ul class="nav__links" role="list">
+        <li><a href="#observe">The Problem</a></li>
+        <li><a href="#method">Methodology</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#thinking">Thinking</a></li>
+      </ul>
+      <a href="#contact" class="nav__cta">Start a Conversation</a>
 
-      <!-- Mobile button -->
-      <button id="menu-toggle" class="md:hidden text-2xl text-gray-400" aria-label="Toggle menu">☰</button>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 py-6">
-      <nav class="flex flex-col gap-4 text-base">
-        <a href="#practice" class="text-gray-600 hover:text-[#1e3a5f] py-2">Practice</a>
-        <a href="#approach" class="text-gray-600 hover:text-[#1e3a5f] py-2">Approach</a>
-        <a href="#engagements" class="text-gray-600 hover:text-[#1e3a5f] py-2">Engagements</a>
-        <a href="#insights" class="text-gray-600 hover:text-[#1e3a5f] py-2">Insights</a>
-        <a href="#clients" class="text-gray-600 hover:text-[#1e3a5f] py-2">Clients</a>
-        <a href="#inquiry" class="bg-[#1e3a5f] text-white px-4 py-3 rounded text-center mt-2">Inquiry</a>
-      </nav>
+      <button class="nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mob-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+
+  <nav class="nav__mob" id="mob-nav" aria-label="Mobile navigation" hidden>
+    <a href="#observe">The Problem</a>
+    <a href="#method">Methodology</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#thinking">Thinking</a>
+    <a href="#contact">Start a Conversation →</a>
+  </nav>
 </header>
 
-<main id="main-content">
 
-  <!-- Hero - Quiet authority -->
-  <section class="pt-24 pb-20 md:pt-28 md:pb-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6 sm:px-8">
-      <div class="max-w-4xl">
-        <div class="flex items-baseline gap-1 mb-6">
-          <span class="logo-text text-3xl text-[#1e3a5f]">UOne</span>
-          <span class="logo-bracket text-3xl">[1]</span>
-          <span class="logo-text text-3xl text-[#3b82f6]">Vantage</span>
-        </div>
-        
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-light leading-tight text-[#1e3a5f] tracking-tight">
-          Observing the moments<br>that shape institutional trust.
+<!-- ══════════════════ HERO ══════════════════ -->
+<main id="main">
+<section class="hero" aria-label="Introduction">
+  <div class="wrap hero__wrap">
+    <div class="hero__kicker">Customer Experience. Observed.</div>
+
+    <div class="hero__grid">
+      <div class="hero__left">
+        <h1 class="hero__h1">
+          You see what you intend.<br>
+          We see what your customers<br>
+          <em>actually experience.</em>
         </h1>
-        <p class="text-xl text-gray-500 mt-6 max-w-2xl leading-relaxed font-light">
-          We are retained by financial, hospitality, and healthcare institutions to observe customer interactions — not through surveys, but through direct, independent observation of the moments that matter.
+
+        <p class="hero__sub">
+          Most businesses work hard and genuinely care — yet <strong>cannot see what customers are actually experiencing.</strong> The gap isn't effort. It's perspective. We provide it.
         </p>
-        
-        <!-- Quiet metrics - no emojis, just substance -->
-        <div class="grid grid-cols-4 gap-8 mt-16 pt-8 border-t border-gray-100 max-w-2xl">
-          <div>
-            <div class="stat-number">150+</div>
-            <div class="text-xs text-gray-400 mt-1 tracking-wide">observations</div>
-          </div>
-          <div>
-            <div class="stat-number">12</div>
-            <div class="text-xs text-gray-400 mt-1 tracking-wide">industries</div>
-          </div>
-          <div>
-            <div class="stat-number">5</div>
-            <div class="text-xs text-gray-400 mt-1 tracking-wide">countries</div>
-          </div>
-          <div>
-            <div class="stat-number">100%</div>
-            <div class="text-xs text-gray-400 mt-1 tracking-wide">confidential</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- The Practice - What we actually do (rich content) -->
-  <section id="practice" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6 sm:px-8">
-      <div class="grid md:grid-cols-2 gap-16">
-        <div>
-          <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">The practice</span>
-          <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-6 leading-tight">
-            Experience intelligence,<br>not opinion.
-          </h2>
-          <p class="text-gray-500 text-base leading-relaxed mb-6">
-            Organizations retain UOne Vantage when they suspect a gap between what they intend to deliver and what customers actually receive. Satisfaction scores may be flat. Retention may be softening. Or there may simply be a sense that something isn't landing as it should.
-          </p>
-          <p class="text-gray-500 text-base leading-relaxed">
-            We spend time in your actual customer interactions — branch offices, hotel lobbies, clinic waiting rooms, call centres. We observe. We document. We return with a calm, precise account of what we saw and what it suggests about where trust is being built or eroded.
-          </p>
-          
-          <!-- Quiet credibility markers -->
-          <div class="grid grid-cols-2 gap-6 mt-10">
-            <div class="metric-card pb-4">
-              <div class="text-sm font-medium text-[#1e3a5f] mb-1">Financial services</div>
-              <div class="text-xs text-gray-400">Private banking • Wealth</div>
-            </div>
-            <div class="metric-card pb-4">
-              <div class="text-sm font-medium text-[#1e3a5f] mb-1">Hospitality</div>
-              <div class="text-xs text-gray-400">Luxury hotels • Resorts</div>
-            </div>
-            <div class="metric-card pb-4">
-              <div class="text-sm font-medium text-[#1e3a5f] mb-1">Healthcare</div>
-              <div class="text-xs text-gray-400">Clinics • Private practice</div>
-            </div>
-            <div class="metric-card pb-4">
-              <div class="text-sm font-medium text-[#1e3a5f] mb-1">Aviation</div>
-              <div class="text-xs text-gray-400">Lounge • Boarding</div>
-            </div>
-          </div>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn-dark">Start a Conversation →</a>
+          <a href="#services" class="btn btn-ghost">Explore Services</a>
         </div>
-        
-        <div class="space-y-8">
-          <!-- What we notice - refined, no emojis -->
-          <div class="bg-white p-8 border border-gray-100">
-            <h3 class="text-sm font-medium text-[#1e3a5f] mb-4">From our field notes</h3>
-            <div class="space-y-6">
-              <div>
-                <div class="flex items-baseline gap-3">
-                  <span class="text-[#3b82f6] text-sm">01</span>
-                  <p class="text-gray-600 text-sm leading-relaxed"><span class="font-medium text-[#1e3a5f]">The pause.</span> After a question, silence averages 4 seconds before a response. The optimal interval is 11 seconds. Most teams fill it with noise. The best wait.</p>
-                </div>
-              </div>
-              <div>
-                <div class="flex items-baseline gap-3">
-                  <span class="text-[#3b82f6] text-sm">02</span>
-                  <p class="text-gray-600 text-sm leading-relaxed"><span class="font-medium text-[#1e3a5f]">The repetition.</span> When a customer repeats information to a second person, confidence drops by an average of 23%. We measure this.</p>
-                </div>
-              </div>
-              <div>
-                <div class="flex items-baseline gap-3">
-                  <span class="text-[#3b82f6] text-sm">03</span>
-                  <p class="text-gray-600 text-sm leading-relaxed"><span class="font-medium text-[#1e3a5f]">The unkept promise.</span> "I'll get back to you." In our observations, 67% of these promises are not fulfilled. The customer remembers.</p>
-                </div>
-              </div>
+
+        <p class="hero__geo">Operating in Pakistan · the Gulf · Europe · UK · US · Canada</p>
+      </div>
+
+      <div class="hero__right">
+        <div class="hero__card" role="complementary" aria-label="Proprietary methodology">
+          <div class="hero__card-label">Proprietary Methodology</div>
+
+          <div class="hero__method-item">
+            <div class="hero__method-roman">I</div>
+            <div>
+              <div class="hero__method-title">Trust Moment Matrix™</div>
+              <p class="hero__method-desc">Identifies which interactions carry the highest trust weight and represent the greatest risk to customer confidence.</p>
             </div>
           </div>
-          
-          <!-- Client types - quiet -->
-          <div class="bg-white p-8 border border-gray-100">
-            <h3 class="text-sm font-medium text-[#1e3a5f] mb-4">Who retains us</h3>
-            <div class="space-y-3">
-              <p class="text-sm text-gray-600">Heads of Customer Experience</p>
-              <p class="text-sm text-gray-600">Operations Directors</p>
-              <p class="text-sm text-gray-600">Practice Managers</p>
-              <p class="text-sm text-gray-600">Founders and Owners</p>
+
+          <div class="hero__method-item">
+            <div class="hero__method-roman">II</div>
+            <div>
+              <div class="hero__method-title">CEOS™ Scoring</div>
+              <p class="hero__method-desc">Compliance, Empathy, Objection Handling, Communication Standards — each 0–25. Total 0–100. Evidence, not sentiment.</p>
+            </div>
+          </div>
+
+          <div class="hero__method-item">
+            <div class="hero__method-roman">III</div>
+            <div>
+              <div class="hero__method-title">Experience Gap Identifier</div>
+              <p class="hero__method-desc">Measures the distance between how you describe your service and what customers actually receive.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Approach - The CEOS framework -->
-  <section id="approach" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">Methodology</span>
-        <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-4">CEOS™ framework</h2>
-        <p class="text-gray-500 text-base font-light">Each observed interaction is scored across four dimensions. Evidence-based, not sentiment-based.</p>
+
+<!-- ══════════════════ NUMBERS BAND ══════════════════ -->
+<section class="numbers-band" aria-label="Key statistics">
+  <div class="wrap">
+    <div class="numbers-grid sr" role="list">
+      <div class="number-item" role="listitem">
+        <div class="number-item__num">15+</div>
+        <div class="number-item__label">Years of direct CX experience</div>
       </div>
-      
-      <div class="grid md:grid-cols-4 gap-6">
-        <div class="text-center p-6">
-          <div class="text-3xl font-light text-[#1e3a5f] mb-3">C</div>
-          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Compliance</h3>
-          <p class="text-xs text-gray-400 leading-relaxed">Adherence to regulatory and institutional standards</p>
-        </div>
-        <div class="text-center p-6 border-l border-r border-gray-100">
-          <div class="text-3xl font-light text-[#1e3a5f] mb-3">E</div>
-          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Empathy</h3>
-          <p class="text-xs text-gray-400 leading-relaxed">Recognition of customer circumstance and emotion</p>
-        </div>
-        <div class="text-center p-6 border-r border-gray-100">
-          <div class="text-3xl font-light text-[#1e3a5f] mb-3">O</div>
-          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Objection handling</h3>
-          <p class="text-xs text-gray-400 leading-relaxed">Response to concerns and resistance</p>
-        </div>
-        <div class="text-center p-6">
-          <div class="text-3xl font-light text-[#1e3a5f] mb-3">S</div>
-          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Communication</h3>
-          <p class="text-xs text-gray-400 leading-relaxed">Clarity, timing, and appropriateness of exchange</p>
+      <div class="number-item" role="listitem">
+        <div class="number-item__num">100</div>
+        <div class="number-item__label">Point CEOS™ scoring scale</div>
+      </div>
+      <div class="number-item" role="listitem">
+        <div class="number-item__num">4</div>
+        <div class="number-item__label">Scoring dimensions per interaction</div>
+      </div>
+      <div class="number-item" role="listitem">
+        <div class="number-item__num">0</div>
+        <div class="number-item__label">Algorithms. Human observation only.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ PROBLEM ══════════════════ -->
+<section class="observe section-pad" id="observe">
+  <div class="wrap">
+    <div class="sh sr">
+      <div>
+        <div class="eyebrow">The Problem We Solve</div>
+        <h2 class="sec-title">Customers feel things your dashboards never capture.</h2>
+      </div>
+      <p class="sec-lead">Every business has moments where things go quietly wrong. A customer hesitates. Their confidence softens. They don't complain — they simply decide, and you never find out why.</p>
+    </div>
+
+    <div class="friction-grid sr d1">
+      <div class="fcard">
+        <div class="fcard__num">01</div>
+        <h3 class="fcard__title">A step that slows the pace.</h3>
+        <p class="fcard__body">Often a handover point where information is repeated rather than carried forward. Your team is working hard. What the customer experiences is disorganisation.</p>
+      </div>
+      <div class="fcard">
+        <div class="fcard__num">02</div>
+        <h3 class="fcard__title">A message that creates uncertainty.</h3>
+        <p class="fcard__body">A reply that arrives slightly too late. Technically correct — but it leaves the customer with more questions. They don't chase it. They reconsider.</p>
+      </div>
+      <div class="fcard">
+        <div class="fcard__num">03</div>
+        <h3 class="fcard__title">A moment where confidence softens.</h3>
+        <p class="fcard__body">A specific phrase. A slight pause. A tone that shifted just enough to plant a seed of doubt. Invisible in a spreadsheet. Completely visible to a customer — and to us.</p>
+      </div>
+      <div class="fcard">
+        <div class="fcard__num">04</div>
+        <h3 class="fcard__title">A process that breaks the flow.</h3>
+        <p class="fcard__body">The moment a customer is made to repeat themselves. The moment they sense the left hand doesn't know what the right hand is doing. Trust unravels in seconds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ METHODOLOGY ══════════════════ -->
+<section class="method section-pad" id="method">
+  <div class="wrap">
+    <div class="sh sr">
+      <div>
+        <div class="eyebrow">Proprietary Methodology</div>
+        <h2 class="sec-title">Three instruments.<br>One precise picture.</h2>
+      </div>
+      <p class="sec-lead">The Trust Moment Matrix™, CEOS™ Scoring, and Experience Gap Identifier work in sequence — identifying what matters, scoring what was observed, and measuring the distance between your belief and the evidence.</p>
+    </div>
+
+    <div class="method-cards sr d1">
+      <article class="mcard mcard--i">
+        <div class="mcard__roman">I</div>
+        <div class="mcard__label">Instrument I</div>
+        <h3 class="mcard__title">Trust Moment Matrix™</h3>
+        <p class="mcard__body">Before any observation begins, we map which interactions carry the highest trust weight — and which represent the greatest risk to customer confidence. This determines where we look first.</p>
+        <span class="mcard__seq">Informs CEOS™ scoring scope →</span>
+      </article>
+
+      <article class="mcard mcard--ii">
+        <div class="mcard__roman">II</div>
+        <div class="mcard__label">Instrument II</div>
+        <h3 class="mcard__title">CEOS™ Scoring</h3>
+        <p class="mcard__body">Each observed interaction is scored across four dimensions — Compliance, Empathy, Objection Handling, Communication Standards. Each 0–25. Total 0–100. Evidence, not inference.</p>
+        <span class="mcard__seq">Feeds Experience Gap analysis →</span>
+      </article>
+
+      <article class="mcard mcard--iii">
+        <div class="mcard__roman">III</div>
+        <div class="mcard__label">Instrument III</div>
+        <h3 class="mcard__title">Experience Gap Identifier</h3>
+        <p class="mcard__body">Before observation, you rate your own operations. After, CEOS™ scores are placed alongside your self-assessment. The distance between the two is the core commercial finding.</p>
+        <span class="mcard__seq">Produces client briefing content →</span>
+      </article>
+    </div>
+
+    <div class="method-flow sr d2">
+      <div class="mf-item">
+        <div class="mf-num">1</div>
+        <div>
+          <div class="mf-phase">Phase 1 — Map</div>
+          <div class="mf-name">Trust Moment Matrix™</div>
         </div>
       </div>
-      
-      <hr class="separator max-w-2xl mx-auto my-12">
-      
-      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center text-sm text-gray-500">
+      <div class="mf-item">
+        <div class="mf-num">2</div>
         <div>
-          <div class="font-medium text-[#1e3a5f] mb-1">0–25 each</div>
-          <p class="text-xs">Dimension scoring</p>
+          <div class="mf-phase">Phase 2 — Score</div>
+          <div class="mf-name">CEOS™ Scoring</div>
         </div>
+      </div>
+      <div class="mf-item">
+        <div class="mf-num">3</div>
         <div>
-          <div class="font-medium text-[#1e3a5f] mb-1">0–100 total</div>
-          <p class="text-xs">Composite CEOS score</p>
-        </div>
-        <div>
-          <div class="font-medium text-[#1e3a5f] mb-1">Benchmarked</div>
-          <p class="text-xs">Against 150+ observations</p>
+          <div class="mf-phase">Phase 3 — Measure</div>
+          <div class="mf-name">Experience Gap Identifier</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Engagements - Services refined -->
-  <section id="engagements" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">Engagements</span>
-        <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-4">Four levels of observation</h2>
-        <p class="text-gray-500 text-base font-light">Each engagement is principal-led. Scope is determined by the question you're asking.</p>
+
+<!-- ══════════════════ DIFFERENTIATION ══════════════════ -->
+<section class="diff section-pad" id="differentiation">
+  <div class="wrap">
+    <div class="sh sr">
+      <div>
+        <div class="eyebrow">What Sets Us Apart</div>
+        <h2 class="sec-title">Something older and more accurate than any algorithm.</h2>
       </div>
-      
-      <div class="grid md:grid-cols-4 gap-5">
-        <div class="service-card p-8">
-          <div class="text-xs text-[#3b82f6] mb-4">Level I</div>
-          <h3 class="text-lg font-medium text-[#1e3a5f] mb-3">The Glimpse</h3>
-          <p class="text-sm text-gray-500 mb-6 leading-relaxed">A single observation session focused on one specific question or touchpoint.</p>
-          <div class="text-xs text-gray-400 space-y-2">
-            <p>2–3 hours on-site</p>
-            <p>Verbal briefing</p>
-            <p>2-page summary</p>
+      <p class="sec-lead">Fifteen years of direct customer-facing experience — watching and listening in real time. No intermediary. No interpretation layer. Just what was directly seen and heard.</p>
+    </div>
+
+    <div class="sr d1">
+      <table class="diff__table" aria-label="Comparison: what others use vs what we use">
+        <thead>
+          <tr>
+            <th class="diff__th-them" scope="col">What others use</th>
+            <th class="diff__th-us" scope="col">What we use — UOne Vantage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="diff__row">
+            <td class="diff__cell-them"><span class="diff__dot-off">✗</span>Automated surveys and AI sentiment scoring</td>
+            <td class="diff__cell-us"><span class="diff__dot-on">✓</span><strong>Disciplined human observation</strong> — nuance cannot be scored by a machine</td>
+          </tr>
+          <tr class="diff__row">
+            <td class="diff__cell-them"><span class="diff__dot-off">✗</span>50-page reports requiring further interpretation</td>
+            <td class="diff__cell-us"><span class="diff__dot-on">✓</span><strong>Direct principal-to-client briefing</strong> — timestamped, real-world examples</td>
+          </tr>
+          <tr class="diff__row">
+            <td class="diff__cell-them"><span class="diff__dot-off">✗</span>Advice based on industry benchmarks</td>
+            <td class="diff__cell-us"><span class="diff__dot-on">✓</span><strong>Advice based on your actual interactions</strong> — right now, in your specific context</td>
+          </tr>
+          <tr class="diff__row">
+            <td class="diff__cell-them"><span class="diff__dot-off">✗</span>Scripted mystery shopping with predictable scenarios</td>
+            <td class="diff__cell-us"><span class="diff__dot-on">✓</span><strong>Unscripted, authentic observation</strong> — exactly as your customers experience it</td>
+          </tr>
+          <tr class="diff__row">
+            <td class="diff__cell-them"><span class="diff__dot-off">✗</span>Teams of analysts, handovers, account managers</td>
+            <td class="diff__cell-us"><span class="diff__dot-on">✓</span><strong>Senior principal leads every engagement</strong> — observation, analysis, and briefing</td>
+          </tr>
+          <tr class="diff__row">
+            <td class="diff__cell-them"><span class="diff__dot-off">✗</span>Generalist consultants with no sector depth</td>
+            <td class="diff__cell-us"><span class="diff__dot-on">✓</span><strong>15+ years of direct customer interaction experience</strong> — across banking, telecom, financial services, and beyond</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ SERVICES ══════════════════ -->
+<section class="services section-pad" id="services">
+  <div class="wrap">
+    <div class="sh sr">
+      <div>
+        <div class="eyebrow">The Service Framework</div>
+        <h2 class="sec-title">Choose the depth that fits your situation.</h2>
+      </div>
+      <p class="sec-lead">Every engagement is scoped clearly before it begins. Every observation is scored using CEOS™. Every briefing is delivered directly by the principal who did the work. The depth varies — the rigour never does.</p>
+    </div>
+
+    <div class="tiers-grid sr d1">
+      <article class="tier">
+        <div class="tier__num">Tier 1</div>
+        <h3 class="tier__name">The Glimpse</h3>
+        <p class="tier__q">"I just need to know if there's actually a problem."</p>
+        <p class="tier__desc">A single, focused observation to expose one immediate blind spot. A clear, scored snapshot of one touchpoint, documented and explained in plain language.</p>
+        <div class="tier__divider"></div>
+        <div class="tier__recv-label">What you receive</div>
+        <p class="tier__recv">CEOS™ scored observation of one touchpoint. Written findings note. Delivered directly.</p>
+        <div class="tier__time">⏱ Within 5 business days</div>
+      </article>
+
+      <article class="tier">
+        <div class="tier__num">Tier 2</div>
+        <h3 class="tier__name">The Tune-Up</h3>
+        <p class="tier__q">"Show me the biggest friction point to address first."</p>
+        <p class="tier__desc">A focused sweep of your core customer interactions. Fast and sharp — built for operators who need clarity without the full deep-dive.</p>
+        <div class="tier__divider"></div>
+        <div class="tier__recv-label">What you receive</div>
+        <p class="tier__recv">3–5 scored interactions, pattern analysis, direct briefing, written summary.</p>
+        <div class="tier__time">⏱ 1–2 weeks</div>
+      </article>
+
+      <article class="tier">
+        <div class="tier__num">Tier 3</div>
+        <h3 class="tier__name">The Root Cause</h3>
+        <p class="tier__q">"This keeps failing. I need to understand why — permanently."</p>
+        <p class="tier__desc">A deeper department-level audit that maps precisely where friction is created and why it recurs. We go past symptoms to structural causes.</p>
+        <div class="tier__divider"></div>
+        <div class="tier__recv-label">What you receive</div>
+        <p class="tier__recv">Full departmental CEOS™ scoring, root cause analysis, briefing, comprehensive findings.</p>
+        <div class="tier__time">⏱ 2–3 weeks</div>
+      </article>
+
+      <article class="tier tier--feat">
+        <div class="tier__badge">Most Complete</div>
+        <div class="tier__num">Tier 4</div>
+        <h3 class="tier__name">The Full CEOS™ Audit</h3>
+        <p class="tier__q">"I want the complete picture — everything my customers experience."</p>
+        <p class="tier__desc">Full-ecosystem observation from first contact to final interaction. All three methodology instruments applied. Strategic briefing for owners and principals.</p>
+        <div class="tier__divider"></div>
+        <div class="tier__recv-label">What you receive</div>
+        <p class="tier__recv">End-to-end observation, full CEOS™ scoring, all three instruments, strategic debrief, comprehensive report.</p>
+        <div class="tier__time">⏱ 4–6 weeks</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ PROCESS ══════════════════ -->
+<section class="process section-pad" id="process">
+  <div class="wrap">
+    <div class="sh sr">
+      <div>
+        <div class="eyebrow">The Engagement Process</div>
+        <h2 class="sec-title">Six steps. No surprises. No noise.</h2>
+      </div>
+      <p class="sec-lead">This is exactly what working with UOne Vantage looks like — from your first conversation to your final report.</p>
+    </div>
+
+    <div class="process-timeline sr d1">
+      <div class="step">
+        <div class="step__dot" aria-hidden="true"><span class="step__dot-num">01</span></div>
+        <h3 class="step__title">Discovery Conversation</h3>
+        <p class="step__body">Twenty minutes. Not a pitch — a genuine conversation about what you want to understand. We listen and give you an honest view of whether an engagement makes sense.</p>
+      </div>
+      <div class="step">
+        <div class="step__dot" aria-hidden="true"><span class="step__dot-num">02</span></div>
+        <h3 class="step__title">Scoping &amp; Agreement</h3>
+        <p class="step__body">We agree on scope, timeline, and deliverables before anything begins. Every detail is clear and confirmed before we observe a single interaction.</p>
+      </div>
+      <div class="step">
+        <div class="step__dot" aria-hidden="true"><span class="step__dot-num">03</span></div>
+        <h3 class="step__title">Observation</h3>
+        <p class="step__body">Real interactions. Real customers. No scripts, no alerts to your team. Every observation is documented with precision — treated as evidence, not impression.</p>
+      </div>
+      <div class="step">
+        <div class="step__dot" aria-hidden="true"><span class="step__dot-num">04</span></div>
+        <h3 class="step__title">CEOS™ Scoring &amp; Analysis</h3>
+        <p class="step__body">Every observation is scored across all four CEOS™ dimensions. We look for patterns — the friction that compounds, the signals customers register before they decide.</p>
+      </div>
+      <div class="step">
+        <div class="step__dot" aria-hidden="true"><span class="step__dot-num">05</span></div>
+        <h3 class="step__title">Direct Briefing</h3>
+        <p class="step__body">A real conversation — principal to client — walking through what was found, what it means, and exactly where to focus first. You speak with the person who did the work.</p>
+      </div>
+      <div class="step">
+        <div class="step__dot" aria-hidden="true"><span class="step__dot-num">06</span></div>
+        <h3 class="step__title">Written Findings</h3>
+        <p class="step__body">Timestamped. Scored. Written in plain language. Clear enough to act on immediately. Complete enough to come back to months later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ BELIEF BAND ══════════════════ -->
+<section class="belief-band" aria-label="Core belief">
+  <div class="wrap">
+    <div class="belief-band__inner sr">
+      <div class="belief-band__quote">
+        By the time<br>data shows it,<br><em>they've decided.</em>
+      </div>
+      <p class="belief-band__text">Metrics are a record of what already happened. <strong>Customer feelings act first — they shape the decision before any dashboard reflects it.</strong> The gap between what you measure and what customers actually experience is where revenue is silently lost.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ OUTCOMES ══════════════════ -->
+<section class="outcomes section-pad" id="outcomes">
+  <div class="wrap">
+    <div class="sh sr">
+      <div>
+        <div class="eyebrow">Client Outcomes</div>
+        <h2 class="sec-title">Outcomes that speak for themselves.</h2>
+      </div>
+      <p class="sec-lead">Client discretion is a core part of how we work — not a limitation. We share what changed, because results are more useful than names.</p>
+    </div>
+
+    <div class="outcomes-grid sr d1">
+      <article class="outcome-card">
+        <div class="outcome-tag">↓28%</div>
+        <p class="outcome-body">A mid-size financial services organisation in the Gulf identified <strong>three recurring friction points in their client communication process</strong>. All three were resolved within 60 days of the briefing. Complaint escalations fell 28% over the following quarter.</p>
+        <div class="outcome-sector">Financial Services · Gulf Region</div>
+      </article>
+
+      <article class="outcome-card">
+        <div class="outcome-tag">1 MTG</div>
+        <p class="outcome-body">A financial services contact centre found <strong>a single phrase repeated across every customer call</strong> was creating uncertainty at the most critical decision point. The fix took one team meeting. Customer retention measurably improved within six weeks.</p>
+        <div class="outcome-sector">Contact Centre · Financial Services</div>
+      </article>
+
+      <article class="outcome-card">
+        <div class="outcome-tag">↑Trust</div>
+        <p class="outcome-body">A professional services business discovered their <strong>onboarding process — which they rated as their strongest asset in self-assessment</strong> — was the primary driver of early-stage client dropout. The CEOS™ Experience Gap score revealed a 34-point gap between self-perception and observed reality.</p>
+        <div class="outcome-sector">Professional Services</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ ABOUT ══════════════════ -->
+<section class="about section-pad" id="about">
+  <div class="wrap">
+    <div class="about__layout sr">
+      <div>
+        <div class="eyebrow">Who We Are</div>
+        <h2 class="about__title">Built on experience.<br><em>Grounded in clarity.</em></h2>
+        <p class="about__body">UOne Vantage is led by Imran Javed — someone who has spent fifteen years inside direct customer-facing environments across banking and telecom, watching at close range how trust forms and how it breaks.</p>
+        <p class="about__body">He leads every engagement himself. What is observed is delivered directly to you, without an interpretation layer in between.</p>
+
+        <div class="principles-label">Operating Principles</div>
+        <div class="principles">
+          <div class="principle"><span class="principle__n">1</span><div><strong>We arrive with no assumptions.</strong> Preconceptions are noise — we leave them at the door.</div></div>
+          <div class="principle"><span class="principle__n">2</span><div><strong>We watch what is done, not what is promised.</strong> Behaviour shapes customer experience. Intention does not.</div></div>
+          <div class="principle"><span class="principle__n">3</span><div><strong>We notice what is absent.</strong> Sometimes what isn't said matters more than what is.</div></div>
+          <div class="principle"><span class="principle__n">4</span><div><strong>We translate friction into plain language.</strong> Clear enough to act on immediately.</div></div>
+          <div class="principle"><span class="principle__n">5</span><div><strong>We deliver the truth with care.</strong> Our purpose is to help you see clearly — not to put you on the defensive.</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="about__panel">
+          <div class="about__cred">
+            <div class="about__cred-head">Our Commitment</div>
+            <p>Every engagement is led personally — no account managers, no handovers, no junior team. From the first conversation to the final briefing, you work directly with the person doing the work.</p>
+          </div>
+          <div class="about__cred">
+            <div class="about__cred-head">Independence</div>
+            <p>We have no software to sell, no platform to recommend, and no commercial interest beyond the accuracy of what we observe. Our only product is clarity.</p>
+          </div>
+          <div class="about__cred">
+            <div class="about__cred-head">Sectors We Know</div>
+            <p>Banking, Telecom, Financial Services, Fintech, Insurance, Healthcare, Education, Airlines, Retail — observed across every level of customer interaction.</p>
           </div>
         </div>
-        
-        <div class="service-card p-8">
-          <div class="text-xs text-[#3b82f6] mb-4">Level II</div>
-          <h3 class="text-lg font-medium text-[#1e3a5f] mb-3">The Tune-Up</h3>
-          <p class="text-sm text-gray-500 mb-6 leading-relaxed">Targeted observation of 2–3 high-risk moments. Full CEOS scoring.</p>
-          <div class="text-xs text-gray-400 space-y-2">
-            <p>2–3 touchpoints</p>
-            <p>CEOS scorecard</p>
-            <p>5-page report</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ THINKING ══════════════════ -->
+<section class="thinking section-pad" id="thinking">
+  <div class="wrap">
+    <div class="sh sr">
+      <div>
+        <div class="eyebrow">Our Thinking</div>
+        <h2 class="sec-title">Data tells you <em>what</em> happened.<br>Observation tells you <em>why.</em></h2>
+      </div>
+    </div>
+
+    <div class="thinking__layout sr d1">
+      <div class="thinking__sticky">
+        <p class="thinking__quote">One is a measurement.<br>The other is a map.<br><em>We build the map.</em></p>
+        <div class="thinking__rule"></div>
+        <p class="thinking__aside">Fifteen years of watching — not analysing, not predicting. Watching.</p>
+      </div>
+
+      <div>
+        <div class="t-block">
+          <h3>Customers feel everything.</h3>
+          <p>A pause a beat too long. A reply that technically answered the question but left the customer feeling unseen. A process that worked perfectly on paper and broke quietly in practice. These moments shape perception long before any metric reflects them.</p>
+        </div>
+        <div class="t-block">
+          <h3>The cost of unseen friction.</h3>
+          <p>When a customer hesitates at a critical point, they don't tell you. They just don't return. When an agent's tone tightens on a call, the customer doesn't complain — they call someone else next time. These are not failures of effort. They are failures of sight.</p>
+        </div>
+        <div class="t-block">
+          <h3>What we believe.</h3>
+          <div class="beliefs">
+            <div class="belief-item">
+              <span class="belief-item__strong">Clarity creates confidence.</span>
+              <span class="belief-item__desc">When you see your business clearly, you make decisions with certainty.</span>
+            </div>
+            <div class="belief-item">
+              <span class="belief-item__strong">Small moments are not small.</span>
+              <span class="belief-item__desc">A single phrase, a two-second pause, a tone that shifts — these compound quietly.</span>
+            </div>
+            <div class="belief-item">
+              <span class="belief-item__strong">The customer's view is the only view that affects your revenue.</span>
+              <span class="belief-item__desc">Their experience is the reality that shapes whether they stay.</span>
+            </div>
+            <div class="belief-item">
+              <span class="belief-item__strong">Independence protects integrity.</span>
+              <span class="belief-item__desc">We have no software to recommend. Our only interest is giving you an accurate picture.</span>
+            </div>
+            <div class="belief-item">
+              <span class="belief-item__strong">Honest authority, not theoretical expertise.</span>
+              <span class="belief-item__desc">Fifteen years across the sectors we serve. That is the authority we bring.</span>
+            </div>
           </div>
         </div>
-        
-        <div class="service-card p-8">
-          <div class="text-xs text-[#3b82f6] mb-4">Level III</div>
-          <h3 class="text-lg font-medium text-[#1e3a5f] mb-3">The Root Cause</h3>
-          <p class="text-sm text-gray-500 mb-6 leading-relaxed">Complete journey observation. Full gap analysis. Pattern identification.</p>
-          <div class="text-xs text-gray-400 space-y-2">
-            <p>Full journey mapping</p>
-            <p>Gap analysis</p>
-            <p>15-page report + briefing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<section class="contact section-pad" id="contact">
+  <div class="wrap">
+    <div class="sh sr">
+      <div>
+        <div class="eyebrow">Get in Touch</div>
+        <h2 class="sec-title">Start with a conversation.</h2>
+      </div>
+      <p class="sec-lead">No pressure. No pitch. A calm, honest conversation about what you're noticing in your business — and what you might be missing.</p>
+    </div>
+
+    <div class="contact-grid sr d1">
+      <!-- Info -->
+      <div class="cp cp--info">
+        <h3>Ready to see your business clearly?</h3>
+        <p>Twenty minutes. No obligation, no slide deck. Tell us the gap you sense, the question you keep returning to, or the problem you can't solve from the inside.</p>
+
+        <div class="info-rows">
+          <div class="info-row">
+            <span class="info-dot">◆</span>
+            <div>
+              <div class="info-label">Response time</div>
+              <div class="info-val">Within one working day. Monday–Friday, 9:00 AM–6:00 PM GST.</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-dot">◆</span>
+            <div>
+              <div class="info-label">Cost</div>
+              <div class="info-val">The discovery conversation is completely free. You commit to nothing until you choose to proceed.</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-dot">◆</span>
+            <div>
+              <div class="info-label">Our position</div>
+              <div class="info-val">If we don't believe an engagement will help you, we'll say so directly.</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-dot">◆</span>
+            <div>
+              <div class="info-label">Confidentiality</div>
+              <div class="info-val">Your data, your team's behaviour, your operational details — none of it leaves the scope of your engagement.</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-dot">◆</span>
+            <div>
+              <div class="info-label">Geographic Focus</div>
+              <div class="info-val">Pakistan, the Gulf, Europe, UK, US, and Canada.</div>
+            </div>
           </div>
         </div>
-        
-        <div class="service-card p-8">
-          <div class="text-xs text-[#3b82f6] mb-4">Level IV</div>
-          <h3 class="text-lg font-medium text-[#1e3a5f] mb-3">Full Audit</h3>
-          <p class="text-sm text-gray-500 mb-6 leading-relaxed">Multi-journey observation across channels. Strategic briefing.</p>
-          <div class="text-xs text-gray-400 space-y-2">
-            <p>3–5 journeys</p>
-            <p>Benchmark scoring</p>
-            <p>Board-ready presentation</p>
+      </div>
+
+      <!-- Form -->
+      <div class="cp cp--form" id="contact-form">
+        <h3>Send a Message</h3>
+        <p>Fill in the form and we'll respond with the clearest next step — usually within one working day.</p>
+
+        <form class="cf" id="cf" novalidate aria-label="Contact form">
+          <input type="hidden" name="access_key" value="d56f941a-ac9c-4299-ac7e-b8f415178fe0">
+          <input type="hidden" name="from_name" value="UOne Vantage Website">
+          <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1">
+
+          <div id="cf-error-summary" role="alert" aria-live="assertive" aria-atomic="true" style="display:none; background:rgba(192,57,43,0.08); border:1px solid rgba(192,57,43,0.30); color:#7a2a1e; border-radius:3px; padding:12px 16px; font-size:0.875rem; margin-bottom:8px;"></div>
+
+          <p class="cf-required" id="cf-required-note"><span aria-hidden="true">*</span> Required fields</p>
+
+          <div class="cf-row">
+            <div class="cf-field">
+              <label for="cf-name">Your Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="cf-name" name="name" placeholder="Full name" required autocomplete="name" aria-required="true">
+            </div>
+            <div class="cf-field">
+              <label for="cf-phone">Contact Number</label>
+              <input type="tel" id="cf-phone" name="phone" placeholder="+971 50 000 0000" autocomplete="tel">
+            </div>
           </div>
-        </div>
-      </div>
-      
-      <p class="text-center text-xs text-gray-400 mt-12">All engagements include a principal on-site and a full confidentiality agreement.</p>
-    </div>
-  </section>
 
-  <!-- Clients - Who we work with -->
-  <section id="clients" class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">Clients</span>
-        <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-4">Selected engagements</h2>
-        <p class="text-gray-500 text-base font-light">We work with institutions that take trust seriously. Names are held in confidence.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <h3 class="text-sm font-medium text-[#1e3a5f] mb-4">Financial</h3>
-          <ul class="space-y-3 text-sm text-gray-500">
-            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
-              <span>Private bank, UAE</span>
-              <span class="text-xs text-gray-400">The Root Cause</span>
-            </li>
-            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
-              <span>Wealth manager, UK</span>
-              <span class="text-xs text-gray-400">Full Audit</span>
-            </li>
-            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
-              <span>Islamic bank, KSA</span>
-              <span class="text-xs text-gray-400">The Tune-Up</span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-sm font-medium text-[#1e3a5f] mb-4">Hospitality & Healthcare</h3>
-          <ul class="space-y-3 text-sm text-gray-500">
-            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
-              <span>Luxury hotel group, Europe</span>
-              <span class="text-xs text-gray-400">Full Audit</span>
-            </li>
-            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
-              <span>Private clinic network, Canada</span>
-              <span class="text-xs text-gray-400">The Root Cause</span>
-            </li>
-            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
-              <span>Airline lounge, Gulf</span>
-              <span class="text-xs text-gray-400">The Glimpse</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Testimonial - Quiet and professional -->
-      <div class="mt-16 p-10 bg-gray-50 border border-gray-100">
-        <p class="text-gray-500 text-base leading-relaxed italic">
-          "They observed for two days and saw things we had walked past for two years. Not because we weren't paying attention — but because we were too close to see them. The conversation afterwards was worth ten times what we paid."
-        </p>
-        <p class="text-xs text-gray-400 mt-4">— Head of Customer Experience, international hotel group</p>
+          <div class="cf-field">
+            <label for="cf-email">Email Address <span aria-hidden="true">*</span></label>
+            <input type="email" id="cf-email" name="email" placeholder="you@company.com" required autocomplete="email" aria-required="true">
+          </div>
+
+          <div class="cf-field">
+            <label for="cf-subject">Subject</label>
+            <select id="cf-subject" name="enquiry_type" autocomplete="off">
+              <option value="" disabled selected>What best describes your enquiry?</option>
+              <option value="discovery">Discovery conversation request</option>
+              <option value="tier1">The Glimpse — Tier 1</option>
+              <option value="tier2">The Tune-Up — Tier 2</option>
+              <option value="tier3">The Root Cause — Tier 3</option>
+              <option value="tier4">Full CEOS™ Audit — Tier 4</option>
+              <option value="general">General enquiry</option>
+            </select>
+          </div>
+
+          <div class="cf-field">
+            <label for="cf-message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="cf-message" name="message" placeholder="Tell us about your business, the gap you sense, or the question you keep returning to." required autocomplete="off" aria-required="true"></textarea>
+          </div>
+
+          <div class="cf-success" id="cf-success" role="status" aria-live="polite">
+            ✓ Message received. We'll be in touch within one working day.
+          </div>
+
+          <div class="cf-submit">
+            <p class="cf-privacy">Your details are kept strictly confidential and never shared.</p>
+            <button type="submit" class="btn btn-gold">Send Message →</button>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
-
-  <!-- Insights - Patterns and observations -->
-  <section id="insights" class="py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs text-[#3b82f6] tracking-[0.2em] uppercase font-medium">Field notes</span>
-        <h2 class="section-heading text-3xl md:text-4xl mt-4 mb-4">Patterns we observe</h2>
-        <p class="text-gray-500 text-base font-light">From 150+ engagements, certain findings recur across institutions and geographies.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 border border-gray-100">
-          <div class="text-2xl font-light text-[#1e3a5f] mb-4">11s</div>
-          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">The optimal pause</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">After a question, the optimal wait time before responding is 11 seconds. Most teams average 4. The gap is visible to customers.</p>
-        </div>
-        <div class="bg-white p-8 border border-gray-100">
-          <div class="text-2xl font-light text-[#1e3a5f] mb-4">67%</div>
-          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Unkept promises</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">"I'll get back to you." In our observations, two-thirds of these commitments are not fulfilled. Each is a small erosion of trust.</p>
-        </div>
-        <div class="bg-white p-8 border border-gray-100">
-          <div class="text-2xl font-light text-[#1e3a5f] mb-4">23%</div>
-          <h3 class="text-sm font-medium text-[#1e3a5f] mb-2">Confidence drop</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">When customers repeat themselves to a second person, confidence in the institution drops by an average of 23%.</p>
-        </div>
-      </div>
-      
-      <div class="text-center mt-10">
-        <a href="#inquiry" class="inline-block text-xs text-[#1e3a5f] border-b border-[#1e3a5f] pb-1 hover:text-[#3b82f6] hover:border-[#3b82f6] transition">
-          Request our full pattern library →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Inquiry - Single call to action, not repeated -->
-  <section id="inquiry" class="py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-6 sm:px-8 text-center">
-      <div class="flex items-baseline justify-center gap-1 mb-8">
-        <span class="logo-text text-2xl text-[#1e3a5f]">UOne</span>
-        <span class="logo-bracket text-2xl">[1]</span>
-        <span class="logo-text text-2xl text-[#3b82f6]">Vantage</span>
-      </div>
-      
-      <h2 class="section-heading text-3xl md:text-4xl mb-4">Make an inquiry</h2>
-      <p class="text-gray-500 text-base font-light max-w-xl mx-auto mb-10">
-        We respond to all inquiries within one working day. Initial conversations are without obligation.
-      </p>
-      
-      <!-- Success message -->
-      <div id="success-message" class="hidden bg-gray-50 border border-gray-200 p-10 mb-8">
-        <p class="text-[#1e3a5f] text-lg mb-2">✓ Inquiry received</p>
-        <p class="text-gray-400 text-sm">A principal will reply within one working day.</p>
-      </div>
-
-      <form id="contact-form" class="max-w-md mx-auto space-y-5">
-        <input type="hidden" name="access_key" value="d56f941a-ac9c-4299-ac7e-b8f415178fe0">
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-        <input type="hidden" name="form_load_time" id="form_load_time" value="">
-
-        <div>
-          <input type="text" name="name" placeholder="Name *" required
-                 class="w-full px-5 py-4 bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#1e3a5f] outline-none transition text-sm">
-          <p class="text-red-400 text-xs mt-1 hidden" id="name-error">Please enter your name</p>
-        </div>
-
-        <div>
-          <input type="email" name="email" placeholder="Email *" required
-                 class="w-full px-5 py-4 bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#1e3a5f] outline-none transition text-sm">
-          <p class="text-red-400 text-xs mt-1 hidden" id="email-error">Please enter a valid email</p>
-        </div>
-
-        <div>
-          <textarea name="message" rows="4" placeholder="What would you like to discuss? *" required
-                    class="w-full px-5 py-4 bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#1e3a5f] outline-none transition text-sm"></textarea>
-          <p class="text-red-400 text-xs mt-1 hidden" id="message-error">Please tell us what you'd like to discuss</p>
-        </div>
-
-        <button type="submit" id="submit-btn" class="w-full bg-[#1e3a5f] text-white py-5 hover:bg-[#143049] transition text-sm disabled:opacity-50">
-          Send inquiry
-        </button>
-        
-        <p class="text-xs text-gray-400">Your details are kept confidential.</p>
-      </form>
-    </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<!-- Footer - Minimal, legal only -->
-<footer class="bg-gray-900 text-gray-400 py-10 text-xs">
-  <div class="max-w-6xl mx-auto px-6 sm:px-8">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex items-baseline gap-1">
-        <span class="text-gray-300 font-medium">UOne</span>
-        <span class="text-[#3b82f6]">[1]</span>
-        <span class="text-gray-300 font-medium">Vantage</span>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer" aria-label="Site footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <img src="data:image/png;base64,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" alt="UOne Vantage" class="footer__logo" width="47" height="24" loading="lazy" decoding="async">
+        <p class="footer__mission">To help businesses understand how they are experienced, so they can strengthen trust, consistency, and confidence in every interaction.</p>
+        <p class="footer__geo">Pakistan · Gulf · Europe · UK · US · Canada</p>
       </div>
-      
-      <div class="flex gap-8">
-        <a href="#privacy" class="hover:text-white transition">Privacy</a>
-        <a href="#terms" class="hover:text-white transition">Terms</a>
-        <span>© 2026</span>
+
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">The Glimpse — Tier 1</a></li>
+          <li><a href="#services">The Tune-Up — Tier 2</a></li>
+          <li><a href="#services">The Root Cause — Tier 3</a></li>
+          <li><a href="#services">Full CEOS™ Audit — Tier 4</a></li>
+        </ul>
       </div>
-      
-      <div class="text-gray-500">Pakistan · Gulf · Europe · UK · US · Canada</div>
+
+      <div class="footer__col">
+        <h4>Methodology</h4>
+        <ul>
+          <li><a href="#method">Trust Moment Matrix™</a></li>
+          <li><a href="#method">CEOS™ Scoring</a></li>
+          <li><a href="#method">Experience Gap Identifier</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About UOne Vantage</a></li>
+          <li><a href="#thinking">Our Thinking</a></li>
+          <li><a href="#observe">The Problem</a></li>
+          <li><a href="#contact">Start a Conversation</a></li>
+        </ul>
+      </div>
     </div>
-    
-    <!-- Hidden sections for footer links -->
-    <div id="privacy" class="h-0 overflow-hidden"></div>
-    <div id="terms" class="h-0 overflow-hidden"></div>
+
+    <div class="footer__bottom">
+      <p class="footer__legal">© 2026 UOne Vantage. All rights reserved. Customer Experience. Observed.</p>
+      <div class="footer__tags">
+        <span class="ftag">Human Observation</span>
+        <span class="ftag">No Algorithms</span>
+        <span class="ftag">Senior-Led Delivery</span>
+      </div>
+      <span class="footer__sign">Seeing clearly.</span>
+    </div>
+
+    <div class="footer__legal-strip">
+      <button class="footer__legal-btn" aria-expanded="false" aria-controls="privacy-content">Privacy Policy</button>
+      <button class="footer__legal-btn" aria-expanded="false" aria-controls="terms-content">Terms of Use</button>
+      <button class="footer__legal-btn" aria-expanded="false" aria-controls="accessibility-content">Accessibility</button>
+    </div>
+
+    <div class="footer__legal-panels">
+      <div class="footer__legal-panel" id="privacy-content" hidden>
+        <button class="footer__panel-close" aria-label="Close Privacy Policy">✕</button>
+        <strong>Privacy Policy</strong>
+        <p><strong>Last updated: February 2026.</strong> UOne Vantage is committed to protecting your personal information. When you submit the contact form, we collect your name, email address, phone number (if provided), and message content. We do not sell, share, or transfer your data to third parties for marketing purposes.</p>
+        <p><strong>Retention.</strong> Enquiry data is retained for up to 24 months and then securely deleted, unless an active engagement relationship exists.</p>
+        <p><strong>Your rights.</strong> You have the right to access, correct, or request deletion of your personal data at any time. Contact us via the <a href="#contact-form">contact form</a>.</p>
+      </div>
+      <div class="footer__legal-panel" id="terms-content" hidden>
+        <button class="footer__panel-close" aria-label="Close Terms of Use">✕</button>
+        <strong>Terms of Use</strong>
+        <p><strong>Last updated: February 2026.</strong> By accessing this website, you agree that all content — including methodology names, service descriptions, and written materials — is the intellectual property of UOne Vantage and may not be reproduced without written permission.</p>
+        <p>This website is provided "as is" without warranty. UOne Vantage shall not be liable for any indirect or consequential damages arising from use of this website. These terms are governed by the laws applicable in the United Arab Emirates.</p>
+      </div>
+      <div class="footer__legal-panel" id="accessibility-content" hidden>
+        <button class="footer__panel-close" aria-label="Close Accessibility statement">✕</button>
+        <strong>Accessibility</strong>
+        <p>UOne Vantage is committed to making this website accessible to all users, including those with disabilities. We aim for WCAG 2.1 AA compliance. If you experience any accessibility issues, please contact us via the contact form and we will address them promptly.</p>
+        <p>This site includes: keyboard navigation support, skip-to-content link, sufficient colour contrast, semantic HTML, ARIA labels, and respect for prefers-reduced-motion preferences.</p>
+      </div>
+    </div>
   </div>
 </footer>
 
-<!-- JavaScript -->
+
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    menuToggle.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
-  });
+(function () {
+  'use strict';
 
-  document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      menuToggle.setAttribute('aria-expanded', 'false');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── Nav scroll effect ── */
+  const navEl = document.getElementById('nav');
+  if (navEl) {
+    window.addEventListener('scroll', function () {
+      navEl.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  }
+
+  /* ── Mobile nav ── */
+  const burger = document.getElementById('burger');
+  const mobNav = document.getElementById('mob-nav');
+  if (burger && mobNav) {
+    burger.addEventListener('click', function () {
+      const isOpen = mobNav.hidden === false;
+      mobNav.hidden = isOpen;
+      burger.setAttribute('aria-expanded', String(!isOpen));
+      burger.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+      burger.classList.toggle('active', !isOpen);
+      if (!isOpen) {
+        const firstLink = mobNav.querySelector('a');
+        if (firstLink) firstLink.focus();
+      }
     });
-  });
 
-  const form = document.getElementById('contact-form');
-  const submitBtn = document.getElementById('submit-btn');
-  const successMessage = document.getElementById('success-message');
-
-  document.getElementById('form_load_time').value = Date.now();
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    let isValid = true;
-    const name = form.querySelector('[name="name"]');
-    const email = form.querySelector('[name="email"]');
-    const message = form.querySelector('[name="message"]');
-    const botcheck = form.querySelector('[name="botcheck"]');
-
-    document.querySelectorAll('.text-red-400').forEach(el => el.classList.add('hidden'));
-
-    if (botcheck && botcheck.checked) return;
-
-    if (!name.value.trim()) {
-      document.getElementById('name-error').classList.remove('hidden');
-      isValid = false;
-    }
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.value.trim() || !emailRegex.test(email.value)) {
-      document.getElementById('email-error').classList.remove('hidden');
-      isValid = false;
-    }
-    
-    if (!message.value.trim()) {
-      document.getElementById('message-error').classList.remove('hidden');
-      isValid = false;
-    }
-
-    if (!isValid) return;
-
-    const formData = new FormData(form);
-    const originalText = submitBtn.textContent;
-
-    submitBtn.textContent = "Sending...";
-    submitBtn.disabled = true;
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
+    mobNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobNav.hidden = true;
+        burger.setAttribute('aria-expanded', 'false');
+        burger.setAttribute('aria-label', 'Open menu');
+        burger.classList.remove('active');
       });
+    });
+  }
 
-      const data = await response.json();
+  /* ── Scroll reveal ── */
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.sr').forEach(function (el) { io.observe(el); });
 
-      if (response.ok && data.success) {
-        form.classList.add('hidden');
-        successMessage.classList.remove('hidden');
-      } else {
-        alert("Something went wrong. Please try again.");
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }
-    } catch (error) {
-      alert("Network error. Please check your connection.");
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
+  /* ── Smooth anchor scrolling (clean URL) ── */
+  function safeReplaceState(url) {
+    try { history.replaceState(null, '', url); } catch (e) { /* sandboxed */ }
+  }
+
+  document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    const hash = anchor.getAttribute('href');
+    if (hash === '#') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      safeReplaceState(window.location.pathname);
+      return;
     }
+    const target = document.querySelector(hash);
+    if (!target) return;
+    e.preventDefault();
+    const nav = document.querySelector('header');
+    const navH = nav ? nav.offsetHeight : 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - navH;
+    window.scrollTo({ top: top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    safeReplaceState(window.location.pathname);
   });
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href === '#' || href === '#privacy' || href === '#terms') return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+  /* ── Clean hash on load ── */
+  (function () {
+    const hash = window.location.hash;
+    if (!hash || hash === '#') { safeReplaceState(window.location.pathname); return; }
+    const target = document.querySelector(hash);
+    if (!target) { safeReplaceState(window.location.pathname); return; }
+    const nav = document.querySelector('header');
+    const navH = nav ? nav.offsetHeight : 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - navH;
+    window.scrollTo({ top: top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    safeReplaceState(window.location.pathname);
+  })();
+
+  /* ── Footer legal panels ── */
+  document.querySelectorAll('.footer__legal-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+      if (!panel) return;
+      const isOpen = !panel.hidden;
+      document.querySelectorAll('.footer__legal-panel').forEach(function (p) { p.hidden = true; });
+      document.querySelectorAll('.footer__legal-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) {
+        panel.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        panel.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest' });
       }
     });
   });
-</script>
 
+  document.querySelectorAll('.footer__panel-close').forEach(function (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      const panel = closeBtn.closest('.footer__legal-panel');
+      if (!panel) return;
+      panel.hidden = true;
+      const trigger = document.querySelector('.footer__legal-btn[aria-controls="' + panel.id + '"]');
+      if (trigger) {
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.focus();
+      }
+    });
+  });
+
+  /* ── Contact form (Web3Forms) ── */
+  const form = document.getElementById('cf');
+  if (form) {
+    form.querySelectorAll('input, textarea').forEach(function (field) {
+      field.addEventListener('input', function () {
+        this.style.borderColor = '';
+        this.style.boxShadow = '';
+        this.removeAttribute('aria-invalid');
+      });
+    });
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const nameF = form.querySelector('#cf-name');
+      const emailF = form.querySelector('#cf-email');
+      const msgF = form.querySelector('#cf-message');
+      const errorSummary = form.querySelector('#cf-error-summary');
+      let valid = true;
+      const errors = [];
+
+      [nameF, emailF, msgF].forEach(function (f) {
+        f.style.borderColor = '';
+        f.style.boxShadow = '';
+        f.removeAttribute('aria-invalid');
+      });
+      if (errorSummary) { errorSummary.style.display = 'none'; errorSummary.textContent = ''; }
+
+      if (!nameF.value.trim()) {
+        nameF.style.borderColor = '#c0392b';
+        nameF.style.boxShadow = '0 0 0 3px rgba(192,57,43,0.12)';
+        nameF.setAttribute('aria-invalid', 'true');
+        errors.push('Name is required.');
+        if (valid) { nameF.focus(); } valid = false;
+      }
+      const rx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!rx.test(emailF.value.trim())) {
+        emailF.style.borderColor = '#c0392b';
+        emailF.style.boxShadow = '0 0 0 3px rgba(192,57,43,0.12)';
+        emailF.setAttribute('aria-invalid', 'true');
+        errors.push('A valid email address is required.');
+        if (valid) { emailF.focus(); } valid = false;
+      }
+      if (!msgF.value.trim()) {
+        msgF.style.borderColor = '#c0392b';
+        msgF.style.boxShadow = '0 0 0 3px rgba(192,57,43,0.12)';
+        msgF.setAttribute('aria-invalid', 'true');
+        errors.push('Message is required.');
+        if (valid) { msgF.focus(); } valid = false;
+      }
+      if (!valid) {
+        if (errorSummary) {
+          errorSummary.textContent = 'Please fix the following: ' + errors.join(' ');
+          errorSummary.style.display = 'block';
+        }
+        return;
+      }
+
+      const subj = form.querySelector('#cf-subject');
+      const subjectText = (subj && subj.value)
+        ? subj.options[subj.selectedIndex].text + ' — Enquiry via uonevantage.com'
+        : 'Enquiry via uonevantage.com';
+      let dynSubj = form.querySelector('#cf-dyn-subject');
+      if (!dynSubj) {
+        dynSubj = document.createElement('input');
+        dynSubj.type = 'hidden'; dynSubj.name = 'subject'; dynSubj.id = 'cf-dyn-subject';
+        form.appendChild(dynSubj);
+      }
+      dynSubj.value = subjectText;
+
+      const btn = form.querySelector('[type="submit"]');
+      const origText = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Sending…';
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST', body: new FormData(form)
+        });
+        const result = await response.json();
+        if (result.success) {
+          const success = document.getElementById('cf-success');
+          const submitRow = form.querySelector('.cf-submit');
+          if (success) success.style.display = 'block';
+          if (submitRow) submitRow.style.display = 'none';
+          form.reset();
+        } else {
+          btn.disabled = false; btn.textContent = origText;
+          alert('Something went wrong. Please try again or email hello@uonevantage.com directly.');
+        }
+      } catch (err) {
+        btn.disabled = false; btn.textContent = origText;
+        alert('Network error. Please check your connection and try again.');
+      }
+    });
+  }
+
+})();
+</script>
 </body>
 </html>
