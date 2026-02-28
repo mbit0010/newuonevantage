@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- FIX: Mobile browser chrome colour (Android Chrome tab bar, Safari iOS) -->
+<meta name="theme-color" content="#FAFAF7">
+<!-- FIX: Stops iOS auto-linking numbers/dates as tappable links -->
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<!-- FIX: DNS prefetch for Web3Forms API used by contact form -->
+<link rel="dns-prefetch" href="//api.web3forms.com">
+<!-- Sitemap declared in /robots.txt — not via HTML link (rel="sitemap" is not a valid relation) -->
 <title>UOne Vantage — Customer Experience. Observed.</title>
 <!-- v18: og:image unchanged · favicon + apple-touch-icon now use actual logo -->
 <meta name="description" content="UOne Vantage observes real customer interactions across your business — scoring what happens, identifying friction, and briefing you directly on what to fix. Human observation. No algorithms.">
@@ -353,7 +360,6 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
   padding-right: var(--gut);
 }
 .footer {
-  padding-bottom: 32px;
   padding-bottom: 32px;
 }
 .footer__top {
@@ -847,17 +853,37 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
 /* ══════════════════════════════════════════
    THINKING
 ══════════════════════════════════════════ */
+/* Thinking section */
 .thinking { padding: var(--sec) 0; background: var(--s0); }
-.thinking__layout {
-  display: grid; grid-template-columns: 1fr 1.55fr;
-  gap: clamp(44px, 6vw, 88px); align-items: start;
+
+/* Header: title left, tagline right — mirrors section-header pattern */
+.thinking__header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 72px); align-items: start;
+  margin-bottom: 44px;
 }
-@media (max-width: 780px) { .thinking__layout { grid-template-columns: 1fr; } }
-.thinking__sticky { position: sticky; top: 78px; }
-.thinking__stmt { font-family: var(--serif); font-size: clamp(1.5rem, 2.75vw, 2.375rem); font-weight: 700; line-height: 1.18; color: var(--t1); letter-spacing: -0.025em; }
-.thinking__stmt em { font-style: italic; color: var(--gold); }
-.thinking__rule  { width: 24px; height: 1px; background: var(--gold); margin: 20px 0; }
-.thinking__aside { font-size: 0.875rem; color: var(--t3); line-height: 1.70; max-width: 230px; font-style: italic; }
+.thinking__header .sec-lead { margin-bottom: 0; padding-top: 8px; }
+@media (max-width: 740px) { .thinking__header { grid-template-columns: 1fr; gap: 12px; } }
+
+/* Body: 4 articles left, beliefs right */
+.thinking__body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(36px, 5vw, 72px);
+  align-items: start;
+}
+.thinking__articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 36px);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .thinking__body { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .thinking__articles { grid-template-columns: 1fr; }
+}
 .t-block { margin-bottom: 36px; }
 .t-block:last-child { margin-bottom: 0; }
 .t-block h3 { font-family: var(--serif); font-size: 1.0625rem; font-weight: 600; color: var(--t1); letter-spacing: -0.01em; margin-bottom: 9px; line-height: 1.3; }
@@ -1001,6 +1027,7 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
   opacity: 0.85;
 }
 .footer__mission  { font-size: 0.875rem; color: var(--t2); line-height: 1.72; margin-bottom: 14px; max-width: 270px; }
+.footer__geo      { font-size: 0.75rem; color: var(--t4); line-height: 1.60; margin-bottom: 14px; max-width: 270px; }
 .footer__email    { font-family: var(--serif); font-size: 0.9375rem; color: var(--gold); transition: color .16s; }
 .footer__email:hover { color: var(--gold-2); }
 .footer__col h4 {
@@ -1025,12 +1052,41 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
 .footer__legal-links {
   display: flex; gap: 20px; flex-wrap: wrap; align-items: center;
   padding-top: 14px; margin-top: 14px;
-  border-top: 1px solid var(--b3);
   font-size: 0.625rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
 }
-.footer__legal-links a { color: var(--t4); transition: color .16s; }
-.footer__legal-links a:hover { color: var(--gold); }
-.footer__legal-links a:active { color: var(--gold); }
+.footer__legal-links a,
+.footer__legal-btn {
+  color: var(--t4); font-size: 0.6875rem; background: none; border: none;
+  cursor: pointer; padding: 0; font-family: inherit; letter-spacing: 0.04em;
+  transition: color .16s;
+}
+.footer__legal-btn { text-decoration: underline; text-underline-offset: 2px; }
+.footer__legal-links a:hover,
+.footer__legal-btn:hover,
+.footer__legal-btn[aria-expanded="true"] { color: var(--gold); }
+
+/* Legal panels — expand inline below footer bar */
+.footer__legal-panels { padding: 0 0 4px; }
+.footer__legal-panel {
+  position: relative;
+  background: var(--s1); border: 1px solid var(--b2);
+  border-radius: var(--r-sm); padding: 16px 40px 16px 16px;
+  margin-top: 10px; font-size: 0.6875rem; color: var(--t3); line-height: 1.75;
+}
+.footer__legal-panel strong:first-child {
+  display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--t2); margin-bottom: 8px;
+}
+.footer__legal-panel p { margin: 0 0 6px; }
+.footer__legal-panel p:last-child { margin-bottom: 0; }
+.footer__legal-panel a { color: var(--gold); text-decoration: underline; }
+.footer__panel-close {
+  position: absolute; top: 10px; right: 12px;
+  background: none; border: none; cursor: pointer;
+  font-size: 0.75rem; color: var(--t4); line-height: 1; padding: 4px;
+  transition: color .14s;
+}
+.footer__panel-close:hover { color: var(--t1); }
 
 
 /* ══════════════════════════════════════════
@@ -1107,46 +1163,7 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
 
 
 /* Legal sections — compact horizontal strip at page bottom */
-.legal-sections {
-  background: var(--s1);
-  border-top: 1px solid var(--b1);
-  padding: 0;
-}
-.legal-sections__bar {
-  display: flex;
-  border: 1px solid var(--b2);
-  border-radius: var(--r-sm);
-  overflow: hidden;
-  margin: 16px 0 20px;
-}
-.legal-section {
-  flex: 1;
-  border-right: 1px solid var(--b2);
-  min-width: 0;
-}
-.legal-section:last-child { border-right: none; }
-@media (max-width: 560px) {
-  .legal-sections__bar { flex-direction: column; }
-  .legal-section { border-right: none; border-bottom: 1px solid var(--b2); }
-  .legal-section:last-child { border-bottom: none; }
-}
-.legal-toggle {
-  width: 100%; background: none; border: none; cursor: pointer;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 16px;
-  font-size: 0.625rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--t4); text-align: left; transition: color .14s, background .14s;
-}
-.legal-toggle:hover { color: var(--gold); background: var(--s2); }
-.legal-toggle__icon { flex-shrink: 0; transition: transform .2s; width: 12px; height: 12px; }
-.legal-section:has(.legal-content:not([hidden])) .legal-toggle__icon { transform: rotate(180deg); }
-.legal-content {
-  padding: 12px 16px 16px; border-top: 1px solid var(--b2);
-  font-size: 0.6875rem; color: var(--t3); line-height: 1.75;
-}
-.legal-content p { margin: 0 0 8px; }
-.legal-content p:last-child { margin-bottom: 0; }
-.legal-content a { color: var(--gold); text-decoration: underline; }
+/* legal panels now inline in footer — see .footer__legal-panels */
 
 /* ══════════════════════════════════════════
    FIX 3: prefers-reduced-motion
@@ -1594,15 +1611,20 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
 <section class="thinking" id="thinking">
   <div class="wrap">
 
-    <div class="eyebrow sr">Our Thinking</div>
-
-    <div class="thinking__layout sr d1">
-      <div class="thinking__sticky">
-        <p class="thinking__stmt">Data tells you <em>what</em> happened.<br><br>Observation tells you <em>why</em> — and what to do next.</p>
-        <div class="thinking__rule"></div>
-        <p class="thinking__aside">One is a measurement. The other is a map. We build the map.</p>
-      </div>
+    <!-- Header: title left, tagline right — parallel layout -->
+    <div class="thinking__header sr">
       <div>
+        <div class="eyebrow">Our Thinking</div>
+        <h2 class="sec-title">Data tells you <em>what</em> happened.<br>Observation tells you <em>why.</em></h2>
+      </div>
+      <p class="sec-lead">One is a measurement. The other is a map. We build the map.</p>
+    </div>
+
+    <!-- Body: 4 articles left, beliefs right -->
+    <div class="thinking__body sr d1">
+
+      <!-- LEFT: 4 article blocks stacked -->
+      <div class="thinking__articles">
         <div class="t-block">
           <h3>Customers feel everything.</h3>
           <p>A pause a beat too long. A reply that technically answered the question but left the customer feeling unseen. A process that worked perfectly on paper and broke quietly in practice. These moments shape perception long before any metric reflects them.</p>
@@ -1612,32 +1634,42 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
           <p>When a customer hesitates at a critical point, they don't tell you. They just don't return. When an agent's tone tightens on a call, the customer doesn't complain — they call someone else next time. These are not failures of effort. They are failures of sight.</p>
         </div>
         <div class="t-block">
-          <h3>What we believe.</h3>
-          <!-- FIX #22: "fifteen years" consistent — removed "Twenty years" line -->
-          <div class="beliefs">
-            <div class="belief-item">
-              <span class="belief-item__strong">Clarity creates confidence.</span>
-              <span class="belief-item__desc">When you see your business clearly, you make decisions with certainty.</span>
-            </div>
-            <div class="belief-item">
-              <span class="belief-item__strong">Small moments are not small.</span>
-              <span class="belief-item__desc">A single phrase, a two-second pause, a tone that shifts — these compound quietly.</span>
-            </div>
-            <div class="belief-item">
-              <span class="belief-item__strong">The customer's view is the only view that affects your revenue.</span>
-              <span class="belief-item__desc">Their experience is the reality that shapes whether they stay.</span>
-            </div>
-            <div class="belief-item">
-              <span class="belief-item__strong">Independence protects integrity.</span>
-              <span class="belief-item__desc">We have no software to recommend. Our only interest is giving you an accurate picture.</span>
-            </div>
-            <div class="belief-item">
-              <span class="belief-item__strong">Honest authority, not theoretical expertise.</span>
-              <span class="belief-item__desc">Fifteen years across the sectors we serve. That is the authority we bring.</span>
-            </div>
+          <h3>What the numbers cannot tell you.</h3>
+          <p>A score tells you something went wrong. It does not tell you where the conversation shifted, which word landed badly, or why a customer who said they were satisfied never came back. The numbers tell you what happened. Only observation tells you why it matters.</p>
+        </div>
+        <div class="t-block">
+          <h3>The gap is rarely where you expect it.</h3>
+          <p>In most organisations we observe, there is a distance between how leaders describe their customer experience and what customers actually encounter. It is not caused by poor intent. It is caused by the absence of direct observation. That gap is the primary finding of every engagement we conduct.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: What we believe -->
+      <div class="t-block">
+        <h3>What we believe.</h3>
+        <div class="beliefs">
+          <div class="belief-item">
+            <span class="belief-item__strong">Clarity creates confidence.</span>
+            <span class="belief-item__desc">When you see your business clearly, you make decisions with certainty.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item__strong">Small moments are not small.</span>
+            <span class="belief-item__desc">A single phrase, a two-second pause, a tone that shifts — these compound quietly.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item__strong">The customer's view is the only view that affects your revenue.</span>
+            <span class="belief-item__desc">Their experience is the reality that shapes whether they stay.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item__strong">Independence protects integrity.</span>
+            <span class="belief-item__desc">We have no software to recommend. Our only interest is giving you an accurate picture.</span>
+          </div>
+          <div class="belief-item">
+            <span class="belief-item__strong">Honest authority, not theoretical expertise.</span>
+            <span class="belief-item__desc">Fifteen years across the sectors we serve. That is the authority we bring.</span>
           </div>
         </div>
       </div>
+
     </div>
 
   </div>
@@ -1697,11 +1729,13 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
         <h3>Send a Message</h3>
         <p>Fill in the form and we'll respond with the clearest next step — usually within one working day.</p>
 
-        <form class="cf" id="cf" novalidate>
+        <form class="cf" id="cf" novalidate aria-label="Contact form">
           <!-- Web3Forms -->
           <input type="hidden" name="access_key" value="d56f941a-ac9c-4299-ac7e-b8f415178fe0">
           <input type="hidden" name="from_name" value="UOne Vantage Website">
           <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1">
+          <!-- FIX: Required fields notice for screen reader users -->
+          <p class="cf-required-note" style="font-size:0.75rem;color:var(--t4);margin-bottom:0.75rem"><span aria-hidden="true">*</span> Indicates a required field</p>
           <div class="cf-row">
             <div class="cf-field">
               <label for="cf-name">Your Name <span aria-hidden="true">*</span></label>
@@ -1718,7 +1752,7 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
           </div>
           <div class="cf-field">
             <label for="cf-subject">Subject</label>
-            <select id="cf-subject" name="enquiry_type">
+            <select id="cf-subject" name="enquiry_type" autocomplete="off">
               <option value="" disabled selected>What best describes your enquiry?</option>
               <option value="discovery">Discovery conversation request</option>
               <option value="tier1">The Glimpse — Tier 1</option>
@@ -1730,7 +1764,7 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
           </div>
           <div class="cf-field">
             <label for="cf-message">Message <span aria-hidden="true">*</span></label>
-            <textarea id="cf-message" name="message" placeholder="Tell us about your business, the gap you sense, or the question you keep returning to." required></textarea>
+            <textarea id="cf-message" name="message" placeholder="Tell us about your business, the gap you sense, or the question you keep returning to." required autocomplete="off"></textarea>
           </div>
           <div class="cf-success" id="cf-success" role="status" aria-live="polite">
             ✓ Message received. We'll be in touch within one working day.
@@ -1758,7 +1792,7 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAYCAYAAACFms+HAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAJ3UlEQVR42pVYfWxUVRb/nfteO047fLTTbakU2X6ILn4FIW5KhMBiCrWh0LirBGERkKZrMPpHDV8pkNUsJiqLRFykDWipK2uMbTVqXF1jsBbqFrcflrINpVVobadD+Wo7nZn37m//mL5hWiC7e5Kb3Hveu/edc+45v3POE5IAAJLQWsMhpdQ4vohAKQURgdY6+q7Dc0hEQHIcb+I65gEgAlADonArIoCY00AKxBH8phtuIgDJqFIO2bYNwzCi78QqEEs3FX5MLCvQQwR9EGVGWBERr5+lNZQnW5TpAUiIY82+vj40NTXR7XZjdHQUCxYskISEBLS3t7O9vR1JSUlYtGiRiAjq6+vZ2toKl8uF/Px8SUtLg9YaSqmosrEKxCrkPJcxS1ME4YGvaPX+Dco9E4COsS8hBCACrW0w6EP8rB0w3emRa7csC/39/SgoKCAAbt26lYFAAJZloaOjg5mZmaysrCRJrFu3jg8++CCrqqpYVlbGtLQ0VldXkyRCoVDUtZzbceaWZY3jR9YWNInA6R0MXTtDTWLiYMw8+GMlgxeOkWTEAs4H9+3bR6UUT548OU6QJ554gsPDw9i7dy8B8OzZs3QEWLduHQ3DYHd397g9o6Oj6Ovru0GR1tZW+v3+CN8OQ5MY7fgjwyM9HG3+A4NndlFrC8Hucga/+y2DvdUcPb6QYd8/GPJ9xdCY4CrWH4eGhqC1xtWrV8f5tWVZ+Omnn7h//35kZWUhOztbgsEgbNvGqlWrYNs2Pv74Y7z//vt84IEHuH37dubn5zMnJ4ebN2+miKCjo4OFhYWsra1FXl4ey8vLKcqEBgBagDLFGPoX1KU6QAyooWaoy8ehL38H4+JxiHURgIoEdGR2PXCcoHP80vHF+Ph4+P1+9Pf3IykpCSRhGAYMw8CUKVMgIujp6cEdd9yB9vZ29Pb2oqKiAnPmzMGBAwcwOjqKVatWYWRkBDt27BCv14vi4mIMXbsKAwC1RILUSARNDwSEGJOAuCkwf/Un0YmTI8gTQ2oiiiiloJSCbduwbTt6xR6PBx6PB4FAIHpDWmuEQiGICLxeL2bOnAmlFObPn4+srCzJysqCy+VCZ2cn29raICLYtm0bp0yZgvXr10MpiUEWBWgLsK5CQ2Bbg4AOQnQYSltj1r2OUmas4NOmTYPWGn6/P2pRAOjv78esWbNk6dKlrKqqwsjICBISEgAAJ0+ehNYaK1euRCAQgFIKlmWNywcejwfhcBhTp07Fnj17opgYCgbGblYBDFNP/z3QsgnW8TnEtVbYOTtgigHbHoFBazyiO5bTWmNgYADZ2dlRpKirq+PGjRu5ZcsWksT58+eZlZXFoqIidnR08LPPPuPkyZO5c+dOksQnn3xCANy2bRsDgQAWLVpEAOzt7eXmzZsJgEVFRSwtLeXTTz/Nq1cuR4KzfSetQA81idClUwx1/YWhi3VRlAldaqBljSDU/3eGzv+VJCMJyAlAwzDg8/lw+PBhtrW1we12Y968eSgpKREnyVy6dAlvvvkm/X4/ACA/Px95eXlCEu+99x6bmpqQnp6O5cuX45133kEwGMSSJUuQl5cnb731Fj///HOkp6fjhRdeQGbmL4UQBDv/TCgX4n7xG0BcoJEgooOEfRWEghhuQIcQ7D4Ic9oKxKcskmgC+l/oVqnbtu0bUv+NpCeGFMjIt20rgPCPhynWIEhACQFRIASCSOBSW8CkexB/++8E0BGLV1ZW8uuvv4ZpmsjNzcXaNWslHA7htb172d5+Glu2bMXs2bNFaw3DMCIKALDGBHYypqOYbdtwuVywbRuWZSEuLg5a27BtDSACAIZhRuseQgBDQcWoZseErTnBeFFr9fX1ISMjgwDY3NxMx+8PHTrE9evXR5NNNBtSYyLPGbZtgSQ+/PBDdnV10XHDm70bm5icMeDrg22FxvO1FRm0QUbi0dRaIy0tDS+//DLWrl2L+vp63H///RARdHZ2oqysDA0NDayursZtt7mwZs1aZOdkS09PD+vr65GZmYmOjn+jpaUVhYXLkZs7X1577TWWlpaipKQEy5Yt44oVK6S2tpYnTpyA15uMDRs2SlJSEpRS+PLLL3niRD1ycu7ExYsX8eqrr+LcuXPywQcf8IcffkB6+jRs2LBRTDNSfEVyCxBFlGvXriElJYU5OTkkia6uLpaWlvL7778nAH7xxRfMzc1lamoqw+EwKisrCYDz58/nc889x+TkZHo8HgYCATz//PMEwN27d/P48eM8ePAgAfCbb75hUlISFyxYQJJ44403CICffvopFy9eTK/Xy+bmZpaUlHDJkiXs7u5mSkpK9NbD4fD18juWUVZWRgBsampiVVUVjx07xoGBAbz00kscHh7Gpk2bCIB+vx9XrlyBYRh85plnSBK7d+8mAA4ODqK6upoiwtOnT5Mkvv32Wx44cICXL19Gbm4up06dSpKYO3cuJ0+eTJLROqilpYUA+NRTT7G2tpYzZsyg1+ul41aOoVVs01BcXIz4+Hjs3LkTp06dwuLFiwUAfD4fXnzxRfb29sI0TZBEIBCA1hputxuWZSEYDEIpBa01hoeHAQCDg4OwbRspKSlobGzE/v37OTw8DJfLBZLYvn07AKCiooJHjx7F6tWrMTQ0BBFBQkICTNNEefkhNDY23lASRwW3bQsZGRny+OOP46OPPoLH40FqaipWr17Nt99+G3v27JHU1FTYto24uDi43W6QhGkaME0T8fHx0FojITExWiokJibCMAwsXLgQZ86cQVlZmTjKOTF01113wbZtvPLKK3j33Xdl9uzZIiJoaWnBI488IkuXLpNz584hHA6PRxXH9JYVhtYadXV1TExMZFtbG7XWePbZZ+lyubjmySdZVFREANy1axdrampomiaXLVvGCxcusLCwkKZpsqamhqdOnWJcXBx//dBDPHr0KFeuXEmv18vi4mIuXLiQSikeOXKEjz76KAEwOTmZM2fOZEFBATs7O1lRUUGXy0WPx8O7776br7/+OifWTnK9M4m0f7a2ca6rizlZ2SIAbBANDQ2cNGkS7r3nXmloaOD0jOkAgHAwhHA4jNS0VPH5fIwz4yAiyMzMlNNn2vnzzz9j3tx5kpiYiPoT9czIyMD06dOl8Z+NzMnOlvLycvp8PsyYMQNdXV0oLy9HQUEBampqpKe3h51nO5E+/XbcmZ0jNyTB/wej/9dh61uf4QRZZ2cnAfDIkSN0eoH77ruP+/bt40Tcd9aOdzC25xyXnMf6x+ja1hABRKnIXMktG2PnLK01BIAyDMD5UzB2plMi1NTUsLa2FsnJyQCAhx9+GI899pg4e3VsfzqBxnX5N2twJ26KbYYnChx71s2UGf9X4nqJ+t/+EtxM8P8AdxwxfAEAUtoAAAAASUVORK5CYII=" alt="UOne Vantage" class="footer__logo" width="47" height="24" loading="lazy" decoding="async">
         </div>
         <p class="footer__mission">To help businesses understand how they are experienced, so they can strengthen trust, consistency, and confidence in every interaction.</p>
-        <p class="footer__mission">Operating in Pakistan, the Gulf, Europe, UK, US, and Canada.</p>
+        <p class="footer__geo">Operating in Pakistan, the Gulf, Europe, UK, US, and Canada.</p>
       </div>
       <div class="footer__col">
         <h4>Services</h4>
@@ -1798,55 +1832,36 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
       <span class="footer__sign">Seeing clearly.</span>
     </div>
     <div class="footer__legal-links">
-      <a href="#privacy-policy">Privacy Policy</a>
-      <a href="#terms-of-use">Terms of Use</a>
-      <a href="#accessibility">Accessibility</a>
+      <button class="footer__legal-btn" aria-expanded="false" aria-controls="privacy-content">Privacy Policy</button>
+      <button class="footer__legal-btn" aria-expanded="false" aria-controls="terms-content">Terms of Use</button>
+      <button class="footer__legal-btn" aria-expanded="false" aria-controls="accessibility-content">Accessibility</button>
     </div>
+
+    <!-- Legal content panels — hidden until toggled -->
+    <div class="footer__legal-panels">
+      <div class="footer__legal-panel" id="privacy-content" hidden>
+        <button class="footer__panel-close" aria-label="Close Privacy Policy">✕</button>
+        <strong>Privacy Policy</strong>
+        <p><strong>Last updated: February 2026.</strong> UOne Vantage is committed to protecting your personal information. When you submit the contact form, we collect your name, email address, phone number (if provided), and message content. We do not sell, share, or transfer your data to third parties for marketing purposes.</p>
+        <p><strong>Retention.</strong> Enquiry data is retained for up to 24 months and then securely deleted, unless an active engagement relationship exists.</p>
+        <p><strong>Your rights.</strong> You have the right to access, correct, or request deletion of your personal data at any time. Contact us via the <a href="#contact-form">contact form</a>.</p>
+      </div>
+      <div class="footer__legal-panel" id="terms-content" hidden>
+        <button class="footer__panel-close" aria-label="Close Terms of Use">✕</button>
+        <strong>Terms of Use</strong>
+        <p><strong>Last updated: February 2026.</strong> By accessing this website, you agree that all content &mdash; including methodology names, service descriptions, and written materials &mdash; is the intellectual property of UOne Vantage and may not be reproduced without written permission.</p>
+        <p>This website is provided &ldquo;as is&rdquo; without warranty. UOne Vantage shall not be liable for any indirect or consequential damages arising from use of this website. These terms are governed by the laws applicable in the United Arab Emirates.</p>
+      </div>
+      <div class="footer__legal-panel" id="accessibility-content" hidden>
+        <button class="footer__panel-close" aria-label="Close Accessibility Statement">✕</button>
+        <strong>Accessibility</strong>
+        <p>UOne Vantage aims to conform to WCAG 2.1 Level AA standards. Current measures include semantic HTML structure, keyboard navigation support, sufficient colour contrast, descriptive alt text on images, and a skip-to-content link.</p>
+        <p>If you encounter any accessibility barriers, please contact us via the <a href="#contact-form">contact form</a> and we will work to resolve the issue promptly.</p>
+      </div>
+    </div>
+
   </div>
 </footer>
-
-<!-- LEGAL SECTIONS -->
-<div class="legal-sections" id="legal-sections">
-  <div class="wrap">
-    <div class="legal-sections__bar">
-
-      <div class="legal-section" id="privacy-policy">
-        <button class="legal-toggle" aria-expanded="false" aria-controls="privacy-content">
-          <span>Privacy Policy</span>
-          <svg class="legal-toggle__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="legal-content" id="privacy-content" hidden>
-          <p><strong>Last updated: February 2026.</strong> UOne Vantage is committed to protecting your personal information. When you submit the contact form, we collect your name, email address, phone number (if provided), and message content. We do not sell, share, or transfer your data to third parties for marketing purposes.</p>
-          <p><strong>Retention.</strong> Enquiry data is retained for up to 24 months and then securely deleted, unless an active engagement relationship exists.</p>
-          <p><strong>Your rights.</strong> You have the right to access, correct, or request deletion of your personal data at any time. Contact us at <a href="#contact-form">Send us a message</a>.</p>
-        </div>
-      </div>
-
-      <div class="legal-section" id="terms-of-use">
-        <button class="legal-toggle" aria-expanded="false" aria-controls="terms-content">
-          <span>Terms of Use</span>
-          <svg class="legal-toggle__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="legal-content" id="terms-content" hidden>
-          <p><strong>Last updated: February 2026.</strong> By accessing this website, you agree that all content &mdash; including methodology names, service descriptions, and written materials &mdash; is the intellectual property of UOne Vantage and may not be reproduced without written permission.</p>
-          <p>This website is provided &ldquo;as is&rdquo; without warranty. UOne Vantage shall not be liable for any indirect or consequential damages arising from use of this website. These terms are governed by the laws applicable in the United Arab Emirates.</p>
-        </div>
-      </div>
-
-      <div class="legal-section" id="accessibility">
-        <button class="legal-toggle" aria-expanded="false" aria-controls="accessibility-content">
-          <span>Accessibility</span>
-          <svg class="legal-toggle__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="legal-content" id="accessibility-content" hidden>
-          <p>UOne Vantage aims to conform to WCAG 2.1 Level AA standards. Current measures include semantic HTML structure, keyboard navigation support, sufficient colour contrast, descriptive alt text on images, and a skip-to-content link.</p>
-          <p>If you encounter any accessibility barriers, please contact us at <a href="#contact-form">Send us a message</a> and we will work to resolve the issue promptly.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
@@ -1857,58 +1872,46 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
 
   /* Nav scroll shadow */
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('on', window.scrollY > 12), { passive: true });
+  if (nav) {
+    window.addEventListener('scroll', () => nav.classList.toggle('on', window.scrollY > 12), { passive: true });
+  }
 
   /* Mobile nav */
   const burger = document.getElementById('burger');
   const mob    = document.getElementById('mob-nav');
   let open = false;
 
-  burger.addEventListener('click', () => {
-    open = !open;
-    mob.style.display = open ? 'flex' : 'none';
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if (open) {
-      const firstLink = mob.querySelector('a');
-      if (firstLink) { firstLink.focus(); }
-    }
-    const bars = burger.querySelectorAll('span');
-    if (open) {
-      bars[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-      bars[1].style.opacity   = '0';
-      bars[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-    } else {
-      bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
-    }
-  });
-
-  /* Close mobile nav on link click */
-  document.querySelectorAll('.nav__mob a').forEach(link => {
-    link.addEventListener('click', () => {
-      open = false;
-      mob.style.display = 'none';
-      burger.setAttribute('aria-expanded', 'false');
+  if (burger && mob) {
+    burger.addEventListener('click', () => {
+      open = !open;
+      mob.style.display = open ? 'flex' : 'none';
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        const firstLink = mob.querySelector('a');
+        if (firstLink) { firstLink.focus(); }
+      }
       const bars = burger.querySelectorAll('span');
-      bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
-    });
-  });
-
-  /* Legal sections toggle */
-  document.querySelectorAll('.legal-toggle').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const targetId = btn.getAttribute('aria-controls');
-      const content = document.getElementById(targetId);
-      if (!content) return;
-      const isHidden = content.hasAttribute('hidden');
-      if (isHidden) {
-        content.removeAttribute('hidden');
-        btn.setAttribute('aria-expanded', 'true');
+      if (open) {
+        bars[0].style.transform = 'translateY(6.5px) rotate(45deg)';
+        bars[1].style.opacity   = '0';
+        bars[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
       } else {
-        content.setAttribute('hidden', '');
-        btn.setAttribute('aria-expanded', 'false');
+        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
       }
     });
-  });
+
+    /* Close mobile nav on link click */
+    document.querySelectorAll('.nav__mob a').forEach(link => {
+      link.addEventListener('click', () => {
+        open = false;
+        mob.style.display = 'none';
+        burger.setAttribute('aria-expanded', 'false');
+        const bars = burger.querySelectorAll('span');
+        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
+      });
+    });
+  }
+
 
   /* Scroll reveal */
   const io = new IntersectionObserver((entries) => {
@@ -2009,6 +2012,13 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
   /* FIX 5: Detect prefers-reduced-motion once and use in all scroll calls */
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* safeReplaceState — history.replaceState throws a SecurityError inside
+     sandboxed iframes (e.g. previews). Silently ignore it; on the real site
+     it works fine. */
+  function safeReplaceState(state, title, url) {
+    try { history.replaceState(state, title, url); } catch (e) { /* sandboxed */ }
+  }
+
   /* ── Clean URL: intercept all internal #hash anchor clicks ──────────────
      Instead of letting the browser append #section to the URL, we:
      1. Prevent the default jump
@@ -2025,7 +2035,7 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
     if (hash === '#') {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-      history.replaceState(null, '', window.location.pathname);
+      safeReplaceState(null, '', window.location.pathname);
       return;
     }
 
@@ -2033,17 +2043,6 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
     if (!target) return; // let browser handle if section not found
 
     e.preventDefault();
-
-    /* If clicking a link that points to a legal section, auto-expand its panel */
-    const legalToggle = target.querySelector('.legal-toggle');
-    if (legalToggle) {
-      const legalContentId = legalToggle.getAttribute('aria-controls');
-      const legalContent = document.getElementById(legalContentId);
-      if (legalContent && legalContent.hasAttribute('hidden')) {
-        legalContent.removeAttribute('hidden');
-        legalToggle.setAttribute('aria-expanded', 'true');
-      }
-    }
 
     // Offset for sticky nav height
     const navEl = document.querySelector('header') || document.querySelector('nav');
@@ -2053,7 +2052,7 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
     window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
 
     // Wipe the hash — URL stays as https://www.uonevantage.com/
-    history.replaceState(null, '', window.location.pathname);
+    safeReplaceState(null, '', window.location.pathname);
   });
 
   /* ── On page load: if URL already has a #hash (e.g. from a bookmark),
@@ -2061,45 +2060,53 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
   (function cleanOnLoad() {
     const hash = window.location.hash;
     if (!hash || hash === '#') {
-      history.replaceState(null, '', window.location.pathname);
+      safeReplaceState(null, '', window.location.pathname);
       return;
     }
     const target = document.querySelector(hash);
     if (!target) {
-      history.replaceState(null, '', window.location.pathname);
+      safeReplaceState(null, '', window.location.pathname);
       return;
-    }
-    /* If it's a legal section, also expand the content panel */
-    const legalToggle = target.querySelector('.legal-toggle');
-    if (legalToggle) {
-      const legalContentId = legalToggle.getAttribute('aria-controls');
-      const legalContent = document.getElementById(legalContentId);
-      if (legalContent) {
-        legalContent.removeAttribute('hidden');
-        legalToggle.setAttribute('aria-expanded', 'true');
-      }
     }
     const navEl = document.querySelector('header') || document.querySelector('nav');
     const navHeight = navEl ? navEl.offsetHeight : 0;
     const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
     window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-    history.replaceState(null, '', window.location.pathname);
+    safeReplaceState(null, '', window.location.pathname);
   })();
 
-  /* ── Footer legal links: clicking Privacy Policy / Terms / Accessibility
-     in the footer scrolls to that panel AND auto-expands it ── */
-  document.querySelectorAll('.footer__legal-links a[href^="#"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      const sectionId = link.getAttribute('href').slice(1);
-      const section = document.getElementById(sectionId);
-      if (!section) return;
-      const toggle = section.querySelector('.legal-toggle');
-      const contentId = toggle && toggle.getAttribute('aria-controls');
-      const contentEl = contentId && document.getElementById(contentId);
-      if (contentEl && contentEl.hasAttribute('hidden')) {
-        contentEl.removeAttribute('hidden');
-        if (toggle) toggle.setAttribute('aria-expanded', 'true');
+  /* ── Footer legal panels: toggle open/close on button click ── */
+  document.querySelectorAll('.footer__legal-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+      if (!panel) return;
+      const isOpen = !panel.hasAttribute('hidden');
+      // Close all other panels first
+      document.querySelectorAll('.footer__legal-panel').forEach(function(p) {
+        p.setAttribute('hidden', '');
+      });
+      document.querySelectorAll('.footer__legal-btn').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+      });
+      // Toggle this one
+      if (!isOpen) {
+        panel.removeAttribute('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        panel.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest' });
       }
+    });
+  });
+
+  /* Close panel when ✕ button clicked */
+  document.querySelectorAll('.footer__panel-close').forEach(function(closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      const panel = closeBtn.closest('.footer__legal-panel');
+      if (!panel) return;
+      panel.setAttribute('hidden', '');
+      const panelId = panel.id;
+      const trigger = document.querySelector('.footer__legal-btn[aria-controls="' + panelId + '"]');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
     });
   });
 
