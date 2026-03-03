@@ -370,7 +370,7 @@
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 136px; }
 
 /* FIX #10: body::before z-index stacking fix — use pointer-events:none only, don't cascade z-index to all children */
 body {
@@ -463,7 +463,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 ══════════════════════════════════════════ */
 .nav {
   position: fixed; inset: 0 0 auto; z-index: 100;
-  height: 80px;
+  height: 120px;
   /* FIX #17 nav (merged v9 enhancement): single background declaration */
   background: rgba(250,250,247,0.88);
   backdrop-filter: blur(24px) saturate(180%);
@@ -473,20 +473,22 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .nav.on { border-bottom-color: var(--b2); box-shadow: 0 1px 20px rgba(13,14,11,0.06); }
 .nav__in {
-  display: flex; align-items: center; justify-content: space-between;
-  height: 62px; gap: 28px;
+  display: flex; align-items: center; justify-content: flex-start;
+  height: 120px; gap: 0;
 }
-.nav__brand { display: flex; align-items: center; flex-shrink: 0; }
+.nav__brand { display: flex; align-items: center; flex-shrink: 0; height: 100%; margin-right: 64px; }
 /* v14: nav__mark and nav__name replaced by embedded logo image */
 .nav__logo {
   display: block;
-  height: 110px;
+  height: 108px;
   width: auto;
+  max-width: 280px;
   object-fit: contain;
+  vertical-align: middle;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
-.nav__links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav__links { display: flex; align-items: center; gap: 28px; list-style: none; flex: 1; }
 .nav__links a {
   font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase;
   color: var(--t3); transition: color .16s; position: relative;
@@ -504,6 +506,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 /* Nav CTA — gold accent for visual distinction */
 .nav__cta {
   flex-shrink: 0;
+  margin-left: auto;
   font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
   color: #fff; background: var(--gold);
   padding: 9px 18px; border-radius: var(--r-sm);
@@ -529,6 +532,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .nav__mob a { display: block; padding: 13px var(--gut); font-size: 0.9375rem; color: var(--t2); border-bottom: 1px solid var(--b3); transition: color .14s, background .14s; }
 .nav__mob a:hover { color: var(--t1); background: var(--s1); }
 @media (max-width: 860px) { .nav__links, .nav__cta { display: none; } .nav__burger { display: flex; } }
+@media (max-width: 860px) {
+  .nav { height: 80px; }
+  .nav__in { height: 80px; }
+  .nav__brand { margin-right: 0; }
+  .nav__burger { margin-left: auto; }
+  .nav__logo { height: 64px !important; }
+  .hero { padding-top: 104px; }
+  html { scroll-padding-top: 92px; }
+}
 
 /* ══ FIX 1: Burger touch target — minimum 44×44px (Apple HIG + Google Material) ══ */
 .nav__burger {
@@ -594,7 +606,7 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
    HERO
 ══════════════════════════════════════════ */
 .hero {
-  padding-top: 88px;
+  padding-top: 148px;
   display: flex; flex-direction: column;
   background: var(--s0); position: relative; overflow: hidden;
 }
@@ -1226,8 +1238,9 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
 /* v14: footer__mark and footer__wordmark replaced by embedded logo image */
 .footer__logo {
   display: block;
-  height: 110px;
+  height: 120px;
   width: auto;
+  max-width: 280px;
   object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
@@ -1242,6 +1255,35 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
 .footer__col ul  { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .footer__col a   { font-size: 0.875rem; color: rgba(250,250,247,0.55); transition: color .16s; }
 .footer__col a:hover { color: var(--gold); }
+/* ── Social links ── */
+.footer__social {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+.footer__social-label {
+  font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(250,250,247,0.30); margin-right: 4px; white-space: nowrap;
+}
+.footer__social-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  color: rgba(250,250,247,0.50);
+  transition: background .18s, border-color .18s, color .18s, transform .18s;
+  flex-shrink: 0;
+}
+.footer__social-link:hover {
+  background: rgba(123,78,18,0.18);
+  border-color: rgba(123,78,18,0.40);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+.footer__social-link svg { display: block; }
+/* LinkedIn gets a subtle priority highlight — primary platform */
+.footer__social-link--linkedin:hover { background: rgba(0,119,181,0.18); border-color: rgba(0,119,181,0.40); color: #4fb3ff; }
+.footer__social-link--youtube:hover  { background: rgba(255,0,0,0.14);   border-color: rgba(255,0,0,0.30);   color: #ff6b6b; }
+@media (max-width: 480px) { .footer__social { gap: 8px; } }
+
 .footer__bottom {
   padding-top: 10px;
   display: flex; flex-direction: column; gap: 6px;
@@ -1344,7 +1386,11 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
   .fcard { padding: 24px 18px 28px; }
   .tier { padding: 22px 16px 28px; }
   .step { padding: 22px 18px 28px; }
-.nav__logo { height: 44px; width: auto; }
+.nav__logo { height: 56px !important; width: auto; }
+  .nav { height: 70px; }
+  .nav__in { height: 70px; }
+  .hero { padding-top: 90px; }
+  html { scroll-padding-top: 78px; }
   .section-header { gap: 14px; }
   .about__body { font-size: 0.875rem; }
   .outcome { padding: 16px 18px; gap: 12px; }
@@ -1357,6 +1403,11 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
   .hero__h1 { font-size: clamp(1.75rem, 8vw, 2.5rem); }
   .hero__kicker { font-size: 0.5625rem; }
   .nav__cta { font-size: 0.5625rem; padding: 7px 12px; }
+  .nav { height: 64px; }
+  .nav__in { height: 64px; }
+  .nav__logo { height: 48px !important; }
+  .hero { padding-top: 82px; }
+  html { scroll-padding-top: 70px; }
 }
 @media (max-width: 360px) {
   .hero__right { padding-left: 0; }
@@ -1493,9 +1544,9 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
 }
 
 
-/* ── v24: Uniform text sizing, larger logo, clean layout ── */
-.nav__logo { height: 110px !important; width: auto !important; max-width: 220px; }
-.footer__logo { height: 110px !important; width: auto !important; max-width: 220px; }
+/* ── v24: Uniform text sizing, proper logo sizes ── */
+.nav__logo { height: 108px !important; width: auto !important; max-width: 280px; }
+.footer__logo { height: 120px !important; width: auto !important; max-width: 280px; }
 
 /* ── v31: Hero logo above headline ── */
 
@@ -1726,7 +1777,7 @@ section { transition: background 0.3s ease; }
   section { padding: 10px 0 !important; }
 </style>
 </head>
-<body>
+<body id="top">
 <div id="v25-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 <a href="#main" class="skip-link">Skip to main content</a>
 
@@ -2185,7 +2236,7 @@ section { transition: background 0.3s ease; }
       <div class="footer__col">
         <h4>Sitemap</h4>
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="#top">Home</a></li>
           <li><a href="#observe">Why CX Audits</a></li>
           <li><a href="#method">Methodology</a></li>
           <li><a href="#services">Services</a></li>
@@ -2200,6 +2251,44 @@ section { transition: background 0.3s ease; }
         <p class="footer__legal">© 2026 UOne Vantage. All rights reserved.</p>
         <span class="footer__sign">Seeing clearly.</span>
       </div>
+
+      <!-- Social media links -->
+      <div class="footer__bottom-row">
+        <div class="footer__social" role="group" aria-label="Follow UOne Vantage on social media">
+          <span class="footer__social-label">Follow</span>
+
+          <!-- LinkedIn — primary platform -->
+          <a href="https://www.linkedin.com/company/uonevantage" class="footer__social-link footer__social-link--linkedin" target="_blank" rel="noopener noreferrer" aria-label="UOne Vantage on LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+
+          <!-- YouTube — strategic content platform -->
+          <a href="https://www.youtube.com/@uonevantage" class="footer__social-link footer__social-link--youtube" target="_blank" rel="noopener noreferrer" aria-label="UOne Vantage on YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+
+          <!-- Facebook — defensive presence -->
+          <a href="https://www.facebook.com/uonevantage" class="footer__social-link footer__social-link--facebook" target="_blank" rel="noopener noreferrer" aria-label="UOne Vantage on Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+
+          <!-- Instagram — defensive presence -->
+          <a href="https://www.instagram.com/uonevantage" class="footer__social-link footer__social-link--instagram" target="_blank" rel="noopener noreferrer" aria-label="UOne Vantage on Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+
+          <!-- X (Twitter) — defensive presence -->
+          <a href="https://x.com/uonevantage" class="footer__social-link footer__social-link--x" target="_blank" rel="noopener noreferrer" aria-label="UOne Vantage on X">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 5.923zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+
+          <!-- Threads — defensive presence -->
+          <a href="https://www.threads.net/@uonevantage" class="footer__social-link footer__social-link--threads" target="_blank" rel="noopener noreferrer" aria-label="UOne Vantage on Threads">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.295 1.33-3.105.703-.632 1.685-1.057 2.914-1.268-.581-.081-1.175-.152-1.794-.209l.069-2.016c.96.085 1.942.198 2.945.34 1.385.2 2.313.57 3.138 1.312.97.873 1.551 2.148 1.628 3.594.082 1.555-.378 2.82-1.37 3.756-1.277 1.232-3.21 1.842-5.734 1.862H12.2zm1.876-8.44c-.173-.086-.355-.17-.545-.252l-.014-.006a8.69 8.69 0 0 0-1.515-.428c-.88.14-1.48.44-1.772.885-.237.36-.28.817-.12 1.261.286.794 1.183 1.332 2.374 1.27.859-.046 1.548-.4 2.05-1.052.384-.493.63-1.155.731-1.972a7.57 7.57 0 0 0-1.189-.706z"/></svg>
+          </a>
+        </div>
+      </div>
+
       <div class="footer__bottom-row">
         <div class="footer__tags">
           <span class="ftag">Human Observation</span>
