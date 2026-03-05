@@ -1551,9 +1551,6 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
   display: none;
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 80;
   padding: 12px 16px;
-  /* Safe-area inset for iPhone home bar — applied via supported property */
-  padding-bottom: 12px;
-  padding-bottom: max(12px, calc(12px + env(safe-area-inset-bottom)));
   background: rgba(250,250,247,0.85);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
@@ -1563,6 +1560,9 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
   opacity: 0;
 }
 .sticky-cta-mob.visible { transform: none; opacity: 1; }
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .sticky-cta-mob { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
+}
 .sticky-cta-mob .btn { width: 100%; justify-content: center; font-size: 0.75rem; padding: 13px 20px; }
 @media (max-width: 860px) { .sticky-cta-mob { display: block; } }
 /* Add bottom padding to footer so sticky CTA doesn't cover content */
@@ -1581,6 +1581,93 @@ a, button, [role="button"], summary { -webkit-tap-highlight-color: transparent; 
 .footer__logo { height: 120px !important; width: auto !important; max-width: 280px; }
 
 /* ── v31: Hero logo above headline ── */
+
+/* ── Section Icons ─────────────────────────────────────── */
+.sec-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(198,160,90,0.10);
+  border: 1px solid rgba(198,160,90,0.22);
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+.sec-icon svg { display: block; }
+
+/* mcard icon */
+.mcard__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: rgba(198,160,90,0.10);
+  border: 1px solid rgba(198,160,90,0.20);
+  margin-bottom: 14px;
+}
+.mcard__icon svg { display: block; }
+
+/* tier icons */
+.tier__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: rgba(198,160,90,0.08);
+  border: 1px solid rgba(198,160,90,0.16);
+  margin-bottom: 14px;
+}
+.tier--feat .tier__icon {
+  background: rgba(198,160,90,0.15);
+  border-color: rgba(198,160,90,0.35);
+}
+.tier__icon svg { display: block; }
+
+/* contact info icons */
+.contact__info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: rgba(198,160,90,0.10);
+  border: 1px solid rgba(198,160,90,0.20);
+  flex-shrink: 0;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* section header eyebrow icon */
+.eyebrow-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.eyebrow-icon svg {
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+/* principle icons */
+.principle__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(198,160,90,0.08);
+  border: 1px solid rgba(198,160,90,0.16);
+  flex-shrink: 0;
+  margin-right: 8px;
+}
 
 /* Normalize body/section text to consistent readable size */
 .fcard__body,
@@ -1889,7 +1976,7 @@ section { transition: background 0.3s ease; }
 
     <div class="section-header sr">
       <div>
-        <div class="eyebrow">The Problem We Solve</div>
+        <div class="eyebrow"><span class="eyebrow-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>The Problem We Solve</span></div>
         <h2 class="sec-title">Customers feel things your dashboards never capture.</h2>
       </div>
       <p class="sec-lead">Every business has moments where things go quietly wrong. A customer hesitates. Their confidence softens. They don't complain — they simply decide, and you never find out why.</p>
@@ -1927,7 +2014,7 @@ section { transition: background 0.3s ease; }
 
     <div class="section-header sr">
       <div>
-        <div class="eyebrow">Proprietary Methodology</div>
+        <div class="eyebrow"><span class="eyebrow-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Proprietary Methodology</span></div>
         <h2 class="sec-title">Three instruments. One precise picture.</h2>
       </div>
       <p class="sec-lead">The Trust Moment Matrix™, CEOS™ Scoring, and Experience Gap Identifier work in sequence — identifying what matters, scoring what was observed, and measuring the distance between your belief and the evidence.</p>
@@ -1936,6 +2023,10 @@ section { transition: background 0.3s ease; }
     <div class="method-cards sr d1">
       <div class="mcard">
         <div class="mcard__accent"></div>
+        <div class="mcard__icon">
+          <!-- Grid/matrix — Trust Moment Matrix -->
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </div>
         <div class="mcard__roman">I</div>
         <div class="mcard__ord">Instrument I</div>
         <h3 class="mcard__title">Trust Moment Matrix™</h3>
@@ -1944,6 +2035,10 @@ section { transition: background 0.3s ease; }
       </div>
       <div class="mcard">
         <div class="mcard__accent"></div>
+        <div class="mcard__icon">
+          <!-- Score gauge dial — CEOS Scoring -->
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 0 1 7.07 17.07"/><path d="M12 2a10 10 0 0 0-7.07 17.07"/><line x1="12" y1="12" x2="16" y2="8"/><circle cx="12" cy="12" r="1.5" fill="var(--gold)" stroke="none"/></svg>
+        </div>
         <div class="mcard__roman">II</div>
         <div class="mcard__ord">Instrument II</div>
         <h3 class="mcard__title">CEOS™ Scoring</h3>
@@ -1952,6 +2047,10 @@ section { transition: background 0.3s ease; }
       </div>
       <div class="mcard">
         <div class="mcard__accent"></div>
+        <div class="mcard__icon">
+          <!-- Gap / distance arrows — Experience Gap Identifier -->
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" y1="12" x2="22" y2="12"/><polyline points="8 7 3 12 8 17"/><polyline points="16 7 21 12 16 17"/><line x1="12" y1="5" x2="12" y2="19" stroke-dasharray="2 2" opacity="0.5"/></svg>
+        </div>
         <div class="mcard__roman">III</div>
         <div class="mcard__ord">Instrument III</div>
         <h3 class="mcard__title">Experience Gap Identifier</h3>
@@ -1969,7 +2068,7 @@ section { transition: background 0.3s ease; }
 
     <div class="section-header sr">
       <div>
-        <div class="eyebrow">Why Choose This CX Audit Approach</div>
+        <div class="eyebrow"><span class="eyebrow-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 9l4 8H3M17 9l4 8h-4M3 17h4M17 17h4"/><line x1="6" y1="21" x2="18" y2="21"/></svg>Why Choose This CX Audit Approach</span></div>
         <h2 class="sec-title">We rely on something older and more accurate than any algorithm.</h2>
       </div>
       <p class="sec-lead">Fifteen years of direct customer-facing experience — watching and listening in real time. No intermediary. No interpretation layer. Just what was directly seen and heard.</p>
@@ -2008,7 +2107,7 @@ section { transition: background 0.3s ease; }
 
     <div class="section-header sr">
       <div>
-        <div class="eyebrow">CX Audit Service Framework</div>
+        <div class="eyebrow"><span class="eyebrow-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>CX Audit Service Framework</span></div>
         <h2 class="sec-title">Choose the depth that fits your situation.</h2>
       </div>
       <p class="sec-lead">Every engagement is scoped clearly before it begins. Every observation is scored using CEOS™. Every briefing is delivered directly by the principal who did the work. The depth varies — the rigour never does.</p>
@@ -2017,6 +2116,10 @@ section { transition: background 0.3s ease; }
     <div class="tiers-grid sr d1">
       <div class="tier">
         <div class="tier__accent"></div>
+        <div class="tier__icon">
+          <!-- Magnifier — The Glimpse -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
         <div class="tier__num">Tier 1</div>
         <div class="tier__name">The Glimpse</div>
         <p class="tier__question">"I just need to know if there's actually a problem."</p>
@@ -2029,6 +2132,10 @@ section { transition: background 0.3s ease; }
       </div>
       <div class="tier tier--popular">
         <div class="tier__accent"></div>
+        <div class="tier__icon">
+          <!-- Wrench — The Tune-Up -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
         <div class="tier__num">Tier 2</div>
         <div class="tier__name">The Tune-Up</div>
         <p class="tier__question">"Show me the biggest friction point to address first."</p>
@@ -2041,6 +2148,10 @@ section { transition: background 0.3s ease; }
       </div>
       <div class="tier">
         <div class="tier__accent"></div>
+        <div class="tier__icon">
+          <!-- Root/tree — The Root Cause -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 12 7 9 7 5a5 5 0 0 1 10 0c0 4-5 7-5 7z"/><path d="M12 16c0 0-4 1.5-4 4"/><path d="M12 16c0 0 4 1.5 4 4"/></svg>
+        </div>
         <div class="tier__num">Tier 3</div>
         <div class="tier__name">The Root Cause</div>
         <p class="tier__question">"This keeps failing. I need to understand why — permanently."</p>
@@ -2054,6 +2165,10 @@ section { transition: background 0.3s ease; }
       <div class="tier tier--feat">
         <div class="tier__accent"></div>
         <div class="tier__badge">Most Popular</div>
+        <div class="tier__icon">
+          <!-- Layers / full audit -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
         <div class="tier__num">Tier 4</div>
         <div class="tier__name">The Full CEOS™ Audit</div>
         <p class="tier__question">"I want the complete picture — everything my customers experience."</p>
@@ -2077,7 +2192,7 @@ section { transition: background 0.3s ease; }
     <div class="about__layout sr">
 
       <div>
-        <div class="about__eyebrow">Who We Are</div>
+        <div class="about__eyebrow"><span class="eyebrow-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Who We Are</span></div>
         <h2 class="about__title">Built on experience. <em>Grounded in clarity.</em></h2>
         <p class="about__body">UOne Vantage is led by Imran Javed — fifteen years inside direct customer-facing environments across banking and telecom, serving businesses across <strong>Pakistan and the United Arab Emirates</strong>. Every <strong>customer experience audit</strong> engagement is led personally. What is observed is delivered directly to you, without an interpretation layer.</p>
         <div class="principles-label">Operating Principles</div>
@@ -2102,7 +2217,8 @@ section { transition: background 0.3s ease; }
           <p>No software to sell, no platform to recommend. Our only product is clarity.</p>
         </div>
         <div class="about__cred about__cred--border">
-          <div class="about__cred-head">Sectors We Know</div>
+          <div class="about__cred-head">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="u-icon-inline"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Sectors We Know</div>
           <div class="sector-badges">
             <span class="sector-badge">Banking</span>
             <span class="sector-badge">Telecom</span>
@@ -2127,7 +2243,7 @@ section { transition: background 0.3s ease; }
 
     <div class="section-header sr">
       <div>
-        <div class="eyebrow">Get in Touch</div>
+        <div class="eyebrow"><span class="eyebrow-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Get in Touch</span></div>
         <h2 class="sec-title">Start with a conversation.</h2>
       </div>
       <p class="sec-lead">No pressure. No pitch. A calm, honest conversation about what you're noticing in your business — and what you might be missing.</p>
