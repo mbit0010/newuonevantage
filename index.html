@@ -13,11 +13,9 @@
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="dns-prefetch" href="https://api.web3forms.com">
-<link rel="preload" as="image" href="Hero_UOneVantage.webp" fetchpriority="high" imagesrcset="Hero_UOneVantage-mobile.webp 600w, Hero_UOneVantage-tablet.webp 1024w, Hero_UOneVantage.webp 1920w" imagesizes="100vw">
-<link rel="preload" as="image" href="Hero_UOneVantage-mobile.webp" media="(max-width: 600px)">
-<link rel="preload" as="image" href="Hero_UOneVantage-tablet.webp" media="(max-width: 1024px)">
-<title>CX Audit Pakistan & UAE | UOne Vantage</title>
-<meta name="description" content="Human-observed CX audits in Pakistan and UAE. Imran Javed. CEOS™ scoring. No algorithms — real interactions, direct briefing.">
+<link rel="preload" as="image" href="Hero_UOneVantage.webp" fetchpriority="high">
+<title>CX Audit & Customer Experience Consultancy | UOne Vantage</title>
+<meta name="description" content="Human-observed CX audits in Pakistan and UAE. We score real interactions using CEOSTM scoring. No algorithms—just expert insights to reduce friction.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://www.uonevantage.com/">
 <link rel="alternate" hreflang="en-AE" href="https://www.uonevantage.com/">
@@ -51,10 +49,10 @@
       "@type": ["ProfessionalService","LocalBusiness"],
       "@id": "https://www.uonevantage.com/#organization",
       "name": "UOne Vantage",
-      "alternateName": "UOne Vantage CX Consultancy",
+      "serviceType": "Customer Experience Auditing and Mystery Shopping", ["UOne Vantage CX Consultancy", "CX Audit Pakistan", "CX Consultancy UAE", "Customer Journey Analysis"],
       "url": "https://www.uonevantage.com",
       "email": "hello@uonevantage.com",
-      "address": {"@type":"PostalAddress","addressCountry":"PK"},
+      "address": {"@type":"PostalAddress","addressLocality":"Lahore","addressRegion":"Punjab","addressCountry":"PK"},
       "description": "UOne Vantage delivers human-observed customer experience audits for businesses in Pakistan, UAE, and the Gulf. We observe real interactions, score every touchpoint using the proprietary CEOS™ framework, and brief business principals directly on what to fix.",
       "slogan": "Customer Experience. Observed.",
       "foundingDate": "2024",
@@ -166,7 +164,7 @@
 <style>
 /* ═══════════════════════════════════════════════════════
    UOne Vantage — Design System v5.0
-   Responsive Master CSS — 19-Layer Architecture
+   Desktop CSS — 19-Layer Architecture
    Typography: IBM Plex Sans + Cormorant Garamond
    Scale: 1.250 Major Third · WCAG 2.2 AA/AAA
    ─────────────────────────────────────────────────────
@@ -180,14 +178,13 @@
     3xl Ultrawide     ≥ 1600px
 ═══════════════════════════════════════════════════════ */
 
-
 /* ── LAYER 1: Design Tokens ─────────────────────────── */
 :root {
   /* Palette */
   --ink:       #1A1A18;
   --ink-2:     #3D3D38;
   --ink-3:     #6B6B64;
-  --ink-4:     #737268; /* was #9A9A92 — raised to 4.63:1 WCAG AA on --paper */
+  --ink-4:     #686860; /* raised to 4.97:1 WCAG AA on --paper-1 */
   --paper:     #FAFAF7;
   --paper-1:   #F3F1EA;
   --paper-2:   #ECEAE0;
@@ -220,11 +217,11 @@
   --t-base:    clamp(0.9375rem,1.2vw,1.0rem);   /* 15px→16px  */
   --t-md:      0.875rem;
   --t-sm:      0.8125rem;
-  --t-xs:      0.6875rem;
+  --t-xs:      0.75rem;   /* 12px — raised from 11px; was smaller than --t-caption (inverted) */
   --t-caption: 0.75rem;
 
   /* Line heights */
-  --lh-tight:   1.08;
+  --lh-tight:   1.10;
   --lh-snug:    1.18;
   --lh-heading: 1.28;
   --lh-ui:      1.40;
@@ -283,41 +280,40 @@
   --dur-s:  0.18s;
 }
 
-
 /* ── LAYER 2: Theme Switching ───────────────────────── */
 
 /* System preference: dark */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --ink:     #F0F0EC;
-    --ink-2:   #C8C8C2;
-    --ink-3:   #9A9A92;
-    --ink-4:   #828280; /* was #72726A — raised to 4.6:1 WCAG AA on dark --paper */
-    --paper:   #18181A;
-    --paper-1: #202024;
-    --paper-2: #28282C;
-    --paper-3: #333338;
-    --gold:    #C8901E;
-    --gold-hi: #E0A82A;
-    --gold-lo: rgba(200,144,30,.12);
-    --gold-bd: rgba(200,144,30,.22);
+    --ink-2:   #C8C4B8; /* warm cream — hue 45°, less clinical for night reading */
+    --ink-3:   #968C80; /* warm mid-text — hue 33°, amber-tinted, easy on night eyes */
+    --ink-4:   #8E8E88; /* 4.98:1 WCAG AA on warm dark --paper-1 */
+    --paper:   #1A1816; /* warm near-black — matches brand warmth */
+    --paper-1: #221F1A;
+    --paper-2: #2B271F;
+    --paper-3: #36302A;
+    --gold:    #C8881A; /* true amber hue 38° — lower blue channel, night-safe */
+    --gold-hi: #D4981F; /* warm amber hover — pulled back from yellow, 7.01:1 */
+    --gold-lo: rgba(200,136,26,.13);
+    --gold-bd: rgba(200,136,26,.24);
   }
 }
 
 /* Explicit dark */
 [data-theme="dark"] {
   --ink:     #F0F0EC;
-  --ink-2:   #C8C8C2;
-  --ink-3:   #9A9A92;
-  --ink-4:   #828280; /* was #72726A — raised to 4.6:1 WCAG AA on dark --paper */
-  --paper:   #18181A;
-  --paper-1: #202024;
-  --paper-2: #28282C;
-  --paper-3: #333338;
-  --gold:    #C8901E;
-  --gold-hi: #E0A82A;
-  --gold-lo: rgba(200,144,30,.12);
-  --gold-bd: rgba(200,144,30,.22);
+  --ink-2:   #C8C4B8; /* warm cream — hue 45°, less clinical for night reading */
+  --ink-3:   #968C80; /* warm mid-text — hue 33°, amber-tinted, easy on night eyes */
+  --ink-4:   #8E8E88; /* 4.98:1 WCAG AA on warm dark --paper-1 */
+  --paper:   #1A1816; /* warm near-black — matches brand warmth */
+  --paper-1: #221F1A;
+  --paper-2: #2B271F;
+  --paper-3: #36302A;
+  --gold:    #C8881A; /* true amber hue 38° — lower blue channel, night-safe */
+  --gold-hi: #D4981F; /* warm amber hover — pulled back from yellow, 7.01:1 */
+  --gold-lo: rgba(200,136,26,.13);
+  --gold-bd: rgba(200,136,26,.24);
 }
 
 /* Explicit light */
@@ -325,7 +321,7 @@
   --ink:     #1A1A18;
   --ink-2:   #3D3D38;
   --ink-3:   #6B6B64;
-  --ink-4:   #737268; /* was #9A9A92 — raised to 4.63:1 WCAG AA on --paper */
+  --ink-4:   #686860; /* 4.97:1 WCAG AA on --paper-1 */
   --paper:   #FAFAF7;
   --paper-1: #F3F1EA;
   --paper-2: #ECEAE0;
@@ -345,7 +341,6 @@
 :root:not([data-theme="light"]) .contact::before {
   background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.07) 20%, rgba(255,255,255,.07) 80%, transparent 100%);
 }
-
 
 /* ── LAYER 3: Reset & Global Defaults ───────────────── */
 *, *::before, *::after {
@@ -383,7 +378,6 @@ img, picture, video, canvas, svg {
 
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; font-family: inherit; }
-ul[role="list"], ol[role="list"] { list-style: none; }
 p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; word-break: break-word; }
 
 /* Selection */
@@ -419,7 +413,6 @@ a, button { touch-action: manipulation; }
   }
 }
 
-
 /* ── LAYER 4: Layout Primitives ─────────────────────── */
 
 /* ── .wrap: fluid container with percentage gutters ──
@@ -432,23 +425,11 @@ a, button { touch-action: manipulation; }
   padding-inline: var(--gut);
 }
 
-/* Safe-area padding for fixed nav (iPhone notch / Dynamic Island) */
+/* Nav inner padding — matches .wrap gutter */
 .nav__in {
   padding-inline: var(--gut);
 }
 
-/* Safe-area inset support — env() kept inside @supports so
-   CSS validators that do not know env() never see it.      */
-@supports (padding-left: env(safe-area-inset-left)) {
-  .wrap {
-    padding-left:  max(var(--gut), env(safe-area-inset-left,  0px));
-    padding-right: max(var(--gut), env(safe-area-inset-right, 0px));
-  }
-  .nav__in {
-    padding-left:  max(var(--gut), env(safe-area-inset-left,  0px));
-    padding-right: max(var(--gut), env(safe-area-inset-right, 0px));
-  }
-}
 
 /* Skip link */
 .skip-link {
@@ -463,14 +444,8 @@ a, button { touch-action: manipulation; }
 
 /* Utilities */
 .u-hidden { display: none !important; }
-.u-sr-only {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-}
 .u-botcheck { display: none; }
 .u-optional { font-weight: var(--fw-regular); opacity: .6; }
-
 
 /* ── LAYER 5: Typography ────────────────────────────── */
 
@@ -497,14 +472,12 @@ a, button { touch-action: manipulation; }
 
 .sec-lead {
   font-family: var(--sans); font-size: var(--t-lead);
-  font-weight: var(--fw-light); color: var(--ink-2);
+  font-weight: var(--fw-regular); color: var(--ink-2);
   line-height: var(--lh-loose);
 }
 
-
 /* ── LAYER 6: Buttons ───────────────────────────────────
-   RULE: min-height: 44px everywhere. WCAG 2.5.5 AA touch
-   target. On mobile, CTAs expand to 100% width.        */
+   min-height: 44px on all interactive elements. WCAG 2.5.5 AA. */
 .btn {
   display: inline-flex; align-items: center;
   justify-content: center; gap: 6px;
@@ -547,7 +520,7 @@ a, button { touch-action: manipulation; }
   box-shadow: 0 2px 0 rgba(100,50,0,.22), var(--sh-gold);
 }
 .btn-gold:hover {
-  background: var(--gold-hi); border-color: var(--gold-hi);
+  background: #7A5418; border-color: #7A5418;
   transform: translateY(-2px);
   box-shadow: 0 4px 0 rgba(100,50,0,.22), 0 12px 28px rgba(139,94,26,.28);
 }
@@ -563,10 +536,34 @@ a, button { touch-action: manipulation; }
   animation: spin .7s linear infinite;
 }
 
+/* Dark mode: gold is bright — use dark text for WCAG compliance (6.88:1) */
+[data-theme="dark"] .btn-gold,
+:root:not([data-theme="light"]) .btn-gold {
+  color: #1C1A14;
+}
+[data-theme="dark"] .btn-gold:hover,
+:root:not([data-theme="light"]) .btn-gold:hover {
+  color: #1C1A14;
+  background: var(--gold-hi); border-color: var(--gold-hi); /* #D4981F — 6.88:1 ✅ */
+}
+[data-theme="dark"] .btn-gold.loading::before,
+:root:not([data-theme="light"]) .btn-gold.loading::before {
+  border-color: rgba(28,26,20,.3); border-top-color: #1C1A14;
+}
+[data-theme="dark"] .nav__cta,
+:root:not([data-theme="light"]) .nav__cta {
+  color: #1C1A14;
+}
+[data-theme="dark"] .nav__cta:hover,
+:root:not([data-theme="light"]) .nav__cta:hover {
+  color: #1C1A14;
+  background: var(--gold-hi); border-color: var(--gold-hi);
+}
 
 /* ── LAYER 7: Navigation ────────────────────────────── */
 .nav {
   position: fixed; inset: 0 0 auto; z-index: 100; height: 76px;
+  overflow: visible;
   background: rgba(250,250,247,.92);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -580,7 +577,7 @@ a, button { touch-action: manipulation; }
 }
 [data-theme="dark"] .nav,
 :root:not([data-theme="light"]) .nav {
-  background: rgba(18,18,20,.96);
+  background: rgba(26,24,20,.96); /* warm near-black, matches brand */
   border-bottom-color: rgba(255,255,255,.06);
 }
 [data-theme="dark"] .nav.on,
@@ -634,7 +631,7 @@ a, button { touch-action: manipulation; }
   box-shadow: 0 2px 0 rgba(100,50,0,.20), var(--sh-gold);
 }
 .nav__cta:hover {
-  background: var(--gold-hi); border-color: var(--gold-hi);
+  background: #7A5418; border-color: #7A5418;
   transform: translateY(-1px);
   box-shadow: 0 4px 0 rgba(100,50,0,.20), 0 10px 24px rgba(139,94,26,.25);
 }
@@ -642,40 +639,99 @@ a, button { touch-action: manipulation; }
   outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
-.nav__burger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; padding: 10px; margin-right: -10px;
-  min-width: 44px; min-height: 44px;
+/* ── Hamburger toggle (hidden on desktop) ───────────── */
+.nav__toggle {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 44px; height: 44px;
+  background: transparent; border: none; padding: 0;
+  margin-left: auto; cursor: pointer; flex-shrink: 0;
+  border-radius: var(--r-xs);
+  transition: background var(--dur-s);
 }
-.nav__burger span {
+.nav__toggle:hover { background: var(--paper-1); }
+.nav__toggle span {
   display: block; width: 22px; height: 2px;
-  background: var(--ink); border-radius: 2px;
-  transition: transform .22s, opacity .15s;
+  background: var(--ink-2); border-radius: 2px;
+  transition: transform .28s var(--ease), opacity .2s, width .2s;
+  transform-origin: center;
 }
-#burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-#burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-#burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.nav__mob {
-  display: none; position: fixed; inset: 0; z-index: 99;
-  background: var(--paper);
-  flex-direction: column; align-items: center; justify-content: center;
-  gap: var(--sp-3); padding: 76px var(--sp-6) var(--sp-10);
-}
-.nav__mob.open { display: flex; }
-.nav__mob a {
-  width: 100%; max-width: 300px; text-align: center;
-  padding: 14px var(--sp-6); font-size: var(--t-base);
-  font-weight: var(--fw-medium); color: var(--ink);
-  border-radius: var(--r-md); background: var(--paper-1);
-  transition: background var(--dur-s), color var(--dur-s);
-  min-height: 44px; display: flex; align-items: center; justify-content: center;
-}
-.nav__mob a:hover { background: var(--paper-2); color: var(--gold); }
-[data-theme="dark"] .nav__mob,
-:root:not([data-theme="light"]) .nav__mob { background: var(--paper); }
-[data-theme="dark"] .nav__mob a,
-:root:not([data-theme="light"]) .nav__mob a { background: var(--paper-2); color: rgba(242,242,238,.92); }
+[data-theme="dark"] .nav__toggle span,
+:root:not([data-theme="light"]) .nav__toggle span { background: rgba(242,242,238,.82); }
 
+/* Animated X state */
+.nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; width: 0; }
+.nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Tablet & Mobile nav collapse (≤ 899px) ─────────── */
+@media (max-width: 899px) {
+  .nav__toggle { display: flex; }
+
+  /* Nav links: compact dropdown from top-right */
+  .nav__links {
+    position: absolute;
+    top: calc(100% + 6px); right: var(--gut);
+    left: auto; width: 200px;
+    background: var(--paper);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--paper-3);
+    border-radius: var(--r-md);
+    box-shadow: 0 8px 32px rgba(26,26,24,.13), 0 2px 8px rgba(26,26,24,.07);
+    flex-direction: column; gap: 0;
+    padding: 0; overflow: hidden;
+    transform: translateY(-8px); opacity: 0; pointer-events: none;
+    transition: transform .22s var(--ease), opacity .18s var(--ease);
+    z-index: 99;
+  }
+  [data-theme="dark"] .nav__links,
+  :root:not([data-theme="light"]) .nav__links {
+    background: rgba(34,31,26,.98);
+    border-color: rgba(255,255,255,.10);
+  }
+
+  .nav__links.open {
+    transform: translateY(0); opacity: 1; pointer-events: auto;
+  }
+
+  .nav__links li { width: 100%; }
+  .nav__links a {
+    display: flex; align-items: center;
+    padding: 10px 16px;
+    font-size: var(--t-sm); min-height: 38px;
+    border-bottom: 1px solid var(--paper-2);
+  }
+  [data-theme="dark"] .nav__links a,
+  :root:not([data-theme="light"]) .nav__links a {
+    border-bottom-color: rgba(255,255,255,.06);
+  }
+  .nav__links li:last-child a { border-bottom: none; }
+  .nav__links a::after { display: none; }
+
+  .nav__cta { display: none; }
+
+  .nav__links .nav__links-cta {
+    display: flex !important;
+    justify-content: center; align-items: center;
+    padding: 10px 16px; min-height: 38px;
+    font-family: var(--sans); font-size: var(--t-sm);
+    font-weight: var(--fw-bold); letter-spacing: var(--ls-ui);
+    color: #fff; background: var(--gold);
+    border: none; border-radius: 0;
+    transition: background var(--dur-s);
+  }
+  [data-theme="dark"] .nav__links .nav__links-cta,
+  :root:not([data-theme="light"]) .nav__links .nav__links-cta { color: #1C1A14; }
+  .nav__links .nav__links-cta:hover { background: #7A5418; }
+}
+
+/* ── Small mobile (≤ 480px) — tighten logo ──────────── */
+@media (max-width: 480px) {
+  .nav__logo { height: 48px; }
+}
+
+.nav__links .nav__links-cta { display: none; }
 
 /* ── Progress bar ───────────────────────────────────── */
 #v25-progress {
@@ -685,9 +741,8 @@ a, button { touch-action: manipulation; }
   transition: width .1s linear; pointer-events: none;
 }
 
-
 /* ── LAYER 8: Section Layout ────────────────────────── */
-/* 2-col on desktop; stacks at tablet */
+/* 2-col on desktop */
 .section-header {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -695,7 +750,6 @@ a, button { touch-action: manipulation; }
   align-items: start;
   margin-bottom: var(--sp-6);
 }
-
 
 /* ── LAYER 9: Hero ──────────────────────────────────── */
 .hero { padding-top: 110px; background: transparent; position: relative; overflow: hidden; }
@@ -747,7 +801,7 @@ a, button { touch-action: manipulation; }
 .hero__h1 em { font-style: italic; color: var(--gold); }
 .hero__sub {
   font-family: var(--sans); font-size: var(--t-lead);
-  font-weight: var(--fw-light); line-height: var(--lh-loose);
+  font-weight: var(--fw-regular); line-height: var(--lh-loose);
   color: var(--ink-2); margin-bottom: var(--sp-8);
   animation: fadeUp .8s var(--ease) .2s both;
 }
@@ -797,8 +851,8 @@ a, button { touch-action: manipulation; }
   box-shadow: inset 0 0 0 0 transparent, 3px 0 12px rgba(139,94,26,.09);
 }
 .hero__method-idx {
-  font-family: var(--serif); font-size: var(--t-xs);
-  font-weight: var(--fw-semi); font-style: italic;
+  font-family: var(--sans); font-size: var(--t-sm);
+  font-weight: var(--fw-bold); font-style: italic;
   color: var(--gold); opacity: .8; min-width: 14px; padding-top: 1px;
   transition: opacity var(--dur-s), transform var(--dur-s);
 }
@@ -820,11 +874,9 @@ a, button { touch-action: manipulation; }
 [data-theme="dark"] .hero__method-body p,
 :root:not([data-theme="light"]) .hero__method-body p { color: rgba(200,200,196,.85); }
 
-
 /* ── LAYER 10: Observe / Friction Cards ─────────────── */
 .observe { padding: var(--sec-pad) 0; background: var(--paper); }
 
-/* 4-col grid — collapses via breakpoints below */
 .friction-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -877,11 +929,9 @@ a, button { touch-action: manipulation; }
 [data-theme="dark"] .fcard__title,
 :root:not([data-theme="light"]) .fcard__title { color: rgba(242,242,238,.98); }
 
-
 /* ── LAYER 11: Method Cards ─────────────────────────── */
 .method { padding: var(--sec-pad) 0; background: var(--paper-1); }
 
-/* 3-col grid — collapses via breakpoints below */
 .method-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -940,6 +990,7 @@ a, button { touch-action: manipulation; }
   line-height: var(--lh-body); color: var(--ink-2);
   margin-bottom: var(--sp-5);
 }
+.mcard__body strong { color: var(--ink); font-weight: var(--fw-semi); }
 .mcard__seq {
   font-family: var(--sans); font-size: var(--t-xs);
   font-weight: var(--fw-bold); letter-spacing: var(--ls-label);
@@ -972,7 +1023,6 @@ a, button { touch-action: manipulation; }
 :root:not([data-theme="light"]) .mcard__roman { color: rgba(255,255,255,.10); }
 [data-theme="dark"] .mcard__title,
 :root:not([data-theme="light"]) .mcard__title { color: rgba(242,242,238,.98); }
-
 
 /* ── LAYER 12: Diff / Compare ───────────────────────── */
 .diff { padding: var(--sec-pad) 0; background: var(--paper); }
@@ -1036,11 +1086,9 @@ a, button { touch-action: manipulation; }
 [data-theme="dark"] .diff__compare,
 :root:not([data-theme="light"]) .diff__compare { border-color: rgba(255,255,255,.09); }
 
-
 /* ── LAYER 13: Services / Tiers ─────────────────────── */
 .services { padding: var(--sec-pad) 0; background: var(--paper-1); }
 
-/* 4-col grid — collapses via breakpoints below */
 .tiers-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1135,7 +1183,6 @@ a, button { touch-action: manipulation; }
 [data-theme="dark"] .tier__name,
 :root:not([data-theme="light"]) .tier__name { color: rgba(242,242,238,.98); }
 
-
 /* ── LAYER 14: About ────────────────────────────────── */
 .about { padding: var(--sec-pad) 0; background: var(--paper); }
 
@@ -1202,7 +1249,7 @@ a, button { touch-action: manipulation; }
   border-color: var(--gold-bd);
 }
 .principle__n {
-  font-family: var(--serif); font-size: var(--t-sm);
+  font-family: var(--sans); font-size: var(--t-sm);
   font-weight: var(--fw-bold); font-style: italic;
   color: var(--gold); flex-shrink: 0; min-width: 20px;
   padding-top: 1px; line-height: var(--lh-heading);
@@ -1254,7 +1301,6 @@ a, button { touch-action: manipulation; }
 :root:not([data-theme="light"]) .sector-badge { border-color: rgba(255,255,255,.09); color: rgba(200,200,196,.80); }
 [data-theme="dark"] .about__title,
 :root:not([data-theme="light"]) .about__title { color: rgba(242,242,238,.98); }
-
 
 /* ── LAYER 15: Contact ──────────────────────────────── */
 .contact { padding: var(--sec-pad) 0; background: var(--paper-1); }
@@ -1403,12 +1449,6 @@ a, button { touch-action: manipulation; }
   font-family: var(--sans); font-size: var(--t-caption);
   color: var(--ink-4); margin-bottom: var(--sp-2); line-height: var(--lh-label);
 }
-.cf-privacy { font-family: var(--sans); font-size: var(--t-caption); font-weight: var(--fw-regular); letter-spacing: var(--ls-body); line-height: var(--lh-label); color: var(--ink-4); }
-
-/* Prevent iOS Safari input zoom */
-@media (max-width: 600px) {
-  .cf-field input, .cf-field select, .cf-field textarea { font-size: 16px; }
-}
 
 [data-theme="dark"] .cf-field input,
 [data-theme="dark"] .cf-field select,
@@ -1422,7 +1462,6 @@ a, button { touch-action: manipulation; }
 [data-theme="dark"] .cf-static-label,
 :root:not([data-theme="light"]) .cf-field label,
 :root:not([data-theme="light"]) .cf-static-label { color: rgba(200,200,196,.70); }
-
 
 /* ── LAYER 16: Footer Banner ────────────────────────── */
 .footer-banner {
@@ -1460,11 +1499,9 @@ a, button { touch-action: manipulation; }
 }
 .footer-banner__cta:hover { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.9); }
 
-
 /* ── LAYER 17: Footer ───────────────────────────────── */
 .footer { background: #1E1E1C; color: rgba(242,242,238,.85); padding: var(--sp-6) 0 var(--sp-4); }
 
-/* 5-col footer grid — collapses via breakpoints below */
 .footer__top {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
@@ -1483,7 +1520,7 @@ a, button { touch-action: manipulation; }
   color: rgba(242,242,238,.55); max-width: 200px;
 }
 .footer__email {
-  font-family: var(--serif); font-size: var(--t-sm); font-weight: var(--fw-medium);
+  font-family: var(--sans); font-size: var(--t-sm); font-weight: var(--fw-medium);
   color: #E0B060; text-decoration: none; transition: color var(--dur-s);
   display: inline-block; margin-top: var(--sp-1);
 }
@@ -1534,7 +1571,7 @@ a, button { touch-action: manipulation; }
   font-family: var(--sans); font-size: var(--t-caption); font-weight: var(--fw-regular);
   letter-spacing: var(--ls-body); color: rgba(242,242,238,.55); /* was .45 — raised to 5.35:1 WCAG AA */
 }
-.footer__sign { font-family: var(--serif); font-style: italic; font-size: var(--t-caption); color: rgba(224,176,96,.7); }
+.footer__sign { font-family: var(--sans); font-style: italic; font-size: var(--t-caption); color: rgba(224,176,96,.7); }
 .footer__tags { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
 .ftag {
   font-family: var(--sans); font-size: var(--t-xs); font-weight: var(--fw-medium);
@@ -1548,7 +1585,6 @@ a, button { touch-action: manipulation; }
   background: none; border: none; padding: 0; transition: color var(--dur-s); cursor: pointer;
 }
 .footer__legal-links a:hover, .footer__legal-btn:hover { color: #E0B060; }
-
 
 /* ── LAYER 18: Modals ───────────────────────────────── */
 .legal-modal-overlay {
@@ -1585,7 +1621,6 @@ a, button { touch-action: manipulation; }
 .legal-modal__body p { margin-bottom: var(--sp-4); max-width: var(--measure-body); }
 .legal-modal__body a { color: var(--gold); text-decoration: underline; }
 
-
 /* ── LAYER 18b: Fixed UI elements ───────────────────── */
 .theme-widget {
   position: fixed; bottom: 80px; right: 20px; z-index: 9999;
@@ -1595,12 +1630,7 @@ a, button { touch-action: manipulation; }
   cursor: grab; user-select: none; touch-action: none;
   transition: box-shadow var(--dur-s);
 }
-@supports (bottom: env(safe-area-inset-bottom)) {
-  .theme-widget {
-    bottom: calc(60px + env(safe-area-inset-bottom, 0px));
-    right:  max(20px, env(safe-area-inset-right,  20px));
-  }
-}
+
 .theme-widget.dragging { cursor: grabbing; box-shadow: var(--sh-xl); }
 .theme-widget:hover { box-shadow: var(--sh-lg); }
 .tw-btn {
@@ -1622,15 +1652,9 @@ a, button { touch-action: manipulation; }
   opacity: 0; transform: translateY(10px); pointer-events: none;
   transition: opacity .22s, transform .22s, background var(--dur-s), box-shadow var(--dur-s);
 }
-@supports (bottom: env(safe-area-inset-bottom)) {
-  .scroll-top {
-    bottom: max(32px, calc(16px + env(safe-area-inset-bottom, 0px)));
-    right:  max(32px, env(safe-area-inset-right, 32px));
-  }
-}
+
 .scroll-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 .scroll-top:hover { background: var(--gold); box-shadow: var(--sh-gold); }
-
 
 /* ── LAYER 18c: Scroll Reveal ───────────────────────── */
 .sr { opacity: 1; transform: none; transition: opacity .65s var(--ease), transform .65s var(--ease); }
@@ -1638,21 +1662,16 @@ a, button { touch-action: manipulation; }
 .js-r .sr.vis { opacity: 1; transform: none; }
 .d1 { transition-delay: .06s; }
 
-
 /* ── Animations ─────────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: none; }
 }
 
-
 /* ═══════════════════════════════════════════════════════
-   LAYER 19: RESPONSIVE SYSTEM
+   LAYER 19: DESKTOP LAYOUT OVERRIDES
    ─────────────────────────────────────────────────────
-   RULE: Desktop (≥900px) is the base — no media query
-   needed for full-width desktop layout. Every breakpoint
-   below ONLY handles the delta from desktop downwards.
-   Each breakpoint has ONE primary job.
+   Wide desktop and ultrawide gutter adjustments only.
 ═══════════════════════════════════════════════════════ */
 
 /* ── Ultrawide  ≥ 1600px ─────────────────────────────
@@ -1666,144 +1685,9 @@ a, button { touch-action: manipulation; }
   .hero__body { grid-template-columns: 1fr min(380px, 38%); }
 }
 
-/* ── Nav collapse  ≤ 899px ───────────────────────────
-   Goal: burger appears, desktop nav hides.            */
-@media (max-width: 899px) {
-  .nav__links, .nav__cta { display: none; }
-  .nav__burger { display: flex; margin-left: auto; }
-  .nav { height: 64px; }
-  .nav__in { height: 64px; }
-  .nav__brand { height: 64px; margin-right: 0; }
-  .nav__logo { height: 44px; }
-  html { scroll-padding-top: 72px; }
-}
-
-/* ── Tablet Wide  700px – 899px ─────────────────────
-   Goal: 4→2 col, 3→2 col. Hero tightens but stays 2-col. */
-@media (min-width: 700px) and (max-width: 899px) {
-  :root { --gut: clamp(1.25rem, 3vw, 2rem); }
-
-  .hero { padding-top: 80px; }
-  .hero__body { grid-template-columns: 1fr min(300px, 34%); gap: var(--sp-6); }
-  .hero__h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
-
-  .section-header { grid-template-columns: 1fr; gap: var(--sp-3); margin-bottom: var(--sp-5); }
-
-  .friction-grid  { grid-template-columns: repeat(2, 1fr); }
-  .method-cards   { grid-template-columns: repeat(2, 1fr); }
-  .tiers-grid     { grid-template-columns: repeat(2, 1fr); }
-
-  .about__layout { grid-template-columns: 1fr; gap: var(--sp-8); }
-  .about__panel  { max-width: 560px; }
-  .principle     { max-width: 100%; }
-
-  .contact-grid { grid-template-columns: 1fr; }
-  .cp--warm { border-right: none; border-bottom: 1px solid var(--paper-2); }
-  .cf-row { grid-template-columns: 1fr 1fr; }
-
-  .footer__top { grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
-}
-
-/* ── Tablet Narrow  481px – 699px ───────────────────
-   Goal: Hero stacks. 3-col→1-col. Diff hides competitors. */
-@media (min-width: 481px) and (max-width: 699px) {
-  :root { --gut: clamp(1.125rem, 3vw, 1.5rem); }
-
-  .hero { padding-top: 76px; }
-  .hero__body { grid-template-columns: 1fr; gap: var(--sp-6); }
-  .hero__right { max-width: 480px; }
-
-  .section-header { grid-template-columns: 1fr; gap: var(--sp-3); margin-bottom: var(--sp-5); }
-
-  .friction-grid { grid-template-columns: repeat(2, 1fr); }
-  .method-cards  { grid-template-columns: 1fr; }
-  .tiers-grid    { grid-template-columns: repeat(2, 1fr); }
-
-  .diff__compare        { grid-template-columns: 1fr; }
-  .diff__col-head--them { display: none; }
-  .diff__col-head--us   { border-radius: var(--r-sm) var(--r-sm) 0 0; }
-  .diff-row--them       { display: none; }
-
-  .about__layout { grid-template-columns: 1fr; gap: var(--sp-8); }
-  .about__panel  { max-width: 480px; }
-  .principle     { max-width: 100%; }
-
-  .contact-grid { grid-template-columns: 1fr; }
-  .cp--warm { border-right: none; border-bottom: 1px solid var(--paper-2); }
-  .cf-row { grid-template-columns: 1fr; }
-
-  .footer__top { grid-template-columns: 1fr 1fr; gap: var(--sp-5); }
-}
-
-/* ── Mobile  ≤ 480px ─────────────────────────────────
-   Goal: Everything single column. Buttons go full-width.
-   Cards reduce padding. Thumbs reign. ─────────────── */
-@media (max-width: 480px) {
-  :root {
-    --gut: 1.125rem;   /* 18px */
-    --sec-pad: 2rem;   /* 32px */
-  }
-
-  .hero { padding-top: 72px; }
-  .hero__body { grid-template-columns: 1fr; gap: var(--sp-5); }
-  .hero__right { max-width: 100%; }
-
-  /* ── Full-width buttons: thumb-safe on mobile ── */
-  .hero__actions { flex-direction: column; align-items: stretch; }
-  .hero__actions .btn { width: 100%; max-width: 100%; justify-content: center; }
-
-  .section-header { grid-template-columns: 1fr; gap: var(--sp-3); margin-bottom: var(--sp-4); }
-
-  .friction-grid { grid-template-columns: 1fr; }
-  .fcard { padding: var(--sp-5) var(--sp-4); }
-
-  .method-cards { grid-template-columns: 1fr; }
-  .mcard { padding: var(--sp-5) var(--sp-4) var(--sp-6); }
-
-  .diff__compare        { grid-template-columns: 1fr; }
-  .diff__col-head--them { display: none; }
-  .diff-row--them       { display: none; }
-  .diff__col-head--us   { border-radius: var(--r-sm) var(--r-sm) 0 0; }
-
-  .tiers-grid { grid-template-columns: 1fr; }
-  .tier { padding: var(--sp-5) var(--sp-4); }
-
-  .about__layout { grid-template-columns: 1fr; gap: var(--sp-6); }
-  .about__portrait-figure { float: none; margin: 0 0 var(--sp-4) 0; }
-  .principle { max-width: 100%; }
-
-  .contact-grid { grid-template-columns: 1fr; }
-  .cp { padding: var(--sp-6) var(--sp-5); }
-  .cp--warm { border-right: none; border-bottom: 1px solid var(--paper-2); }
-  .cf-row { grid-template-columns: 1fr; }
-  .cf-submit .btn { width: 100%; justify-content: center; }
-
-  .footer__top { grid-template-columns: 1fr; gap: var(--sp-5); }
-  .footer__bottom-inner { flex-direction: column; align-items: flex-start; gap: var(--sp-4); }
-  .footer__bottom-left  { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
-  .footer__legal-links  { flex-wrap: wrap; gap: var(--sp-2); }
-
-  .theme-widget { bottom: 20px; right: 20px; }
-  .scroll-top   { bottom: 20px; right: 72px; }
-}
-
-/* ── Small Mobile  ≤ 360px ───────────────────────────
-   Goal: tighter gutters, hard type floors. ────────── */
-@media (max-width: 360px) {
-  :root { --gut: 0.875rem; }
-
-  .hero__h1     { font-size: 1.7rem; }
-  .about__title { font-size: clamp(1.4rem, 7vw, 1.8rem); }
-  .footer-banner__text { font-size: 1.25rem; }
-
-  .fcard, .mcard, .tier { padding: var(--sp-4) var(--sp-3); }
-  .fcard__title, .mcard__title, .tier__name { font-size: var(--t-base); }
-  .cp { padding: var(--sp-5) var(--sp-4); }
-}
-
 /* ── Print ───────────────────────────────────────────── */
 @media print {
-  .nav, .nav__mob, .scroll-top, .theme-widget, #v25-progress,
+  .nav, .scroll-top, .theme-widget, #v25-progress,
   .footer-banner__cta, .hero__actions, .tier__cta, .cf-submit,
   .footer__social, .footer__legal-links, .legal-modal-overlay { display: none !important; }
   * { background: #fff !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
@@ -1811,7 +1695,7 @@ a, button { touch-action: manipulation; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 10pt; }
   a[href^="#"]::after, a[href^="javascript:"]::after { content: ""; }
   .hero { padding-top: 20px; page-break-after: avoid; }
-  .friction-grid, .tiers-grid, .method-grid { display: block; }
+  .friction-grid, .tiers-grid, .method-cards { display: block; }
   .fcard, .mcard, .tier, .diff-row { break-inside: avoid; margin-bottom: 1rem; border: 1px solid #ccc; }
   .about__layout, .contact-grid { grid-template-columns: 1fr; }
   h1, h2, h3 { page-break-after: avoid; }
@@ -1842,39 +1726,29 @@ a, button { touch-action: manipulation; }
   <div class="wrap">
     <div class="nav__in">
       <a href="https://www.uonevantage.com" class="nav__brand" aria-label="UOne Vantage home">
-        <img src="Logo_UOneVantage.webp" alt="UOne Vantage" class="nav__logo" width="280" height="112" decoding="async">
+        <img src="Logo_UOneVantage.webp" alt="UOne Vantage CX Audit Logo" title="UOne Vantage — Customer Experience Consultancy" class="nav__logo" width="280" height="112" decoding="async">
       </a>
-      <ul class="nav__links">
+      <ul class="nav__links" id="navLinks">
         <li><a href="#observe">Why CX Audits</a></li>
         <li><a href="#method">Methodology</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Get in Touch</a></li>
+        <li><a href="#contact" class="nav__links-cta">Start a Conversation →</a></li>
       </ul>
-      <a href="#contact" class="nav__cta">Start a Conversation</a>
-      <button class="nav__burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mob-nav">
+      <a href="#contact" class="nav__cta">Start a Conversation →</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
-  <nav class="nav__mob" id="mob-nav" aria-label="Mobile navigation">
-    <a href="#observe">Why CX Audits</a>
-    <a href="#method">Methodology</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Get in Touch</a>
-  </nav>
 </header>
 
 <main id="main">
 
 <!-- ── HERO ──────────────────────────────────────────── -->
 <section class="hero" aria-label="Introduction">
-  <picture>
-    <source srcset="Hero_UOneVantage-mobile.webp" media="(max-width: 600px)" width="600" height="338">
-    <source srcset="Hero_UOneVantage-tablet.webp" media="(max-width: 1024px)" width="1024" height="576">
-    <img src="Hero_UOneVantage.webp" alt="" class="hero__bg-img" aria-hidden="true" width="1920" height="1080" fetchpriority="high" loading="eager">
-  </picture>
+  <img src="Hero_UOneVantage.webp" alt="" title="Human-Observed CX Audit — UOne Vantage" class="hero__bg-img" aria-hidden="true" width="1920" height="1080" fetchpriority="high" loading="eager">
   <div class="wrap hero__wrap">
     <div class="hero__body">
       <div class="hero__left">
@@ -1882,7 +1756,7 @@ a, button { touch-action: manipulation; }
         <h1 class="hero__h1" id="hero-heading">You see what you intend. We see what your customers <em>actually experience.</em></h1>
         <p class="hero__sub">Most businesses are working hard and genuinely care — yet <strong>cannot see what customers are actually experiencing</strong>. The gap isn't effort. It's perspective. Our human-observed <strong>customer experience audits</strong> provide it.</p>
         <div class="hero__actions">
-          <a href="#contact" class="btn btn-dark">Start a Conversation →</a>
+          <a href="#contact" class="btn btn-gold">Start a Conversation →</a>
           <a href="#services" class="btn btn-ghost">Explore Services</a>
         </div>
       </div>
@@ -1992,7 +1866,7 @@ a, button { touch-action: manipulation; }
         <div class="mcard__ord">Instrument II</div>
         <h3 class="mcard__title">CEOS™ Scoring</h3>
         <p class="mcard__body">Each observed interaction is scored across four dimensions — Compliance, Empathy, Objection Handling, Communication Standards. Each dimension is scored 0–25. Total score: 0–100. Evidence, not inference.</p>
-        <p class="mcard__body"><strong style="color:var(--ink);font-weight:600">Compliance</strong> measures whether the interaction followed the process it was supposed to follow. <strong style="color:var(--ink);font-weight:600">Empathy</strong> captures whether the customer felt heard — not just answered. <strong style="color:var(--ink);font-weight:600">Objection Handling</strong> scores how a concern, hesitation, or pushback was managed in the moment. <strong style="color:var(--ink);font-weight:600">Communication Standards</strong> covers clarity, tone, pace, and the absence of friction in language. Every score is attached to a timestamped, real observation — not a general impression.</p>
+        <p class="mcard__body"><strong>Compliance</strong> measures whether the interaction followed the process it was supposed to follow. <strong>Empathy</strong> captures whether the customer felt heard — not just answered. <strong>Objection Handling</strong> scores how a concern, hesitation, or pushback was managed in the moment. <strong>Communication Standards</strong> covers clarity, tone, pace, and the absence of friction in language. Every score is attached to a timestamped, real observation — not a general impression.</p>
         <div class="mcard__detail-list">
           <div class="mcard__detail-item"><span class="mcard__detail-dot"></span><span><strong>C</strong> — Compliance: process adherence and accuracy</span></div>
           <div class="mcard__detail-item"><span class="mcard__detail-dot"></span><span><strong>E</strong> — Empathy: the customer felt genuinely heard</span></div>
@@ -2149,7 +2023,7 @@ a, button { touch-action: manipulation; }
         <h2 class="about__title" id="about-heading">Built on experience. <em>Grounded in clarity.</em></h2>
         <figure class="about__portrait-figure">
           <div class="about__portrait-wrap">
-            <img src="Imran_UOneVantage.webp" alt="Imran Javed, Founder and Principal, UOne Vantage" class="about__portrait" width="296" height="296" loading="lazy" decoding="async">
+            <img src="Imran_UOneVantage.webp" alt="Imran Javed, Founder and Principal, UOne Vantage" title="Imran Javed — Founder & Principal, UOne Vantage CX Consultancy" class="about__portrait" width="296" height="296" loading="lazy" decoding="async">
           </div>
           <figcaption class="about__portrait-caption">Imran Javed<br>Founder &amp; Principal</figcaption>
         </figure>
@@ -2252,27 +2126,27 @@ a, button { touch-action: manipulation; }
             <p class="cf-required-note u-required-note"><span aria-hidden="true">*</span> Indicates a required field</p>
             <div class="cf-row">
               <div class="cf-field cf-field--float" id="cf-field-name">
-                <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name" aria-describedby="cf-name-msg" minlength="2">
+                <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name" aria-label="Your Name" aria-describedby="cf-name-msg" minlength="2">
                 <label for="cf-name">Your Name <span aria-hidden="true">*</span></label>
                 <span class="cf-field-msg" id="cf-name-msg" aria-live="polite">Please enter your name.</span>
               </div>
             </div>
             <div class="cf-field cf-field--float" id="cf-field-email">
-              <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email" aria-describedby="cf-email-msg" pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}">
+              <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email" aria-label="Email Address" aria-describedby="cf-email-msg" pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}">
               <label for="cf-email">Email Address <span aria-hidden="true">*</span></label>
               <span class="cf-field-msg" id="cf-email-msg" aria-live="polite">Please enter a valid email address.</span>
             </div>
             <div class="cf-field cf-field--float">
-              <input type="text" id="cf-company" name="company" placeholder=" " autocomplete="organization">
+              <input type="text" id="cf-company" name="company" placeholder=" " autocomplete="organization" aria-label="Company / Organisation">
               <label for="cf-company">Company / Organisation <span class="u-optional">(optional)</span></label>
             </div>
             <div class="cf-field cf-field--float">
-              <input type="tel" id="cf-phone" name="phone" placeholder=" " autocomplete="tel">
+              <input type="tel" id="cf-phone" name="phone" placeholder=" " autocomplete="tel" aria-label="Phone / WhatsApp">
               <label for="cf-phone">Phone / WhatsApp <span class="u-optional">(optional)</span></label>
             </div>
             <div class="cf-field cf-field--message" id="cf-field-message">
               <label for="cf-message" class="cf-static-label">Message <span aria-hidden="true">*</span></label>
-              <textarea id="cf-message" name="message" placeholder="Tell us briefly what you're noticing…" required autocomplete="off" aria-describedby="cf-message-msg" minlength="10"></textarea>
+              <textarea id="cf-message" name="message" placeholder="Tell us briefly what you're noticing…" required autocomplete="off" aria-label="Tell us briefly what you're noticing…" aria-describedby="cf-message-msg" minlength="10"></textarea>
               <span class="cf-field-msg" id="cf-message-msg" aria-live="polite">Please include a short message.</span>
             </div>
             <div class="cf-success" id="cf-success" role="status" aria-live="polite" aria-atomic="true">✓ Message received. We'll be in touch within one working day.</div>
@@ -2291,7 +2165,7 @@ a, button { touch-action: manipulation; }
 
 <!-- ── FOOTER BANNER ─────────────────────────────────── -->
 <div class="footer-banner" role="img" aria-label="UOne Vantage — professional CX audit practice">
-  <img src="Footer_UOneVantage.webp" alt="" class="footer-banner__bg" aria-hidden="true" width="1920" height="420" loading="lazy">
+  <img src="Footer_UOneVantage.webp" alt="Human-Observed CX Analysis — UOne Vantage Pakistan and UAE" title="Human-Observed CX Analysis — UOne Vantage" class="footer-banner__bg" aria-hidden="true" width="1920" height="420" loading="lazy">
   <div class="footer-banner__overlay">
     <p class="footer-banner__heading">Customer Experience Audit</p>
     <p class="footer-banner__text">The gap between what you believe and what your customers experience — we close it.</p>
@@ -2305,7 +2179,7 @@ a, button { touch-action: manipulation; }
     <div class="footer__top">
       <div>
         <a href="https://www.uonevantage.com" aria-label="UOne Vantage home">
-          <img src="Logo_UOneVantage.webp" alt="UOne Vantage" class="footer__logo" width="200" height="80" loading="lazy" decoding="async">
+          <img src="Logo_UOneVantage.webp" alt="UOne Vantage CX Audit Logo" title="UOne Vantage — CX Audit & Customer Experience Consultancy" class="footer__logo" width="200" height="80" loading="lazy" decoding="async">
         </a>
         <p class="footer__geo">Operating in Pakistan, the Gulf, Europe, UK, US, and Canada.</p>
         <a href="/cdn-cgi/l/email-protection#5f373a3333301f2a30313a293e312b3e383a713c3032" class="footer__email"><span class="__cf_email__" data-cfemail="e78f828b8b88a79288898291868993868082c984888a">[email&#160;protected]</span></a>
@@ -2332,7 +2206,7 @@ a, button { touch-action: manipulation; }
         <ul>
           <li><a href="#about">About UOne Vantage</a></li>
           <li><a href="#observe">The CX Problem We Solve</a></li>
-          <li><a href="#contact">Start a Conversation</a></li>
+          <li><a href="#contact">Start a Conversation →</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -2491,19 +2365,6 @@ function initThemeDrag(el) {
   window.addEventListener('resize', function() { var r = el.getBoundingClientRect(); clampPos(r.left, r.top); });
 }
 
-/* ── Mobile nav ───────────────────────────────────────── */
-function initMobileNav() {
-  var burger = document.getElementById('burger');
-  var mobNav = document.getElementById('mob-nav');
-  if (!burger || !mobNav) return;
-  function openNav()  { mobNav.classList.add('open');    burger.setAttribute('aria-expanded', 'true');  document.body.style.overflow = 'hidden'; }
-  function closeNav() { mobNav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
-  burger.addEventListener('click', function() { mobNav.classList.contains('open') ? closeNav() : openNav(); });
-  mobNav.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeNav); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeNav(); });
-  document.addEventListener('click',   function(e) { if (mobNav.classList.contains('open') && !mobNav.contains(e.target) && !burger.contains(e.target)) closeNav(); });
-}
-
 /* ── Scroll top ───────────────────────────────────────── */
 function initScrollTop() {
   var btn = document.getElementById('scroll-top');
@@ -2530,7 +2391,7 @@ function initProgressBar() {
 /* ── Active nav ───────────────────────────────────────── */
 function initActiveNav() {
   var sections = Array.from(document.querySelectorAll('section[id]'));
-  var navLinks = Array.from(document.querySelectorAll('.nav__links a, .nav__mob a'));
+  var navLinks = Array.from(document.querySelectorAll('.nav__links a'));
   if (!sections.length || !navLinks.length) return;
   var navH = document.querySelector('.nav');
   function getOffset() { return navH ? navH.offsetHeight + 16 : 96; }
@@ -2557,11 +2418,6 @@ function initSmoothScroll() {
       var offset = nav ? nav.offsetHeight + 8 : 96;
       var top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({top: top, behavior: 'smooth'});
-      var mobNav = document.getElementById('mob-nav');
-      if (mobNav) mobNav.classList.remove('open');
-      var burger = document.getElementById('burger');
-      if (burger) burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
     });
   });
 }
@@ -2716,9 +2572,39 @@ window.addEventListener('DOMContentLoaded', function() {
     else { localStorage.setItem(THEME_KEY, 'dark'); applyTheme('dark'); }
   });
 
+  /* ── Hamburger nav toggle ───────────────────────────── */
+  var navToggle = document.getElementById('navToggle');
+  var navLinks  = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      var isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    /* Close on link click */
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open navigation menu');
+        document.body.style.overflow = '';
+      });
+    });
+    /* Close on Escape */
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open navigation menu');
+        document.body.style.overflow = '';
+        navToggle.focus();
+      }
+    });
+  }
+
   if (pill) initThemeDrag(pill);
   startAutoTimer();
-  initMobileNav();
   initScrollTop();
   initProgressBar();
   initActiveNav();
