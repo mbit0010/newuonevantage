@@ -24,7 +24,7 @@
 <link rel="dns-prefetch" href="https://api.web3forms.com">
 <link rel="preload" as="image" href="Hero_UOneVantage.webp" fetchpriority="high">
 <title>CX Audit & Customer Experience Consultancy | UOne Vantage</title>
-<meta name="description" content="Human-observed CX audits in Pakistan and UAE. Real interactions scored using CEOS™ scoring, with AI-assisted analysis to surface patterns and reduce customer friction.">
+<meta name="description" content="Human-observed CX audits in Pakistan and UAE. Real interactions scored using CEOS&trade; scoring, with AI-assisted analysis to surface patterns and reduce customer friction.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://www.uonevantage.com/">
 <!-- TODO: paste real Google Search Console verification code here before going live -->
@@ -38,7 +38,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.uonevantage.com/">
 <meta property="og:title" content="Customer Experience Audit | CX Consultancy Pakistan and United Arab Emirates | UOne Vantage">
-<meta property="og:description" content="Human-observed customer experience audits for Pakistan, UAE, and the Gulf. CEOS™ framework scoring with AI-assisted pattern analysis. Direct briefing from the principal who did the work.">
+<meta property="og:description" content="Human-observed customer experience audits for Pakistan, UAE, and the Gulf. CEOS&trade; framework scoring with AI-assisted pattern analysis. Direct briefing from the principal who did the work.">
 <meta property="og:image" content="https://www.uonevantage.com/og-image.png">
 <meta property="og:image:alt" content="UOne Vantage — Customer Experience. Observed.">
 <meta property="og:image:width" content="1200">
@@ -48,7 +48,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@uonevantage">
 <meta name="twitter:title" content="Customer Experience Audit | CX Consultancy Pakistan and United Arab Emirates | UOne Vantage">
-<meta name="twitter:description" content="Human-observed CX audits for businesses in Pakistan and the United Arab Emirates. CEOS™ scoring framework. AI-assisted pattern analysis. Direct principal briefing.">
+<meta name="twitter:description" content="Human-observed CX audits for businesses in Pakistan and the United Arab Emirates. CEOS&trade; scoring framework. AI-assisted pattern analysis. Direct principal briefing.">
 <meta name="twitter:image" content="https://www.uonevantage.com/twitter-image.png">
 <meta name="twitter:image:alt" content="UOne Vantage — Customer Experience Audit Pakistan UAE Gulf">
 
@@ -2858,8 +2858,8 @@ function initThemeDrag(el) {
   el.addEventListener('mousedown', function(e) { e.preventDefault(); dragStart(e.clientX, e.clientY); });
   document.addEventListener('mousemove', function(e) { dragMove(e.clientX, e.clientY); });
   document.addEventListener('mouseup', dragEnd);
-  el.addEventListener('touchstart', function(e) { var t = e.touches[0]; dragStart(t.clientX, t.clientY); }, {passive: true});
-  document.addEventListener('touchmove', function(e) { if (!dragging || !moved) return; e.preventDefault(); var t = e.touches[0]; dragMove(t.clientX, t.clientY); }, {passive: false});
+  el.addEventListener('touchstart', function(e) { e.preventDefault(); var t = e.touches[0]; dragStart(t.clientX, t.clientY); }, {passive: false});
+  document.addEventListener('touchmove', function(e) { if (!dragging) return; e.preventDefault(); var t = e.touches[0]; dragMove(t.clientX, t.clientY); }, {passive: false});
   document.addEventListener('touchend', dragEnd);
   window.addEventListener('resize', function() { var r = el.getBoundingClientRect(); clampPos(r.left, r.top); });
 }
@@ -3088,21 +3088,22 @@ window.addEventListener('DOMContentLoaded', function() {
       updateToggleIcon();
     }, { passive: false });
 
-    /* Touch swipe on widget: left→light, right→dark */
+    /* Touch swipe on widget: right→light, left→dark (only fires if not a position drag) */
     var twTouchX = null;
     pill.addEventListener('touchstart', function(e) {
       if (e.touches.length === 1) twTouchX = e.touches[0].clientX;
-    }, { passive: true });
+    }, { passive: false });
     pill.addEventListener('touchend', function(e) {
       if (twTouchX === null) return;
       var dx = e.changedTouches[0].clientX - twTouchX;
       twTouchX = null;
+      if (pill._moved) return;
       if (Math.abs(dx) < 12) return;
       var goLight = dx > 0;
       localStorage.setItem(THEME_KEY, goLight ? 'light' : 'dark');
       applyTheme(goLight ? 'light' : 'dark');
       updateToggleIcon();
-    }, { passive: true });
+    }, { passive: false });
   }
 
   /* ── Hamburger nav toggle ───────────────────────────── */
