@@ -236,6 +236,8 @@
 }
 </script>
 
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2210%22%20fill%3D%22%238B5E1A%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2230%22%20font-weight%3D%22bold%22%20fill%3D%22%23FAFAF7%22%3EUV%3C%2Ftext%3E%3C%2Fsvg%3E" type="image/svg+xml">
+<link rel="icon" type="image/webp" href="Logo_UOneVantage.webp">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -1612,8 +1614,8 @@ a, button { touch-action: manipulation; }
 }
 .footer__logo {
   display: block;
-  height: clamp(28px, 3.5vw, 40px); width: auto; max-width: 140px;
-  object-fit: contain; object-position: left center; margin-bottom: var(--sp-2);
+  height: clamp(84px, 10vw, 120px); width: auto; max-width: 420px;
+  object-fit: contain; object-position: left center; margin-bottom: var(--sp-4);
 }
 .footer__geo {
   font-family: var(--sans); font-size: var(--t-caption); font-weight: var(--fw-regular);
@@ -2195,7 +2197,7 @@ a, button { touch-action: manipulation; }
 <body id="top">
 
 <!-- Theme widget -->
-<div class="theme-widget" id="themeWidget" aria-label="Theme switcher">
+<div class="theme-widget" id="themeWidget" role="group" aria-label="Theme switcher">
   <button class="tw-btn" id="twToggle" aria-label="Toggle day/night mode" title="Toggle day / night">🌙</button>
 </div>
 
@@ -2594,7 +2596,7 @@ a, button { touch-action: manipulation; }
         <!-- Info panel -->
         <div class="cp cp--warm">
           <h3>A twenty-minute conversation.<br><span class="u-sub-title">No obligation. No slide deck.</span></h3>
-          <p>Twenty minutes. No obligation, no slide deck. Tell us the gap you sense, the question you keep returning to, or the problem you can't solve from the inside.</p>
+          <p>Tell us the gap you sense, the question you keep returning to, or the problem you can't solve from the inside. We'll tell you honestly whether we can help.</p>
           <ul class="info-list">
             <li class="info-item">
               <span class="info-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
@@ -2668,10 +2670,10 @@ a, button { touch-action: manipulation; }
 </main>
 
 <!-- ── FOOTER BANNER ─────────────────────────────────── -->
-<div class="footer-banner" role="img" aria-label="UOne Vantage — professional CX audit practice">
+<div class="footer-banner" role="region" aria-label="UOne Vantage — professional CX audit practice">
   <img src="Footer_UOneVantage.webp" alt="Human-Observed CX Analysis — UOne Vantage Pakistan and UAE" title="Human-Observed CX Analysis — UOne Vantage" class="footer-banner__bg" aria-hidden="true" width="1920" height="420" loading="lazy" decoding="async">
   <div class="footer-banner__overlay">
-    <p class="footer-banner__heading">Customer Experience Audit</p>
+    <p class="footer-banner__heading">What your customers experience — observed.</p>
     <p class="footer-banner__text">The gap between what you believe and what your customers experience — we close it.</p>
     <a href="#contact" class="footer-banner__cta">Start a Conversation →</a>
   </div>
@@ -2683,7 +2685,7 @@ a, button { touch-action: manipulation; }
     <div class="footer__top">
       <div>
         <a href="https://www.uonevantage.com" aria-label="UOne Vantage home">
-          <img src="Logo_UOneVantage.webp" alt="UOne Vantage CX Audit Logo" title="UOne Vantage — CX Audit & Customer Experience Consultancy" class="footer__logo" width="200" height="80" loading="lazy" decoding="async">
+          <img src="Logo_UOneVantage.webp" alt="UOne Vantage CX Audit Logo" title="UOne Vantage — CX Audit & Customer Experience Consultancy" class="footer__logo" width="600" height="240" loading="lazy" decoding="async">
         </a>
         <p class="footer__geo">Operating in Pakistan, the Gulf, Europe, UK, US, and Canada.</p>
         <a href="/cdn-cgi/l/email-protection#5f373a3333301f2a30313a293e312b3e383a713c3032" class="footer__email"><span class="__cf_email__" data-cfemail="e78f828b8b88a79288898291868993868082c984888a">[email&#160;protected]</span></a>
@@ -2745,7 +2747,7 @@ a, button { touch-action: manipulation; }
       </div>
       <div class="footer__bottom-inner">
         <div class="footer__bottom-left">
-          <p class="footer__legal">© 2026 UOne Vantage. All rights reserved. V3</p>
+          <p class="footer__legal">© 2026 UOne Vantage. All rights reserved.</p>
           <div class="footer__tags">
             <span class="ftag">Human Observation</span>
             <span class="ftag">No Algorithms</span>
@@ -2853,12 +2855,12 @@ function initThemeDrag(el) {
   try { var p = JSON.parse(localStorage.getItem(POS_KEY) || 'null'); if (p) clampPos(p.x, p.y); } catch(e){}
   var dragging = false, moved = false, sx, sy, ox, oy;
   function dragStart(ex, ey) { var r = el.getBoundingClientRect(); ox = r.left; oy = r.top; sx = ex; sy = ey; dragging = true; moved = false; el.classList.add('dragging'); }
-  function dragMove(ex, ey) { if (!dragging) return; var dx = ex - sx, dy = ey - sy; if (Math.abs(dx) > 5 || Math.abs(dy) > 5) moved = true; if (moved) clampPos(ox + dx, oy + dy); }
+  function dragMove(ex, ey) { if (!dragging) return; var dx = ex - sx, dy = ey - sy; if (Math.abs(dx) > 12 || Math.abs(dy) > 12) moved = true; if (moved) clampPos(ox + dx, oy + dy); }
   function dragEnd() { if (!dragging) return; dragging = false; el.classList.remove('dragging'); if (moved) { var r = el.getBoundingClientRect(); localStorage.setItem(POS_KEY, JSON.stringify({x: r.left, y: r.top})); el._moved = true; } moved = false; }
   el.addEventListener('mousedown', function(e) { e.preventDefault(); dragStart(e.clientX, e.clientY); });
   document.addEventListener('mousemove', function(e) { dragMove(e.clientX, e.clientY); });
   document.addEventListener('mouseup', dragEnd);
-  el.addEventListener('touchstart', function(e) { e.preventDefault(); var t = e.touches[0]; dragStart(t.clientX, t.clientY); }, {passive: false});
+  el.addEventListener('touchstart', function(e) { var t = e.touches[0]; dragStart(t.clientX, t.clientY); }, {passive: true});
   document.addEventListener('touchmove', function(e) { if (!dragging) return; e.preventDefault(); var t = e.touches[0]; dragMove(t.clientX, t.clientY); }, {passive: false});
   document.addEventListener('touchend', dragEnd);
   window.addEventListener('resize', function() { var r = el.getBoundingClientRect(); clampPos(r.left, r.top); });
@@ -3075,6 +3077,25 @@ window.addEventListener('DOMContentLoaded', function() {
       applyTheme(next);
       updateToggleIcon();
     });
+    /* Belt-and-suspenders for mobile: handle tap via touchend directly on button */
+    var twTapped = false;
+    twToggle.addEventListener('touchstart', function(e) {
+      twTapped = true;
+    }, {passive: true});
+    twToggle.addEventListener('touchend', function(e) {
+      if (!twTapped) return;
+      twTapped = false;
+      e.preventDefault(); /* prevent the 300ms synthetic click double-firing */
+      e.stopPropagation();
+      if (pill && pill._moved) { pill._moved = false; return; }
+      var override  = localStorage.getItem(THEME_KEY);
+      var autoTheme = root.getAttribute('data-theme-auto') || getAutoTheme();
+      var current   = override || autoTheme;
+      var next = current === 'dark' ? 'light' : 'dark';
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+      updateToggleIcon();
+    }, {passive: false});
   }
   updateToggleIcon();
 
